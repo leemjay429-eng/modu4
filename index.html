@@ -1,0 +1,1342 @@
+<!-- 모바일 좌우 패딩 16 -->
+<script>
+if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
+  var s=document.createElement('style');
+  s.textContent='body{margin:0}@media(max-width:700px){.contents_div{padding:0 16px}}@media(max-width:576px){.contents_div br{display:inline!important}}';
+  document.head.appendChild(s);
+}
+</script>
+<script>
+(function(){
+  try{
+    if(!document.querySelector('meta[name="viewport"]')){
+      var m=document.createElement('meta');
+      m.setAttribute('name','viewport');
+      m.setAttribute('content','width=device-width, initial-scale=1');
+      (document.head||document.getElementsByTagName('head')[0]||document.documentElement).appendChild(m);
+    }
+  }catch(e){}
+})();
+</script>
+<div class="contents_div">
+<style>
+@font-face{font-family:'Pretendard';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2') format('woff2');font-weight:100;font-display:swap}
+@font-face{font-family:'Pretendard';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraLight.woff2') format('woff2');font-weight:200;font-display:swap}
+@font-face{font-family:'Pretendard';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Light.woff2') format('woff2');font-weight:300;font-display:swap}
+@font-face{font-family:'Pretendard';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Pretendard';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Medium.woff2') format('woff2');font-weight:500;font-display:swap}
+@font-face{font-family:'Pretendard';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-SemiBold.woff2') format('woff2');font-weight:600;font-display:swap}
+@font-face{font-family:'Pretendard';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Pretendard';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraBold.woff2') format('woff2');font-weight:800;font-display:swap}
+@font-face{font-family:'Pretendard';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Black.woff2') format('woff2');font-weight:900;font-display:swap}
+@font-face{font-family:'Paperozi';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-1Thin.woff2') format('woff2');font-weight:100;font-display:swap}
+@font-face{font-family:'Paperozi';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-2ExtraLight.woff2') format('woff2');font-weight:200;font-display:swap}
+@font-face{font-family:'Paperozi';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-3Light.woff2') format('woff2');font-weight:300;font-display:swap}
+@font-face{font-family:'Paperozi';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-4Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Paperozi';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-5Medium.woff2') format('woff2');font-weight:500;font-display:swap}
+@font-face{font-family:'Paperozi';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-6SemiBold.woff2') format('woff2');font-weight:600;font-display:swap}
+@font-face{font-family:'Paperozi';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-7Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Paperozi';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-8ExtraBold.woff2') format('woff2');font-weight:800;font-display:swap}
+@font-face{font-family:'Paperozi';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-9Black.woff2') format('woff2');font-weight:900;font-display:swap}
+
+/* ===== 토큰 ===== */
+.contents_div .mgd-wrap{
+  /* 기준색: 정원 그린 메인 + 햇살 옐로 포인트 (토큰 이름은 기존 그대로 유지) */
+  --c-cobalt:#2e7d4f; --c-cobalt-d:#1f5c38; --c-navy:#1f6e46;
+  --c-sky:#f1f2f4; --c-cream:#f6f0e6; --c-panel:#f8f5ef; --c-chat:#dcebdf;
+  --c-ink:#1e2a23; --c-sub:#56635b; --c-line:#d6e0d9; --c-ivory:#fff4e2;
+  --c-pink:#a86a00; --c-pink-bg:#fbf1d3; --c-pink-l:#f6e7a1;
+  --c-green:#3a8251; --c-green-bg:#e0efe3;
+  --c-orange:#c4602a; --c-orange-bg:#fbe5d5;
+  --c-violet:#6152ad; --c-violet-bg:#e7e3f6;
+  --c-cobalt-bg:#e2f0e6;
+  --acc:var(--c-cobalt); --acc-bg:var(--c-cobalt-bg); --acc-dot:#8fcf9f;
+
+  --fs-h1:40px; --fs-sub:20px; --fs-h2:28px; --fs-h3:24px; --fs-theme:25px;
+  --fs-body:17px; --fs-desc:16px; --fs-lead:16px; --fs-info:16px;
+  --fs-kicker:15px; --fs-num:14px; --fs-tag:12.5px; --fs-lb:13px; --fs-cta:16px; --fs-arw:17px; --fs-chk:11px;
+  --fs-stat:34px; --fs-ava:17px;
+  --fs-card:16.5px; /* 카드 설명·정보 글자 */
+  --kick:32px; --cap:24px; --post:28px; --lens:40px; --ava:38px;
+  --card-pv:26px; --card-ph:26px;
+  --lens-img:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2.6' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='M16.5 16.5 21 21'/%3E%3C/svg%3E");
+}
+.contents_div .mgd-acc--pink{ --acc:var(--c-pink); --acc-bg:var(--c-pink-bg); --acc-dot:#e7c766; }
+/* 정원 테마 1~4: 밝고 선명한 포인트색 */
+.contents_div .mgd-sec[data-sec="t1"]{ --acc:#ef5f9e; --acc-bg:#fde7f1; }
+.contents_div .mgd-sec[data-sec="t2"]{ --acc:#2fb36d; --acc-bg:#dcf5e7; }
+.contents_div .mgd-sec[data-sec="t3"]{ --acc:#f7853a; --acc-bg:#ffeadb; }
+.contents_div .mgd-sec[data-sec="t4"]{ --acc:#8b6cf0; --acc-bg:#ece7fe; }
+.contents_div .mgd-acc--green{ --acc:var(--c-green); --acc-bg:var(--c-green-bg); --acc-dot:#7cc48a; }
+.contents_div .mgd-acc--orange{ --acc:var(--c-orange); --acc-bg:var(--c-orange-bg); --acc-dot:#f2a061; }
+.contents_div .mgd-acc--violet{ --acc:var(--c-violet); --acc-bg:var(--c-violet-bg); --acc-dot:#b4a6f0; }
+.contents_div .mgd-acc--cobalt{ --acc:var(--c-cobalt); --acc-bg:var(--c-cobalt-bg); --acc-dot:#8fcf9f; }
+
+/* ===== Reset ===== */
+.contents_div .mgd-wrap, .contents_div .mgd-wrap *,
+.contents_div .mgd-wrap *::before, .contents_div .mgd-wrap *::after{ box-sizing:border-box; }
+.contents_div .mgd-wrap :where(h1,h2,h3,p,ul,ol,li,figure){ margin:0; padding:0; }
+.contents_div .mgd-wrap :where(ul,ol){ list-style:none; }
+.contents_div .mgd-wrap :where(img){ max-width:100%; display:block; border:0; }
+.contents_div .mgd-wrap :where(a){ text-decoration:none; color:inherit; }
+.contents_div .mgd-wrap :where(button){ font:inherit; margin:0; }
+
+/* ===== 래퍼 · 폰트 ===== */
+.contents_div .mgd-wrap{
+  max-width:800px; margin:0 auto;
+  font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  font-size:var(--fs-body); line-height:1.75; letter-spacing:-0.02em;
+  color:var(--c-ink); word-break:keep-all; overflow-wrap:break-word;
+  -webkit-text-size-adjust:100%;
+}
+.contents_div .mgd-wrap :where(h1,h2,h3){
+  font-family:'Paperozi','Pretendard',sans-serif; word-break:keep-all;
+}
+
+/* ===== 섹션 ===== */
+.contents_div .mgd-sec{
+  width:100%;
+  padding:70px clamp(22px, 6.25%, 50px);
+}
+/* 정원 테마 섹션 사이 3px 그레이 구분 */
+.contents_div .mgd-sec[data-sec^="t"]{ border-bottom:3px solid #d9dde5; }
+.contents_div .mgd-sec--cobalt{ background:var(--c-cobalt); color:#fff; }
+.contents_div .mgd-sec--navy{ background:var(--c-navy); color:#fff; }
+.contents_div .mgd-sec--cream{ background:var(--c-cream); }
+.contents_div .mgd-sec--sky{ background:var(--c-sky); }
+
+/* 섹션 머리: 키커 + 검색창형 타이틀 */
+.contents_div .mgd-head{ text-align:center; }
+.contents_div .mgd-kicker{
+  display:inline-flex; align-items:center; height:var(--kick); padding:0 14px;
+  border-radius:999px; background:var(--acc); color:#fff;
+  font-size:var(--fs-kicker); font-weight:700; line-height:1.2; letter-spacing:.01em;
+}
+.contents_div .mgd-intro .mgd-kicker,
+.contents_div .mgd-sec--navy .mgd-kicker{ background:var(--c-pink-l); color:var(--c-navy); }
+.contents_div .mgd-search{
+  display:flex; align-items:center; gap:14px; width:fit-content; max-width:100%;
+  margin:14px auto 0; padding:9px 9px 9px 26px;
+  background:#fff; border:1.5px solid var(--c-line); border-radius:999px; text-align:left;
+}
+.contents_div .mgd-head > .mgd-search:first-child{ margin-top:0; }
+.contents_div .mgd-search--multi{ border-radius:28px; padding-top:14px; padding-bottom:14px; }
+.contents_div .mgd-h2{
+  min-width:0; font-size:var(--fs-h2); font-weight:800; line-height:1.35; letter-spacing:-0.01em; color:var(--c-cobalt-d);
+}
+.contents_div .mgd-lens{
+  flex:0 0 auto; width:var(--lens); height:var(--lens); border-radius:50%;
+  background:var(--acc) var(--lens-img) center / 48% no-repeat;
+}
+/* 테마 제목(검색창형): 375px에서 19px 기준, 웹은 같은 비율로 25px */
+.contents_div .mgd-search .mgd-h2{ font-size:var(--fs-theme); }
+.contents_div .mgd-sec--navy .mgd-search{ background:rgba(255,255,255,.08); border-color:rgba(255,255,255,.32); }
+.contents_div .mgd-sec--navy .mgd-h2{ color:#fff; }
+.contents_div .mgd-sec--navy .mgd-lens{ background-color:var(--c-pink); }
+.contents_div .mgd-sec--navy .mgd-ava{ background:var(--c-pink-l); color:var(--c-cobalt-d); }
+
+/* 섹션 머리: 번호형 (선정 과정 · 최다 선정 이유 · 정원 15곳) */
+.contents_div .mgd-head--num{ display:flex; align-items:center; gap:14px; text-align:left; }
+.contents_div .mgd-head-mark{ position:relative; flex:0 0 auto; margin:-11px 0 0 -5px; }
+.contents_div .mgd-head-no{
+  display:block; position:relative; z-index:0; pointer-events:none;
+  font-family:'Paperozi','Pretendard',sans-serif; font-size:99px; font-weight:900; line-height:1; letter-spacing:-0.05em;
+  color:var(--acc); opacity:.13;
+  transform:scaleX(.9); transform-origin:0 50%; margin-right:-12px;
+}
+.contents_div .mgd-head--num .mgd-kicker{
+  position:absolute; top:43px; left:5px; z-index:1; display:block; height:auto; padding:0; border-radius:0; background:none; white-space:nowrap;
+  color:var(--acc); font-size:15px; font-weight:800; line-height:1.3;
+}
+.contents_div .mgd-head--num .mgd-h2{ position:relative; z-index:1; flex:1 1 auto; min-width:0; margin-top:0; }
+.contents_div .mgd-sec--navy .mgd-head-no{ color:var(--c-pink-l); opacity:.16; }
+.contents_div .mgd-sec--navy .mgd-head--num .mgd-kicker{ color:var(--c-pink-l); }
+.contents_div .mgd-sec--navy .mgd-head--num .mgd-h2{ color:#fff; }
+
+/* 말풍선 메시지 */
+.contents_div .mgd-msg{ display:flex; align-items:flex-start; gap:10px; margin-top:30px; }
+.contents_div .mgd-ava{
+  flex:0 0 auto; display:inline-flex; align-items:center; justify-content:center;
+  width:var(--ava); height:var(--ava); border-radius:38%; background:var(--c-cobalt); color:#fff;
+  font-family:'Paperozi','Pretendard',sans-serif; font-size:var(--fs-ava); font-weight:700; line-height:1; letter-spacing:0;
+}
+.contents_div .mgd-bub{
+  display:block; width:fit-content; max-width:100%;
+  padding:14px 18px; background:#fff; border-radius:4px 18px 18px 18px;
+  box-shadow:0 2px 10px rgba(23,61,42,.07);
+}
+.contents_div .mgd-lead{ min-width:0; font-size:var(--fs-lead); line-height:1.7; color:var(--c-ink); }
+.contents_div .mgd-lead--plain{ margin-top:24px; }
+.contents_div .mgd-lead strong{ color:var(--c-cobalt-d); font-weight:700; }
+.contents_div .mgd-pop{ color:var(--c-pink); font-weight:800; }
+
+.contents_div .mgd-msg-col{ min-width:0; }
+.contents_div .mgd-msg-col .mgd-bub + .mgd-bub{ margin-top:8px; border-radius:18px; }
+
+/* ===== 이미지 ===== */
+.contents_div .mgd-fig{
+  position:relative; width:100%; overflow:hidden; background:#eee;
+}
+.contents_div .mgd-fig::before{ content:''; display:block; padding-top:62.5%; }
+.contents_div .mgd-fig img{
+  position:absolute; inset:0; width:100%; height:100%;
+  object-fit:cover; object-position:center;
+}
+
+/* 이미지 2장: 위아래로 반씩 — .mgd-fig에 mgd-fig--duo 클래스 (현재 사용 카드 없음, [보관]) */
+.contents_div .mgd-fig--duo img{ height:50%; }
+.contents_div .mgd-fig--duo img:first-child{ object-position:center top; } /* 위 사진은 상단 기준 */
+.contents_div .mgd-fig--duo img + img{ top:50%; border-top:1px solid rgba(255,255,255,.6); }
+/* 이미지 2장: 1장은 배경, 1장은 오른쪽에 작은 사각형으로 — 두 번째 img에 class="mgd-fig-sub" (현재 사용 카드 없음, [보관]) */
+.contents_div .mgd-fig .mgd-fig-sub{
+  inset:auto; top:calc(36% + 43px); right:calc(7% + 20px); z-index:2;
+  width:39.6%; height:auto; aspect-ratio:1 / 1.3;
+  transform:translateY(-6.923%); /* 늘어난 높이를 위아래로 반씩: 가운데 축 유지 */
+  border:1px solid #292929;
+  box-shadow:0 0 14px 2px rgba(0,0,0,.45); /* 배경과 분리되도록 검은 외곽 글로우 */
+}
+
+/* ===== 사진 슬라이드 (좌우 버튼 · 스와이프) ===== */
+.contents_div .mgd-fig--slide .mgd-slides{
+  position:absolute; inset:0; display:flex; transition:transform .45s ease;
+}
+.contents_div .mgd-fig--slide .mgd-slides img{
+  position:static; flex:0 0 100%; width:100%; height:100%;
+}
+.contents_div .mgd-sl-nav{
+  position:absolute; left:0; top:0; z-index:3; width:100%; aspect-ratio:4 / 5;
+  display:flex; align-items:center; justify-content:space-between; padding:0 10px; pointer-events:none;
+}
+.contents_div .mgd-sl-btn{
+  pointer-events:auto; width:35.7px; height:35.7px; padding:0; border:0; border-radius:50%; cursor:pointer;
+  background:rgba(0,0,0,.32) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 5l7 7-7 7'/%3E%3C/svg%3E") center / 22.68px no-repeat; /* 화살표 1.2배, 선 약 3px */
+  transition:opacity .2s, background-color .2s;
+}
+.contents_div .mgd-sl-prev{ transform:scaleX(-1); }
+.contents_div .mgd-card .mgd-sl-nav{ width:36%; height:100%; aspect-ratio:auto; } /* PC 가로형 카드: 사진 영역에만 버튼 */
+.contents_div .mgd-sl-btn:disabled{ opacity:.3; cursor:default; }
+@media (hover:hover) and (pointer:fine){
+  .contents_div .mgd-sl-btn:not(:disabled):hover{ background-color:rgba(0,0,0,.5); }
+}
+@media (prefers-reduced-motion:reduce){
+  .contents_div .mgd-fig--slide .mgd-slides{ transition:none; }
+}
+
+/* ===== 히어로 (배경 5장 디졸브 + 고정 텍스트 이미지) ===== */
+.contents_div .gdh-wrap{
+  --gdh-yellow:#f8ec0f;
+  width:100%; container-type:inline-size; container-name:gdh;
+}
+.contents_div h1.gdh-sr{
+  position:absolute; width:1px; height:1px; padding:0; margin:-1px;
+  overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0;
+}
+/* 프레임: 원본 880×876 비율 */
+.contents_div .gdh-hero{ position:relative; width:100%; overflow:hidden; background:#e9e4d8; }
+.contents_div .gdh-hero::before{ content:''; display:block; padding-top:99.5455%; }
+/* 배경: 1→5 차례로 전환 */
+.contents_div .gdh-photos{ position:absolute; inset:0; }
+.contents_div .gdh-photo{ position:absolute; inset:0; margin:0; opacity:0; }
+.contents_div .gdh-photo img{
+  position:absolute; inset:0; width:100%; height:100%;
+  object-fit:cover; object-position:center;
+}
+.contents_div .gdh-photo.is-on{ opacity:1; z-index:2; }
+.contents_div .gdh-photo.is-prev{ opacity:1; z-index:1; }
+.contents_div .gdh-hero--fx .gdh-photo.is-on{ animation:gdhFade 1.6s cubic-bezier(.45,0,.25,1) both; }
+@keyframes gdhFade{ from{ opacity:0; } to{ opacity:1; } }
+/* 텍스트: 고정 */
+.contents_div .gdh-title{ position:absolute; inset:0; z-index:3; pointer-events:none; }
+.contents_div .gdh-title img{ width:100%; height:100%; }
+/* 페이지네이션 */
+.contents_div .gdh-bars{
+  position:absolute; left:50%; bottom:4.5%; z-index:4;
+  display:grid; grid-template-columns:repeat(5, 30px); gap:6px;
+  transform:translateX(-50%);
+}
+.contents_div .gdh-bar{
+  height:3px; border-radius:2px; background:rgba(255,255,255,.5);
+  transition:background-color .4s ease;
+}
+.contents_div .gdh-bar.is-on{ background:var(--gdh-yellow); }
+
+/* 인트로: 키커 · 부제 · 수치 · 채팅 */
+.contents_div .mgd-intro{ background:var(--c-cobalt); color:#fff; text-align:center; }
+.contents_div .mgd-h1{
+  margin-top:16px; font-size:var(--fs-h1); font-weight:800; line-height:1.3; letter-spacing:-0.01em; color:#fff;
+}
+.contents_div .mgd-intro-sub{
+  margin-top:14px; font-family:'Paperozi','Pretendard',sans-serif;
+  font-size:var(--fs-sub); font-weight:600; line-height:1.4; letter-spacing:-0.01em; color:var(--c-pink-l);
+}
+
+/* 채팅창 */
+.contents_div .mgd-chat{
+  max-width:600px; margin:30px auto 0; overflow:hidden; text-align:left;
+  background:#fff; border-radius:22px; box-shadow:0 14px 34px rgba(10,36,22,.28); color:var(--c-ink);
+}
+.contents_div .mgd-chat-top{
+  display:flex; align-items:center; gap:12px; padding:13px 18px;
+  border-bottom:1px solid rgba(29,41,68,.08);
+}
+.contents_div .mgd-chat-bk{ font-size:22px; font-weight:700; line-height:1; }
+.contents_div .mgd-chat-name{
+  flex:1; font-family:'Paperozi','Pretendard',sans-serif; font-size:var(--fs-desc); font-weight:600; line-height:1.3;
+}
+.contents_div .mgd-chat-ic{
+  width:18px; height:18px;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231d2944' stroke-width='2' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='M16.5 16.5 21 21'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+.contents_div .mgd-chat-ham{ font-size:17px; line-height:1; }
+.contents_div .mgd-chat-body{ padding:20px 18px 22px; background:var(--c-chat); }
+.contents_div .mgd-chat .mgd-msg{ margin-top:0; }
+.contents_div .mgd-chat .mgd-lead{ max-width:88%; }
+.contents_div .mgd-chat .mgd-bub{ box-shadow:none; padding:11px 15px; }
+.contents_div .mgd-chat .mgd-bub + .mgd-bub{ margin-top:6px; border-radius:18px; }
+
+.contents_div .mgd-stats{
+  display:grid; grid-template-columns:repeat(3,1fr); margin-top:30px;
+}
+.contents_div .mgd-stats li{ padding:18px 8px; text-align:center; }
+.contents_div .mgd-stats li + li{ border-left:1px solid rgba(255,255,255,.22); }
+.contents_div .mgd-stats b{
+  display:block; font-family:'Paperozi','Pretendard',sans-serif; font-weight:800;
+  font-size:var(--fs-stat); line-height:1.2; color:var(--c-ivory); letter-spacing:-0.01em;
+}
+.contents_div .mgd-stats li:last-child b{ color:var(--c-pink-l); }
+.contents_div .mgd-stats b span{ font-size:.55em; font-weight:700; margin-left:2px; }
+.contents_div .mgd-stats em{
+  display:block; margin-top:4px; font-style:normal; font-size:var(--fs-lb); font-weight:600;
+  line-height:1.4; color:rgba(255,255,255,.8);
+}
+
+/* ===== 선정 과정 ===== */
+.contents_div .mgd-flow{ margin-top:34px; text-align:center; }
+.contents_div .mgd-steps{ display:grid; grid-template-columns:1fr 1fr; gap:26px; }
+.contents_div .mgd-step:nth-child(n+3){ grid-column:1 / -1; } /* 01·02는 2열, 03·04는 한 줄씩 */
+.contents_div .mgd-step{
+  position:relative; display:flex; flex-direction:column; align-items:center; justify-content:flex-start;
+  padding:22px 12px 20px; background:#fff; border:1px solid var(--c-line); border-radius:14px; text-align:center;
+}
+/* 단계 화살표(웹): 원형 배지 + 흰 꺾쇠, 박스 사이 간격 중앙 */
+.contents_div .mgd-step + .mgd-step::before{
+  content:''; position:absolute; z-index:1; left:-28px; top:50%; width:30px; height:30px; margin-top:-15px;
+  border-radius:50%; box-shadow:0 0 0 4px var(--c-cream);
+  background:var(--c-cobalt) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 5l7 7-7 7'/%3E%3C/svg%3E") center / 16px no-repeat;
+}
+.contents_div .mgd-step:nth-child(n+3)::before{ left:50%; top:-28px; margin:0 0 0 -15px; transform:rotate(90deg); } /* 아래로 향하는 화살표 */
+.contents_div .mgd-step-hd{ display:flex; flex-direction:column; align-items:center; gap:6px; }
+.contents_div .mgd-step-num{
+  flex:0 0 auto; font-family:'Paperozi','Pretendard',sans-serif; font-size:22px; font-weight:800; line-height:1;
+  color:var(--c-cobalt); letter-spacing:-0.02em;
+}
+.contents_div .mgd-step:last-child{ background:var(--c-cobalt); border-color:var(--c-cobalt); }
+.contents_div .mgd-step:last-child .mgd-step-num,
+.contents_div .mgd-step:last-child .mgd-step-tt{ color:#fff; }
+.contents_div .mgd-step:last-child .mgd-step-tx{ color:rgba(255,255,255,.85); }
+.contents_div .mgd-step:last-child .mgd-step-tx strong{ color:var(--c-pink-l); }
+.contents_div .mgd-step-tt{ font-size:var(--fs-desc); font-weight:700; line-height:1.45; color:var(--c-ink); }
+.contents_div .mgd-step-tx{ margin-top:8px; font-size:var(--fs-info); line-height:1.6; color:#44506a; }
+.contents_div .mgd-step-tx strong{ color:var(--c-pink); font-weight:700; }
+
+/* ===== 최다 선정 이유 ===== */
+.contents_div .mgd-facts{
+  display:grid; grid-template-columns:repeat(3,1fr); margin-top:24px;
+}
+.contents_div .mgd-fact{ display:flex; flex-direction:column; align-items:center; justify-content:center; padding:20px 12px; text-align:center; }
+.contents_div .mgd-fact + .mgd-fact{ border-left:1px solid var(--c-line); }
+.contents_div .mgd-fact b{
+  display:block; font-family:'Paperozi','Pretendard',sans-serif; font-weight:800;
+  font-size:calc(var(--fs-stat) - 2px); line-height:1.2; color:var(--c-cobalt); letter-spacing:-0.01em;
+}
+.contents_div .mgd-fact:first-child b{ font-size:26px; }
+.contents_div .mgd-fact b span{ font-size:.55em; font-weight:700; margin-left:2px; }
+.contents_div .mgd-fact em{ display:block; margin-top:6px; font-style:normal; font-size:var(--fs-info); font-weight:700; line-height:1.45; color:var(--c-ink); }
+
+/* ===== 안내 박스 ===== */
+.contents_div .mgd-notice{
+  display:flex; align-items:flex-start; gap:12px; margin-top:24px; padding:20px 22px;
+  border:1.5px solid var(--c-pink-l); border-radius:18px; background:rgba(255,255,255,.1);
+}
+.contents_div .mgd-chk{
+  flex:0 0 auto; display:inline-flex; align-items:center; justify-content:center;
+  width:26px; height:24px; margin-top:0; padding-top:5px; color:var(--c-navy);
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 24'%3E%3Cpath d='M13 3.5 23 20.5H3Z' fill='%23f6e7a1' stroke='%23f6e7a1' stroke-width='4' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+  font-size:13px; font-weight:900; line-height:1;
+}
+.contents_div .mgd-notice p{ font-size:var(--fs-info); font-weight:600; line-height:1.65; color:#fff; }
+.contents_div .mgd-notice.mgd-notice--foot{ margin:0 0 34px; }
+.contents_div .mgd-notice--foot{ flex-direction:column; align-items:center; text-align:center; gap:10px; }
+
+/* ===== 정원 카드 ===== */
+.contents_div .mgd-cards{ display:grid; grid-template-columns:1fr; gap:20px; margin-top:30px; }
+.contents_div .mgd-card{
+  display:flex; flex-direction:row; overflow:hidden; background:#fff;
+  border:1px solid rgba(29,41,68,.07); border-radius:22px;
+  box-shadow:0 6px 20px rgba(23,61,42,.07);
+}
+.contents_div .mgd-card-body{ flex:1; display:flex; flex-direction:column; padding:var(--card-pv) var(--card-ph); }
+.contents_div .mgd-h3{
+  display:flex; align-items:center; gap:10px;
+  font-size:var(--fs-h3); font-weight:700; line-height:1.45; letter-spacing:-0.01em; color:var(--c-ink);
+}
+.contents_div .mgd-num{
+  flex:0 0 auto; font-size:1.05em; font-weight:800; line-height:1; color:var(--acc); letter-spacing:-0.02em;
+}
+.contents_div .mgd-h3-link{ color:inherit; }
+.contents_div .mgd-posts{ order:-1; align-self:flex-end; display:flex; flex-wrap:wrap; align-items:center; gap:6px; margin:0 0 10px; }
+.contents_div .mgd-card-hd{ display:flex; flex-direction:column-reverse; }
+.contents_div .mgd-card-hd .mgd-posts{ order:0; align-self:flex-end; margin:0 0 10px; }
+.contents_div .mgd-posts-lb{ margin-right:2px; font-size:var(--fs-lb); font-weight:600; line-height:1.4; color:var(--c-sub); }
+.contents_div .mgd-posts a{
+  display:inline-flex; align-items:center; justify-content:center; width:var(--post); height:var(--post);
+  border-radius:9px; background:var(--acc-bg); color:var(--acc);
+  font-size:var(--fs-lb); font-weight:700; line-height:1; transition:background-color .2s, color .2s;
+}
+.contents_div .mgd-posts a:active{ background:var(--acc); color:#fff; }
+/* 누리집 바로가기(블로그 자리 대체형 필 버튼) */
+.contents_div .mgd-posts a.mgd-home{
+  width:auto; gap:4px; padding:0 10px 0 12px;
+  border:1px solid var(--acc); background:#fff; color:var(--acc); border-radius:999px;
+}
+.contents_div .mgd-home-arw{ font-size:1.1em; line-height:1; transition:transform .2s; }
+.contents_div .mgd-desc{
+  margin-top:14px; padding:10.7px 16px 12.7px; border-radius:4px 16px 16px 16px; background:var(--acc-bg);
+  font-size:var(--fs-card); line-height:1.7; color:var(--c-ink);
+}
+.contents_div .mgd-info{ margin-top:14px; padding:11px 16px; border-radius:14px; background:var(--c-panel); border:1px solid #ece6da; }
+.contents_div .mgd-info li{ display:flex; align-items:flex-start; gap:10px; font-size:var(--fs-card); line-height:1.5; }
+.contents_div .mgd-info li + li{ margin-top:5px; }
+.contents_div .mgd-lb{
+  flex:0 0 auto; display:inline-flex; align-items:center; gap:6px;
+  color:var(--c-ink); font-size:1em; font-weight:700; line-height:1.5; white-space:nowrap;
+}
+.contents_div .mgd-lb::before{
+  /* 아이콘 크기는 글자 크기와 별개로 직전 크기 유지 */
+  --ic:calc((var(--fs-info) + .5px) * 1.311);
+  content:''; flex:0 0 auto; display:block; width:var(--ic); height:var(--ic);
+  margin:calc((var(--fs-info) + .5px) * -.133);
+  background:url("data:image/webp;base64,UklGRkA6AABXRUJQVlA4TDQ6AAAvX8BHEE1ADOA2btMD0Jfo/gOLVp8JIvo/AfzYkIs23tT2WzftRlr7gTtJ+gdz8+uffXIBBoNszwACbDRODGgUgxY0A7N4RkRHUkn24RcYslBO6fhrH95ikGnrRNACBfVwAHcJYB6+MItEzJYUWmz2crMvXEeSrSqN80kA5B+fOzy9HoHrRJJVq1iWi0sATzb/yN6nuwA7sm1VUWNxQP7x8GUzpx7PFXfp/wQgmxczhhjBSx83YS4jH4P5pY/9Gtr977sPEeYX15fy5Os5jpzW0O+5aLEIgeDFgzkS5RSpNlK00LZr38nwg9S4nxFaWnIguIu99ixTsQK4ytPWVaZUFDJfZiruBwcA3DvpOpN1k8g//18XY5plbgGCRlwBSPLQZe2/BCDb4yaxAUCTSABAKyqK0wF3duR0y0wBsCftZB+0b3bbOUeYvUhFJhquwsyOI/baPXsCDVspigIoAUUBoChKACEFUAJQMMNcQVFFSanvDcZtGzmy1H/XE/biPyImIOe6EBgEcFxFILNmyeVZkfstNqKKjYIObCAJDTVQFEALCkqJWmoSzeNZ/SQ2VtuWR5Lz2S5oXGZmZmZmpprdMDMzpzrMzMzUHWZmZhpYZmhmKHD5hz9X1+uqn4FL+aRaqp1wunRv9KYspSbUS9V6tHrUvcMzi06+oRplYaA14JFDg4sdSdG2bdmU8xl39+QGZE1/RKNLYgFUmkYaB6uYOgvwmYY7exh3ex+4kSQ5cnKOP7gESMyUl2HV+wMn4ASM4Jzu3t1QlmzbtG3lmHPee59t27Zt27Zt+/2C7fdKtl2ybdtaa44JsCgBkGI3TnfP7D7hyWFmZmZmZmbm/APnB5iZmZmZOTlmJvOj3Z3pDkm5enkf0OFIT5UXtK1X7xS0o1eu45NdG47kVF5YPlXOfMx3YXbkK8+2bSuSZNtW632IiKqa42JmSjHzWjnKRvH/ifUnvIJSK7WyXlZufQAzMy8zU1MRmaP7jmRbtW3btiKlXEqto/XJLA6rMP+mLqDD1GKKQAtVYebeW6ul5CTHtrZje/Z9v7FZ2TbbrEzAxgTyV2Gr2VhVBmFUTkrb+d77mQDP//8bc7Rt229hYyGVSqXD7qCdtG0ctm3bdmO3bdu2bTaP7qQ76hhVKW5cax0YVv8B22FjZNvHTOnRjmNmjWzbPg5PtG2btm1tW22ta4wxva1j2+feoG3btm+QIfvekO3QDdm2jb2PNtdck0NdzW9t26pt27aVcim1tdZpTNjMDBZsHZ3YNmxnth9L3zbwFvfWtsQ8YUBvrdZasjfatk3btm0tllr7GGuOubT3XrZt27Ztr/Vr27btvZdt27Zta9purZYJSAj+SNSe5yoIoi58+bJxw/72lbp9czG5mdumrEcczOROwd2aSiJy+z6LZz9SOlvGRrT/usnzx1MAkp576hjS+1FJGPmu6wezvM2L6dz26dgvuW9Zxxgz5KSDzYYBzIZgH4IIkCArIWhozzxfXy/1B7csGTczp/RSxop9vggq1O/pif0e05OHPm0ol3MwuGqBOBpGIXBBAM4FpQnEIAPQMERjCcy2IoUp0B+e1DIf8j1Xx4OPZZ97Yozgcy90K68of3tsaF5m2Wi1pTYGChdMEZgVoIBhOANnE8CvhQBEhIQ3cVaivlJEt7WtvTWDw6yr6tZdPvHqvBJjYudpwqu7YFsxOTqvmhHh5I6KKkiWpAfwgDRDsGU2BzCJyABDNlKTATMIXwqZRuJpdrAwiAaisGBj5kLd/g1/j0++3nnNc9qngVM+jjIdEC/BkcEBj9wwokggwjSxQEIMMAZAQBtHkAEbNAfOO4LsoNvI2+OyJ4XC06+MttvPb1vCkItPzwLzKkHNRtAD2IQJXEEwMIZaBGM1TIgHksxBiyGAxi3zQIKjYaPVS5jNdjND4af0wbL+nvLf+a23f62Nrt5UEvplN//m9S9eZlC+FChXoPANxADIv/eqTkjJEio5CBUUOUgCFYKQtBHcD5ghV4DZaDLCXfD/8fe4D3QnISZGVZJKhXjQmkd88khqRlJKhORHSOFNb1o8AhMgRkKVHPMloWBBYW/fmB+38MmcjGcBjLYil2qcyJg7i4jklTKabj+vjV+3/mDn34xyB69IysC2kShJJIpAVpCswDAmhhajBAjESEEAgl6SscQLXiJCMEtI+YLtyZ4H/P9QPKt16PCOq+3O3L6ijaIkRYUpHrTWvbLf8bwgxdGU3FEHagSbQDMoQCykwgAEi6SlXyhmD9uyF8okDRRu3j5FtgAJNjMRHGLuBG7FjZSM2d31Yfvxzy6Y7IxRxPv+K1vuc9bdu2LboKg7TV5IxUTLQkrBFsRANtaXAiZtQRsOmNVaPFlHBoFt82V5gdWgLy5LBgQJcIMt6BKyQoYkmnXTl/3vb/tg2YpRLEB0lvOYeEmqRQR6k4Ls4gN2GMxqY+TPKCwxKX2Z3UKZTQkyWQEDkYEjXpF3RIcN5p+RPsb8TLz5FrFBC+ZXMrinqecp2XTpES2RLtq+uIzwO4qfzQ+4BMQoQbbeKpXQLriJVSCywlowMCmCSRm1HcWKeIrsFuIfIA+0xM6jEOEc4E4p5GBi7n6q/H+1LDq6/LAjK3MBnapXhxkLZUSyGwhkMYRHLKAhtA+tjrmkwpIBR4vcop7YVg8jxjB52DOZwYt5yzgsgqNJ/5brz4NjbbZl5DSZm2fRovbPA1Q+RY4V1cK1xDZ0YIMkqhQLRowbF6RACnJJGnFbLGEHKTiGKaFDFCDzBZmx8lN7ohYYP3P6gkKwxmd1+99+IYsiey7by0VRVUcwHMQtEuHZEKBitQgYsRXYgw2A5iUxLW6wJ59tggNIc56CvskYflqOFYuosRo5LCEd2BXuELYclEU6zvsyAZZZMCbGWEhTqZAYEr93Jdiy5zwgvKwgidUgl4F9UBsnsCfSEI6JZWx4wjdEgrKggA2Zq4o8qc3LdlmEPEuwCCCCQRoH1sCiSNulwY6/10ZZ4lR28WzxuCwGBcj8PvwzKAQ22EVA0pYelBJCmKZEJyB4OIswiRvNDnCCAM2UgAokdAEOcQZWS3Ykk8hcXIdLLDJCQrghQGHELAgltIptiMADu/gYR9BCDTOEQggFjJJFgjzGTUhvM402oCRAjGSislAUKipcUtSWHMTEJqDBFjkUbOnHiAmoEYA13A0Q6qgvsnsEFCkTBn2SYlYWZShvoNzwlE2khrRV59UYLBAXFqTBM9xsxSCiNHGCGWHPISWzqDZzxK9JZYkYHLDip9j2DauywiV6UrVqDh/uyiJrmw+TvOGx+Z7IKG0QEJdSb0Abu7HMqSR78T2hwqQZ2YJFsi1SC8wPMAu6CDKLJRDMor2FFJxKlQkQQke1Xp9Fo/e9zNGE5mCFkYzDaktkDYjVRa0GKrvABr8V5oYG7AhSkMBBXuJkwAXnDQv7D1AEG7AjwI5CR24SpM7C88cs6Z5nZtFDD693y1tN4qSKhRQTVBJGvGRiCGNoAaEpDa8mvfgBsmDL/znCFew4Cm2GkJgYzGJ2oZZZUpHIoriFFAOpZsotj//vuSwCMNlH+0UqRlo++oB0KFiDDG3WMBCLSfOYox3quCQYI/pnK7HzwdpGoYM7WAOqNdH4A4+Si2TmNyvEnwpX4mYvm/uPuSHsWliesLtQGUwgICoKCiAwIcHK/Y8FLZzFVUgJqliZiUjAKqMkoSHYJpNg2YGFITCmtab3mgqKhXZxNm0Nyvxjp8fk9tXDMkeJV5e7ItFt9Yo9pSAlOEBZ9M+7DIwg8cca2fweImGJBytwbDgGiuFU4km8kfEbldnXcGfx+NSTj7+bifC5AqBlT++8ljB0DO5vsHdtPsb9qReDrTDbcMbXgDtsDJvwC4zYBKr8GQwBEKPE/qgQCUt2YYA0OiKozcigTzQm1pHF3Abec9PnvB/XO+z2sW2M4p5ZdfE9+a5/T29KilFzBToQLoiBuSAtjAUavzY2xEihI2Jgx2qgAOIjjGFaI1hKUAhmCVwCIsAx3acdHt6GKmHCxfI2Gc29qXxCyK/P8wXS9GGnzPZITC6fJ3JBcULoDHDiJ4gCKYZCkopCBBwLQEAJx3BgAG2tHjLYkVQnhsx3+iy95Z4fO+cljL2hjCrslMV/+NMSVr8vwgOJ8kZOD2S6IrjBuHAznN6E3ATa5gjW35DEeAMlu+Awgyz5FNF8HbyOYLucNG3Hu5el+rO2hVHeO695itFayDNEeCuIW4IC5kR5QxvcJFBBWcTRnwLBMkMDtQFgoC4HVqxgx4UrlUAXzchdaaGWwbMBz20UlmpTmREn9IYSSUIDKeAAxCgqImMJAiLYggFSvM1X7OVH43nj6SpZkrEziK2Bvu5Vb7cy4HleIsWLKG0fSd74cg45a/WWdOgRI2aCtYyhNt+xKHBjnWKdZLxgLl40Z/e5A8PMKWzz8njXPNUb8D0ti3MAb/bF3/8gnNut8tnLdKGbGafInOkzmxt5ZouTwVyM4NYIIm2FqA5Tm0pyr8QJ2DKspdLZm/7bsen26eknuv3fj9Ay2ZvKYZS/Hyz9iK1uf+77kek9bdk4b0HrQKkUqZKnxc9NeHvIZCySoVNXYaAEOOjNGKPGccWVf5cbE77gYiRjZiXFXpRTeNybeeKMy8+rd9O2U4rHGob1FlEiNZUhq5QqV+2BDMZzlHX702HfXo3g5cFh1q96JNTFqTOW9qbyswsKgLcAPADgvr3/99duF7lesqg9Ryomy6CeLUUyzXab/ON+rOd5cx71dnCtdzIhGWNLDKXkoq8PxK1/aI1f/1wZ3d+JvKEZmpqELnFxMKCDHmPLi2/V3aEE76EDMJcx9/qqb/yxebXsajMhVCJUhIjIgsmYhmNvXj72r/DWzoCDoM2bCYCUcJE3gkzXeIDVWupbIB3JBXgCLoIXIgkXGN7x3lespTwBwWJYTSDDOzggBKJY08Meaym4wMtEjQQ0DA3ZEISraLmOlwNTIGYCg5g0VIyEPJQt4DSEErSMWRrSgNCyDdyBAtVGoMQQ2BAQC2UrXB+Ay/icOWtqi7Vsw+HEAlmohAwjIDEarlK2lFMIGesda0CgZRsud78ZIjC2Yliw8hUvbxAbuFGaybbSII3ypZCGvVkWk8WwqMjKVygM/fZ3PycaWpaUr8zlDoc0hmsjKKtmLihbsAAHsAUlK8kBxggsUrZgPQE2dgyWDa/GBKwoW8CdIGjbvUZjoL342MzFylaIDH8fLatMg4JRLdtdMB11KFWQ2qpQh7LFAXsOLmXqBQfIMrkrX5UMHUlu1m1VLeRUtl5dCf7FjoKSz5iOf5YtdIgdCmU/syMyF5SpRXboRlEoWhxw2mE/W6NlOrFDJ/kPhaTTwn43lzrCA8rUItBl7AX6M4syC1VpeCU07IUqU/eEpifg/kPSP8ipkd4imdCL0gJyjPr2CX/4bQK85VzP10onFDVaqI7eLUqlqvnoWnzxh3PiE8jGWKRn4+sYPZV0/mTheRvkcYrsKlmveObTS2tPS/i7h3JKgjH5EAW4dZm7pzXHW32w8/+vrq6LvO2KG78PJtxZIBqM2QC/AC4C7CHhDxr8SWcrxM9Sl5N7v5b7XBA/8bxZ//iwejzHWrbyqjb6gJpsnxi52+edWxTYVrWYespVtg6O7TwaD1tXlZPK1Uqik4hhXvHX5urfWxMuvc2HWg4DktdCDb42LfzkxoMVkvAKdDsrVq2TcXsvEvTSw//9ubeu9/a6p17r4i6v/fouLuom7sDYqJPU3a79waoN4MC455CYrBuYbh1xy8TTABJ++WB+8gLP8ov3/Hn2zMf+v9oFkhRAD50n1pdd+pNNQnehEq0Xd2Nl/ff7hRtliYThjgubaHBGg0/McZsVh+XYFSexel99N7njABEYiXQrxbfZfs0bRcL1JeFyVcKb1K0gwrsQfxk5ffn6xBPOfX2vUx/4/7Ua7bsv3/Z7b2ztOrxCGzK3CK7d8HwW+eQNSBSiHH6SIikFLXdG8HC6+7Hx0fzvkgASQLy39j//W2i3337uk5huCzh9sToTMFnDzsW/8byHw0sDGD9+S7z3e/N/SARf/bBUUz7+2j6bh8RCSXhhopSJ4jLpZvZOiqJ1sfe9ep3tuj5qQMgLJw+2v5b98LZ4vKmVjSqvAjDhRg99HwAy3HsFKABmzVBPiw81T7fWnPj6qwlezkwOahT9B+1/9mASzrVMWJE0SKeACIMwcaLkRH3NqdwbI4V3r38D8GUH3x+60f9/35Y9kWj7HbHL/z9pd0s/+7br2vZseWTYjR1sUY053csqOnldT9zrD/Hr059IKbqIrD5BxkoXAPOW7jz8KXppfbV+Pmcj0hAWFcwEWAQwzWeLUZsxXFiq1rWH9Rs0BXJxo2WasLqqX8YtZz+R/eGtvwCghQMivUNH858nzP7zNjr8ry66RxFNSVrSnXDvrg0Nt2oDgEjEpSWGTenjHNXptA5KTvPgOOgE89oPHwPovBeeDxbtxrrI0l8+3dMtp8GtJs/bqn4bD2Cy98JzTvx0cKuv/Wq55fvi7K4juXMqZ6cGBhoKSkSSqBW05bFYVo9bDbIarZbav6CNusct+M9lypwbczUAk0ZeSYSbhq/Efb7689kAVlt0YH/BrWYVZfTOJKsSFK3nCHaBGEa4xTukJDLM5HSVUtdrKb6nXXTgA/5+KoC5AMA1ffThoa8Xy9s20dDWySDWt6MXA+/FM9kjI4+jN6bWB5oW9plCbWMlHZO1MF6K1H5VET048Vy9BGCaN2wn41Ff2M7NHJsnms3ssVfJiCAkTssTWSJHKSJcFYCAKFKCs8BVqdqZ723w6OsaCOoEIdzsv/8yvPCxeammtk7qQYJDVJAEGKOIdHEACSfxFrDLSFn80uUt65sA/nD//bHwajd3Sdo8JAa2SweWs53EvaRrs9qGhyHeHm61WZhdOeWJD4LtQVKmaPhQcsRoZ77AZxHh0fyoayLycDuASVfmD9/kB/y7OIfixWWH0iUKxIyWGZNZ7A8ggVGSPDShLz8apQzxKwA/gON9EKwnVU9r4jnSjioLRQ6kuilaMg2YV0QSC0sc8DKJGh7SUR9jhi/i6AcX/c1T9nFWJ+VJ0WoulZKSbsSsSRD3WAEoCjAEOVjsUdVOVp5qr7khQrpWyTLcqOZKAaH6q4jCCnnRghvGRqguGR6W/zg7/1lz5ZVvzp7yiOm56zQogyo0lQAJ24oWQQJJkCQkkbpWDtnnUi46BMC1P+G6hupNpSTtT8tb3vb3DsUriUvUBU2JpCXZLXGIIkGKLnhKwUie+jc8md09/qDFto3aqH2nyzFfCzdmr15PJTyIkAsVEKMFBAIFMBfOxSFBSCgGh4WbxMVQd8cELoVMVHZEN4csh6iVdijdoh+f/1HV8+KWb3w5s+XDtaB4aQlFZJBiLEThAMpAknAWktUCs4xB9j7mhrOP6737sAgFSfxd1UX2NKkDhSgswRB0haLCI3HZyuAQ2eE4z8+W4577z9VeS7buj2VatxCpOq2Mqo4ylPFZJE96iZ9AhhsLawZoigtxBVwAWT7KipU7SAR3SAVWLBjQ05eE7+J1ZWbrPpA0GDw+KT03x52X/XHKW1i6+SvcgkGICmBIsQmeAdJ8HXKQxYiqrvgog/5ePyL0NzWYRrrjeJ8Up4qQjfSHYGeFGytdTLkEqQrEiEyDw5bsHYvsG4vd603WDF8t03hyYbfR6QWVjAi2J+WMD7nTSYmWvSnJjbX9dzneiq5hXf3QYkDCFGblG9Nt08om1zLl6pS8YiKuCDdlpMQ3ZkRJLy2+oz4P1EHuUDYpHdMbe7TJGYkIwZbGFuEZIOEjkBOJECB9aSpbLuMusrc/Y6h9L82rS837IOkIUELzk6LNrvosRp4eCrsiq06MzkyWtHTKX8X8zxvt6czxs1G1VO4UfwwPJDxYOfMU/zdC/06np51Ry8mPMel0aLUFi8HJNlXEudzgNUh08GxR4u4PbNtr2WB9qPHWWiT7yODMSjcaY32HWsTPtbR2pmKqmCKvG5rk3KVH+6jAISN6hUlEEp5NZPAcuIBDlPZjliFj3xobh1pX325r88D90feY5qwjctn+wxpnUjdwPyXk0IFVemfRjEPoDtzlc9Ogv7dC7AjXQnerPGP2PGSOvzZs/cptxnKbY2HSPQssgnjEnjYvo2rbH1v2sjhvcgXI0n6M090P6pY0oh6rdsNlq2mJK52Xpky56/ZF2Q7mKQw4eZv3yEn+OhNrux3mY6eOK6ppR7dS5HYBNgRwMZYhYARCafRFailrT9pdQ21qGFZp8FljPS3ayUG0OtjhSMZVwVq8sz0ZHnbBJS4JZfkemfmX3ZD/BLtoQtULOh8y/yqDm+6GhxajD53lFwugRmQYoIHa5hvCjuUNry3RfYN5IsCESJwQlUkJRkGxMWprmJezUnNJWXoP3MWwZ6pRTFk/TLkjr+ce/c3j6JqdsYR25ciu6yJ6NQpVb5FqhB8VPMvvNRahMhU6RV/bsHqozWKxZRtK7QpmV1rqpq2Rli0Z2xipU/Xmo6HXfCDfitVNuGgaogcORAWq3jIWJ0VzmzGdIvs6dyrcJAFgFHSArKqoWE1Grh+mH2/gMJhuviCSVC3RB8HekDKhvUfn3M7Y2FWHERs9+v/Y5QK+P4nW2DWp8PLJtWt30V4P1OFdkVRKTOBomhJVCY6yhZlDDRwtk2Jd6G5TKknCL6y4iveEtW2G1dvEQTaIw9b61NJ+5Yu4SbI2Kh3rpdJthu1ZFRabesFie8AKGCfvWo0ALaoogUIkRAASWDGyigNVD1Jwy7RULB6nMV0yu3DqSTkjDM0XTPW1sv9alNMVq4xy4AVr3OrwnJzY1P0HHWwHoulOi9nkRPGTKWRStPXrfYTq3Fw+z9kE3rZkndiNm9UL7kaXyJefR+T8guKSq6JFr75KXiy4CHKXlHk3sPm/0ACIppEoYQon8KF21EncCGnQgjIUAOgIlhSOU/Y4QG+zRv78Z1UPc6iv5GJfqlAG+0bEwDu75B45zDe1h8saZXodnLuKaZc2/uAsNz4XZ9fF64NnDR7PTroa9mX6oMlK46RE6Tjwe6g5x/l88RZi1XrWBLQN/qamGM3xcKSYF4eHosqAwsTzmdQHQsBtCKdBUhBkHChNcsuMunDYx96Z7kAECBBTVQWba/MrBAGhhsIqhQZSydbdUaYYsNt76GFj5wTZhMdzTw97LU5WXyLNPKk7xTgtZKY2BVFueZKvN/1tvffEq/Y7eiaxuC/Rkeziz0sUS7wY6gPu7m1XtTuq2FXvpJXmL58ULZhcStdbCsXUQQuTMpVYkEnKCChOqmmw2SBKAiiNg5Bl4zo9OYcLzf93lWogkQIQqnpQ7nDITwNZuAoKikYFdvi6k7J5qb9wseryKzUNchokGLWJI4BaEJzRZIKCVCeExppUyrqyVKz/JO9C15wmBLF9rInYoVqhZHnkir1D/eKUqW/cz4/Kawt0fHIHZgKA1/L9fKVCV2Rca5wFJ2jjwZoiA/k/5kRIOAAagtROeHrZB5E7q4QWX0VVMTAbTrbdTWYwVSCmqs0Aqf5np3fvXH212a6hKIQKYUhaOAtwEmKCdunpiqKToiEeTL22suGlRvLy1i3mvHz7U/epeqG3QwNMMjHuqtbpQnHDXjuNpXpuxoqpXp6PswcBeTSkBJCLX0OMpXvdEE5UChIgEkhTFUmG2GbCgzKdYjrEhNkLIKqgcMGVp7jxfcvkBAkQVBGB+TDsxKb2yK7hsp2EBrjBhJ9TBZQFSD6ISWLlSWJ8AJ0UfWKUG91sOXpqvpnPA5AAppRN65k5BbsTOiEAfB9Af5PffYxBps7zr9qnY5FFxGq2AAOhw2FFK05OlBsCwSjfQFBtNnyhpeylXV62th1YwoJIVMd5kmCcqkIcVFcIjGV6/keS5vJrr5Dr3oaBVxEyrABklCDEOCeHUv2hzjj2CuGNmg722jl5r2uEavzk7Yfz0FspHoDfvXu/CMX8E5RHv5Dhv4V5+c+AMmNacKpt6Q2L8vNCjd71dJNsgCgANa8FDtiYXxMbsCFTbinbXO4m9Y3bS0NVq3UgqqqKEgaZGsb9vfRWjRTwjrd9GpNJJJKEVYKjLFbaoPqQ4bDkpgWadIH2GVlNFZR99d4KPcX5AD6/Lxg+7lEUgm/7cebe5YfEfX92/5u8aB8Hiixjkls6Ip+CmIbzTz1JjqdkUSTeyZgEwJVQoKqaIhZYgip+gn7cqmpNVYDdh9BKuAFi/M5DEBkwspzI05Z2OD/b4GCRabj6xnTptbv2o498UvzZwiGybFZVbfq4OaPjD3Nxjb3fxpxw8z5D/Vv57rufBolwdctALp3AqH1ywT0HadmZTi5nuVRZjF9g1X3aacCAiGMBCKJ1CBB8vG4rXAkiAEkfISBYC6MWaUM1NCcZOwgV9w7LHpmWXWHF/39Rc+hR6uiVaho3B6egrzh4j1zwGwBj5n2UGm7fp1AAnB3c3W9nPEpuO/sWHYqspM9rzrsDQy0mVk0+r842N7uKnMF3vXp3fJlsE6ugmzZ1J3yD50lAGlgtaE+FqUGzh+qbJus5U+0jB5/CLb5Vbvy9rnkkl+99RRk0ELseceu3f1R9no89NfKXqXMiWG8qAFoVxdqGa7vI0ZiJml+EVNfJy+Hikg4Z3iI6Tpf9Vbzzte3tb3xi6v9e9/FnhauL2aACBtOdwJmLx+C7sW+GhTWti0x98+99kX/5k3P8Uy70bznJ/w6wmisUxk3V0uz2kc2mGJfORXBGsdVu4WVzAPkTu2qo3tS8q2jdztrbhoIVfZrSQL2rO9lMNeG4tmldopjf5Hj/CKjY9LXb6971P8/+4uFJzzzx94H7YhJtwIJB3xofL+Fn8QNYGeFahcGrX5Ze5tQMF/9vOddfFtqeFLtA4NRoHSaEV6RlsADNiivVG0XXbh638Z5ctbRQPbOqF6Pc0QAIEyIW4NRz0qaUg4vFMZmMFK4Mg9P9KeLlcvPv3pz51yYDVthAeCzYHPQXMLwK1IEV+C78KubgJrh9pqdNs6GtdZG/33UMi6aDZOJE0yVgw5BBCnfBZaMKsnHE28mF9vDefW4poZh/LSOm1HYiDolcoemuO0moL4OqUNghe0BBEUGQ9IHWN1z4B7jM95/hCLL88sXgQeCrG9AFvJaX4I/HrhdcCnfEdTE797zRfY4LXBWYhXrzgUh8hEfklRgQzngwwkFVUZK9mcxmyzfvFiH4PgVrM1NLQxyZSVXkamremYbkSTKbYgMVAhQFsSnQ4mmJZiBbQXI+5JrBQU8D++BpKMIcEqGqvRGPxjIM4vq4Ey6BqdlyAEoaijQGTa/is+UwhucV7s1RhjWRDNFgWF84rfC64ZbL9iV7lGELzfSwWeIbDOLJzTYIQl9dgj+P12pzAYisQ3I54Xrg1MD/Zj9s70RBKpRZpWpWqVo9q4T8KXgkNmEBboeb4ZCp8QIcVZ1grMkSr40KysRIGywuxIJzpWXRmDQqnAQt7pKlPdyMZAqZPuVXwYWhGhTq2JBIHQsqjrpgjVDSBs4DbgqugPlYjX2kp6ESFErY0PBtbeOvJBub8Dg8FboYLo2roYRuFAEkkgJSUUaWeBlnszVyzYnfr2xMxArVlYwsz7J2OBTHunYqZnSyaF0+0N6EXhgS1CMo9PeLwZbhxVWdtzgEGcnvF+Ky+PcKHiMsizCnTFY33lve9OKC2dlYVkul8+FyuAisEx0wHBJJFBAAAtguX2XALCybysEvwh2wAdbBlYkF1gwn0qRoQ2614m3MWCVYjXrKj8HWRg7jDRWzq1jFMwmlqn2gVrNBC2gD5wQ3BO8AbwXPSrv9AB3Ay4uX9PbexnmR84FzgH1/aAmUYkAgsACSwa+6mOzAVbpup/s9808sowEJkR2I4gnhaDA62Sw3pDAwYysBlhzj3a985rvwjGN8NSdIN5/D2RaQIYhWsEW19kMHTgyOmoxcnXhetheVFLS9F7lR46Zg3xD8cMxTKkHHedqeu3dMAYLZUYMI2UKs7Z/teP80Q4EY76AdUYsrjwkn6Uz24iiFIdlhtrHjkA8dgyPR8VmEJIXE4rNkXa6hYkawI13SVFW1oBVMAicnzitcWbIVQN1dVnIKDV3g6DEEKalnzT3hndu/PNZ34WLheTO2kLCyzsm6/tzO8MsyxiBqJA1pELRwPPxHWuIWtvkdxdlOGlz9D3YQXLVD5lktUk00dXmKFszTAVXVmg5/qw2YyEnABYNE7QSC5aGFaNa0+2czMXkxj0hEhDHf4IRdN3MnDL4at+U3JBhKf8IZ1TeD+WHQ5nYkWWjdOnuggikjgRTGgYjY+nEX7ekwyjqCM+yDU5uUrVdr2tMBOwCItw2qG+F6E1pugTssHPgL/HAzFxj8IxzVeJoZgFUhPTCR85K7bFyAAknIghZyQ0l1bPwAHe+uVrMqdjfkznLh6TBbey5CP7cMQeBa3AC15IVpj7boLni1mJLZLDPzJlxu9utwEzwH7OKRHR/IVARSpEAGyZaTt15Q6VVVkYx3o2ABCQ1gRGyg0E/YN36gP0iG4NZmLi13JXg2yeTHCMww81E9CHf8g3+1LQN2Qs6b2bb8vG27FMHYMIXlRq0XhTVogzaIqNYFpOnHSdNxLhMB1ADDjp5VGDkk5caubjXctq1fbTMfle/GKQnWHjnu9foV7hYuX1G7Gq8qFVMtSYMlWer15lNOAs+Bi3z004BOYOAqIRivaw8xkCrj4vIlsWhPa32chEOcHL75BSfCTuK0MG3TXDUxNLQzFklZR1URsyZV93eCJa8UAJP8eT4dMmYFNSWYjVBXPUuFFyKY2ycWwks/K2gS6GSU4jQkcwtHEaIHOgYV0IYNDDDRA0CSJayfUVlA2PxCiK37iJ3ECZLSqX4wGL4o2czslsed3s+XALz/7kSo3ormqZuXe0q5GMjEEOissUx1MXzFCQ2LEEn+LWdxbWpxdw+7fwl1uvUKc9nEQKE7DOo1jMzV7vut5Fnrtt6prcCJWU5I70Q0N5kTYQawYK0+1ZvAvRGCCWW/ofmk3+49+asWajHVG0DxWCRGCqiKZHI7dBSrJXphZtixsZM5IuAsqrsrpieNBsDlFAoYxhgISOtGgFAmH/8MEuwpFSJN0/Rjxg14a7XnguaQLhifNAMogofghGDF4tRppWuaEOTeOAS6WfKKJuAuj3oXaCo1VEKMWryPB+07P+ajeKZYHxKBpqeSFrtynJq6ye2DaEtvWq0Yb+plh81ioi8XY7pCCmwhCCqGVBWRhqpCY8EsQCppd2Q0A8vU3E2VSa5O6sO02E6dEJCJx0N7jcUHrLceQlIyIVq/gYuOev1xgfvnnjrFuxGhmPdBKoAWtHHtkLLCkGhShGi61fvs+HqK56Y2WoMPfpxUrzBue1a6aGR+kgCggQOBfmyqqtWBykRFu1+l3BcL8iJGt82Y3nArTeupvn4WbYYzAxaZQjuRk6VqWun+EBz6KgBz5r2HSnD4IQ0RUXz07UW5WCaGu6pGjNQ66ZGyPpBYpdS6ocumqkNRLzZvDAERVEBvougTpK9ZA0RVBUCiOoEsyPZxRFAU+shIObGLiYWB1K8p43af9W93mTpF0812dtO2RK6I0yiDqmokj2mDqna+B/ehhbt+9kt+WAF8nCtcMXQa0YOtD+QAZ+U5v5oyu49GzrtAe2P7TbovdiwuZIg7cGp1TOsjWziHb/x9XFUBAWL2ROVjEAncOPKfveb6QBeybHYuyT7YATndbvhK/LLZCA3ZTEFlyRD9oMNEP7dfB+Ddw37/Sb0+nMKz5Ou+9su+5Te/mzdtfxxd51bVle5y2ZzxqjAeqvxUyAutPbAYQC3+jdjegShcy7joFFYbO0t2U171wu5RV1UVoS6xVFUpkn+0HJSx2CQVk8gQMM/7PJZEVOEUcHilrN+MWi/KOTmqi4L2g7v1PWvbx2/t5TqX3zBfFkBqPa79lABo67qOTVbGTbtTa592WP0kDaxwixAnliYsAAr/6iMEzvIOYsyqcPplh6BskmWDQkW1r2IHgtEUsKr2YwSJy013NN8lhjusAkfoW7cOJHhIzOZE7KpSijIrPRu0j44Zoe0wr9Eb+Xno22v/kNCShCTO+pT2Ypgw/fjmwQ3Or1q4KHA3JdwqJ6I0QwVABqCCecDUfBJpebVG4YJiQNTMvxyn+NXrEpWGauXn2732/zZ561KBiGrDzdF5c3MnpJZ2ONtfYLNiAjeBJXOTCB2EFtEnOVgIr/gHi14WkRGqY5NSTTvc97/mI/+ZdtaXaFs998jS0Bt8VTn6nodP24r7Y8aWq3vZUOxgJEKyG5WLMGDRQIwYQUpwBmWJ5nDVg3FvOhlY76J7InOTINU+SXv7B+WVn0bhSkADS9I0Lc5tDJ8Mq67OiYtW7rCYm8FEnGg8JaQgpeRrzZ9X3KyMlHTrMmVLZe/Pqe9++9wOUGs/IbR0Z269fbKL5YumBiMGNjY5H6gEm4rg1EcUiCSZ5HJVSrI9qEfPPXA0GEjTNP2UIOHNApdgmxBpKgFvoDndQsGyd+enTiCxCLOD2ZR1dgZkqCg8w/GQLdxtM33EzIN3KDyBluw9vkCe9Snt0l/5YBxfHuuTqzvwPQgH2xkg4DCZZsLe5GLB2dQitXm0PcAeaMVWqXHPJB2SSFMPRnkSKrPrRSqaKYPBXRbY/V2F303tpyXrZqUvbm+pThK+sVywzSTYJD3ZAmqABkR0fhKlll/oy0x/xhNqq/c8snR07S8QAPXey19msHwslWwKN0u4deMswDcHi0IyY/ytIdcsGEqNC+NdmL5ODf8PdoDHHDKYpulCDNAiEomkaTo46GRxtja1Dj6fLpRDV10Su2iOIVksDAXO5maIEHg/ixFIR7Pk9gdmA7SzPUsAKGV48iXF3W1Jt8yFeutbu/+hiCfeeFBGK5dSMgwJuxi9QDgJk3RDnrp2hsaTneLEyTzmgAcseIJHowuQm8SD73bEETFIwJ5WZ71pofgwqpeeM01zN9QW4QSYuTngVohc3Nh91u2LbzGbV0Q7R/P6vKp+6AuElnLCyKr2r+cAxLb3zyN3vLxls89Wp3CPG1Hx9BB87QIODINFJp67G7q16hoBasAkooJs5IuE7YsCgAyi5RjzAbT5iNvCCUxhYh8fOAlOFBGR9FYzmFbukcUurFzjVCr63Se3+s/Flm96nbP/+ZkcMhz9fQfjyO9piScMP0P73vLtPCreObsRbcGk5W3L3t/hhplVT0SMdvFDV/osjFzcTZynEW0qjp2qgHUgLIRANRAEYLhoTsGdvZH4InHEjShsbWc4NxFcsoyX9mKxfDAtGeBqScbOLidYSY3RvytDvnXvh5zJzFWnDBFt2j9jHwBXnuE5hpXYcpILwfrtiWmiq9yDabcYpkftxej7N3mPr1a81yXtVr2Aa6bgrCnnNOrUk+p+UaoRilB1wkaEAiUgNGfynVyQXCS5hOuQLnwnM8dpph7aTKqxaemwq+HSu5BAg3xnRCcL0fjxPXPOHGS91ILOqdFRHP1xkmmPd/QOz5EltTdZIUo+vmqNerPvOM7+9uMln5Rq7oZHdNd9nngy8XmoOVudX2cJuSgWWVxPmXKlO8k3KC1KJYWyMuQpy/VFF5PL1JSHItPUtq03yQfTkR0qnnOURyFNUbpCcrqdTlMOJ40k0SiTPnofH249ptwo5o3SYp0hc1IGW4a6gQY+2vavfxm91XPf5FbPkSW0iFxCubmjnwcyP+67UC/dXSZb90SWvVWdBiB2uG/b42mP5+k1sTa9+kxoX2Xnsyq6UwGWdJzSNPEK0iRolQR1CaNTrSgOqgrgQ4zdX1t+j5mrTVtLfC3xaoIkgBJEoSSZWC3VqUUOxqDqoN1nVm/cFcv+35P+kRdgvY7W7NLneDWiV5f/93cXAWrSc3R3eI4omYTsIQ/rT6+wgrO792TrHqXDzpmffG/2fRj6ngDDm8zqjO46v9UiLLdsYe1rNYmVQT2LpCqEwI2S4caEMDZRJiHiGTUBbKNEsKINdExB94owwpMzHWgMRHioMvSIFBU5pgT7X/d/+z8XALDunp/gdi/dzqUI7YEsqSPd/H8ftePt75/59rElAwu5OTlbc2Gs8ahymfvgstnW6FwAMQ8MCVDu/EQG3/MuAYtcMOToVuiMzpjrNK9LQyN2cKNEk7mKpAlqFFgnIQkyUAYKaPxZT7y4iZek0vtWc6KKNoxSdDAVl5Kv/FbhkHMGp1cXAfgUwK/v8povzN7oHRF+TXq2ZmngRssjDc8X1v7fm4PTrlqud3iOLJGE/jO0hNe/j+PXpLrAWh7IspWKmwUY3BkM/va974FQDr2GAqD3ptzNyPGe7aOJY1p12ztBXqRnbdFFSa7MjoGJkiMa5IABlKACBITE6ghPrfNxdcd/LJECAbdOzHXbXYWYF92h/tf9AGZ4O8dPD257+iW8n3ieZ1IsTszw6Ff8u6Zbj07zjf8dHz3DcwwrEXopn0D2suijuLdYZa47pwduFG5OcC0KkJBUQiyiJgxw/xYz/3Ysy3ci940rNk/3sbwRvLhBs7oEm+BCviExKEwCFNI8HzRGd/ogqPzkxRr/HrpJf/dSwvfwfZ+0RRVjA+CEArHtXc+Xa550mn64Lj9YXbqH3viz9HrhhMbn7JghaYs54YRTSG8v+a0sucgpeN7TD58XW9GdlnLC80pOmOtlNEvb4i/+k+tlop/rE414ien17Ynm/BmASR5cz3tZTPTQG6Sf0OAmJ7HCbTasnPAWCb1u0hvUd8IbCb/Q4E+Q3EM9Ba7LwkvZbBU7P4lpOlm2DxUAbjUcChiOV1XIOUSZ9y7MtxfjyS5u+0LebiS4Pa2eEiKhJgwVJr4T667htFWs2s+UQ/AySijCcQGIVAfVSB+Eckr8dyHeviAX/CyNhHJC/Yzz4Wy0mgtWstoW0EEWybxIcUDmhIyvHiKzIUrMl3HRO7Ilh/USdfI8Kky2jPXXs1ofTukiOok3ykRqGPDoZXo/2drC4hvY8huZknr9Pep6VuhHmXEuUaLkuUygWh4A96zVTZQYBrCBRfZlqro44ISl2EjNuhmfY1ZFjVSv0tZ5SivmHZQu0itMfwl6PfRQ7sbf3fznRUK5OpBjAkgCwABPkqoRTIveziUSfrw8/7zkhFC3px02j5e6gCu3HFQICkmN6apKMELTQHRkhmL7/HyZ8HsPNdDfjF+Ch7vpZaKBFaD/cVFM2HqvEuDdiKSUPGuCoQCeJXM4oRMX5Cb+Jkz2KbQOnivRhuguY1qAAK9SgForlwMUIiQR3Dm9QCvx0vsw4SVhEsZFrD0HEdwKwf9ME1rp8YJolyEkaRqVEs+mvp11DgvzggFOHqIMMTp+cLEg6sOivhoPwYzMJMGzvBycXqEknHJemI9lgXVs1EeNjh8jqhVuah1W4ytwUZwPCxCrJKE4QF3Peh/OgmGewuoDlAG6u0CqC9oza8Hlg/6Ai+D1mUwmHaOsn16mLGWlMEPs5IOMMaq6qlpVXktVDkhSR9JaCbQrd15/oQAQ0nTWz2gDbBWmn1WyMumZy8yqnIAyFQNfBsBALMBFE8glMYBBMhtivTD9zJ4fP+FIUpVCRJnWJFFOajYHF0fbzRSb0QeYI8wAadlZjplZVVCpvSrog1FTZ9mFMQ85xJjlx4Z5o3xa7tShbcSl8fG4AGYs7RhVkuxu+CA4Zv8jVUIkZBApScCpQ9uEQz4Wl8WkSJdw/01sN+XTIrQA1YEmu/DhwfWSzci9Boqz//mV6AYgycNITj0qTr4P7oCXmoYRJ74XX4RjZ01mopgEwlE9rMU7g5eK2motwC/i+MtiT67cZMQwCISHylfgwXj9BggQIMgm9sb7oRtnnGsmSQQWyFGaHPlI5KtwJ1wTL52SI1KyiaV4T7z0WVYKJDMzD+ZC1JTH3LfKO/Ds6+Iu2N2PTlBTWRcmPwCPxNWwM8dMkvAwHHOwIoBXOeNNVUmqpcmFOP4i2IKcYbZmn9eKsggQzQmsaUc4IMn23BX/38Yk2TDUtPfFlbAebayGt9qXwFlgJsDlqgRJEgjkAJIx1d7xqTi+jBxZblbDX3rEjbEOOahG5EKYPsuPMXM5Itp0DAYuwHJr66U7PgObEc3MpDS9/kG4M14vhpE9b1LlZPxgmZk7yAktFM0cl+dTHtl+rO+JbcysyvM1uCO2/aUYRnZ+/ApmWyg3QwiiZSiQcBzyPuTjWdNd22OciWamKvvLF78NZjwlNZuPx+DDMIkky3Hq83+SBDnYS/+qGzFmWcwU3XdbLoHn2y+Ld4RF4TXi7P99JF7qVTKlyIWHkWO4vfTCeACiOzHGLGYx2wKZudtmPO+If5rJvYayqZmPx5NwFeSSycyodhEVZhq5aF4Kxy3H815qsRVjFBX4IT+OX8Ah0Zr5O2DHFuSQIlc2e2HMuLdd1JaDPIwEMHlbPPtReKlFj+4OOLM/gt/CQrSae+EvtrddpMdmfgG4lLvLURoOKJBLUXwzro9bAGIsI8YI4Nb+YfwB7Lib4PU5w4wTF0LMhACcmsIJLDmKXViJL8NeiF7GMEBTS7DjTvjL3FUrG0pelmcAYqs9EHJhl8QT8FnY2RzCcCyaiE61HJSdD7vzLZCZiWrVciOGApR34DL4+53jMRuGiIYDAhDZXDweZ2ZObiZVDVOO6gDl+eUQz1QTd/c0JzUt27kOn4w9Zsot3xoHD2SOXJHxcVptwz0ykt5ufjZWwBEmMx+e8FCSCwfG2+7zkLdimnsNJ7q3pp7X9AkDsdVylwdCUQhcoDkgU8qw3TN7XjNT7mirHJcILADhcglvnUn0KnevFd3OD3eX4gjUpRvgBphJzoQ1cfc4nCzuzidNYusNvCqGAYFcjiTI8m6c0QKc2jEekreiyUbAES53BTJHDlTJlNHa0RxWnHj9zkkwNALgkoOHMSddZiYpxp8GO5rD8PHtO7MIGqG6NEcOAslkJjvgZ3Dmy5pK8zwevUdmZho1BRIhmZlIj+Yaj6TH8UOa18FCtMXIOjjCA3URAKqugWjtPNMlUGzvbsa/amukALnDzjAdvKch0l3AcMx9KncklZLXe6ZxCAB+UAdR4q0wHTxZJCt0mcnMapmh2D4zRs7anTfNCCnHy/ROosQTYSrcNURUKACOaglgMJkdb/trLUNCPnK4U6BkCXeHuRqvd/F3mSiTmUsajoRiOZhqPm920pHkaIQcdw4aoszlz6vwSZiEzzu5etcgY3QERdQwIQE/hN0z0ZUbIy+PkT/rphS4msAX4qYSsYVoRZBUA5SbiDOzLVckrGdeJiYWcGugHuo7Ees4Pc4hO9GWCVQDOT6Ambw97mjEHGHt9lzSN3DSfYmH0wIljF/CgmU2TOhd1HET1UpLdUBOtQCvEuApQsrbu4boRTb7ahZMGFZTw9ADVrNuwlQdjEUCkKjTNNwt7yD+o8CUy1ifFqH3Jhhi6XaBTEjcpHry6E6jRLYHWZIXEjwh9iEpMEVeoVZIJ8dQXTiOx0GUcdAQVUWmZP+vJMLBEpIinw7guYP0LmqFMKkCUJUB7oABHoEc8EhqjFkcIPvpHdSsyMc8x6nLHoIL8EYHr+9chyJjAUXKNsyoVhWAAAE4IFJj9o8nN/upeQevLeBNjhT12bgWwaU7Tp6azxVbOLOPOeOkdZBlegIJ4QACHMCACC4Bnp1XJlwkfDOPyy/HUxzRoG4XUxNG5jH977H+EEdsZvFBZitQZqMAIiBAERCAIxACTQ7RS3wzhzc6uewWPJHwC/tTz9sWURMGuBcz/hpzrWHeOSwxwBRFpiwyocjEAhP3f26Buu2Nwgvkq1+9yw/zxqtfza7GYScX6ONDDBWGVw/y9zx+7+e9+Xx0c75I+BHuQFtMZ4xv8Ef1Ag==") 0 0 / 100% 300% no-repeat;
+}
+.contents_div .mgd-lb::after{
+  content:''; flex:0 0 auto; width:1px; height:.8em; margin-left:6px; background:#c9cfdb;
+}
+/* 아이콘: HTML 안에 내장한 스프라이트(세로 3칸: 핀 · 시계 · 체크) */
+.contents_div .mgd-lb--loc::before{ background-position:0 0; }
+.contents_div .mgd-lb--time::before{ background-position:0 50%; }
+.contents_div .mgd-lb--fee::before{ background-position:0 100%; }
+.contents_div .mgd-em{ font-weight:700; color:var(--c-ink); white-space:nowrap; }
+.contents_div .mgd-val{ flex:1; min-width:0; color:var(--c-ink); }
+.contents_div .mgd-nw{ white-space:nowrap; }
+/* 조건부 줄바꿈: <br> 대신 빈 span */
+.contents_div .mgd-br::before{ content:'\A'; white-space:pre; }
+.contents_div .mgd-br--mo{ display:none; }
+/* .mgd-val--tight: 아래 스크립트가 한 줄에 안 들어갈 때만 글자를 조금씩 줄임(여유 있으면 다른 정보와 같은 크기) */
+.contents_div .mgd-sm{ font-size:.74em; letter-spacing:-0.04em; color:var(--c-sub); white-space:nowrap; }
+.contents_div .mgd-cta-wrap{ margin-top:auto; padding-top:18px; }
+.contents_div .mgd-cta{
+  display:flex; align-items:center; justify-content:center; gap:8px; min-height:48px; padding:8px 16px;
+  border-radius:12px; background:var(--c-cobalt); color:#fff;
+  font-size:var(--fs-cta); font-weight:700; line-height:1.45;
+  transition:background-color .2s, transform .18s, box-shadow .24s;
+}
+.contents_div .mgd-cta-arw{ font-size:var(--fs-arw); line-height:1; }
+
+/* 사진 출처: 카드 상단 우측 */
+.contents_div .mgd-card{ position:relative; }
+.contents_div .mgd-credit{
+  position:absolute; top:12px; right:14px; z-index:2; max-width:calc(100% - 20px);
+  padding:0; background:none; color:rgba(255,255,255,.72);
+  text-shadow:0 0 3px rgba(0,0,0,.35), 0 0 8px rgba(0,0,0,.22);
+  font-size:11px; font-weight:400; line-height:1.4; letter-spacing:-0.01em; white-space:nowrap; pointer-events:none;
+}
+.contents_div .mgd-card .mgd-credit{ right:auto; left:calc(36% - 10px); transform:translateX(-100%); }
+
+/* PC: 모든 카드 가로 배치(사진 왼쪽 36% 세로형 · 내용 오른쪽) */
+.contents_div .mgd-card .mgd-fig{ flex:0 0 36%; }
+.contents_div .mgd-card .mgd-fig::before{ padding-top:130%; } /* 최소 세로형 1:1.3, 내용이 길면 더 길어짐 */
+
+/* ===== 등장 애니메이션 (스크롤 진입 시) ===== */
+.contents_div .mgd-wrap.is-anim .mgd-rise{ opacity:0; transform:translateY(24px); transition:opacity .6s ease, transform .6s ease; }
+.contents_div .mgd-wrap.is-anim .mgd-rise.is-in{ opacity:1; transform:none; }
+
+/* ===== 푸터 ===== */
+.contents_div .mgd-tags{ display:flex; flex-wrap:wrap; justify-content:center; gap:4px 12px; }
+.contents_div .mgd-tags li{
+  display:inline-block; padding:0; border:0; background:none;
+  font-size:var(--fs-tag); font-weight:500; line-height:1.6; color:rgba(255,255,255,.82);
+}
+
+/* ===== 마우스 hover ===== */
+@media (hover:hover) and (pointer:fine){
+  .contents_div .mgd-cta:hover{ background:var(--c-cobalt-d); transform:translateY(-2px); box-shadow:0 8px 18px rgba(23,61,42,.28); }
+  .contents_div .mgd-h3-link:hover{ color:var(--acc); }
+  .contents_div .mgd-posts a:hover{ background:var(--acc); color:#fff; }
+  .contents_div .mgd-posts a.mgd-home:hover .mgd-home-arw{ transform:translate(2px,-2px); }
+}
+.contents_div .mgd-cta:active{ background:var(--c-cobalt-d); transform:translateY(1px); }
+
+/* ===== 동작 줄이기 ===== */
+@media (prefers-reduced-motion:reduce){
+  .contents_div .mgd-wrap.is-anim .mgd-rise{ opacity:1; transform:none; transition:none; }
+  .contents_div .mgd-cta{ transition:none; }
+  .contents_div .gdh-hero--fx .gdh-photo.is-on{ animation:none; }
+}
+
+/* ===== 반응형 ===== */
+@media (max-width:600px){
+  .contents_div .mgd-br--mo{ display:inline; }
+  .contents_div .gdh-bars{ grid-template-columns:repeat(5, 22px); gap:5px; }
+  .contents_div .gdh-bar{ height:2.5px; }
+  .contents_div .mgd-wrap{
+    --fs-h1:28px; --fs-sub:15px; --fs-h2:22px; --fs-h3:20px; --fs-theme:19.7px;
+    --fs-body:14px; --fs-desc:14px; --fs-lead:13.5px; --fs-info:14px;
+    --fs-kicker:10px; --fs-num:10px; --fs-tag:11px; --fs-lb:10px; --fs-cta:14px; --fs-arw:15px; --fs-chk:10px;
+    --fs-stat:24px; --fs-ava:14px;
+    --fs-card:14.5px;
+    --kick:22px; --cap:17px; --post:24px; --lens:32px; --ava:30px;
+    --card-pv:20px; --card-ph:17px;
+  }
+  .contents_div .mgd-sec{ padding:40px 22px; }
+  .contents_div .mgd-sec[data-sec^="t"]{ padding-bottom:0; }
+  .contents_div .mgd-kicker{ padding:0 10px; line-height:1; }
+  .contents_div .mgd-head--num{ gap:8px; }
+  .contents_div .mgd-head-mark{ margin:-6px 0 0 -3px; }
+  .contents_div .mgd-head-no{ font-size:67px; margin-right:-8px; }
+  .contents_div .mgd-head--num .mgd-kicker{ top:29px; left:3px; padding:0; font-size:12px; line-height:1.3; }
+  .contents_div .mgd-search{ gap:10px; margin-top:10px; padding:7px 12px 7px 23px; }
+  .contents_div .mgd-search--multi{ border-radius:22px; padding-top:10px; padding-bottom:10px; }
+  .contents_div .mgd-msg{ gap:8px; margin-top:22px; }
+  .contents_div .mgd-lead--plain{ margin-top:18px; }
+  .contents_div .mgd-bub{ padding:12px 14px; }
+  .contents_div .mgd-fig::before{ padding-top:125%; }
+  .contents_div .mgd-chat{ margin-top:24px; border-radius:18px; }
+  .contents_div .mgd-chat-top{ padding:11px 14px; gap:10px; }
+  .contents_div .mgd-chat-bk{ font-size:19px; }
+  .contents_div .mgd-chat-body{ padding:16px 12px 18px; }
+  .contents_div .mgd-chat .mgd-lead{ max-width:90%; }
+  .contents_div .mgd-chat .mgd-bub{ padding:9px 12px; }
+  .contents_div .mgd-stats{ margin-top:24px; }
+  .contents_div .mgd-stats li{ padding:14px 4px; }
+  .contents_div .mgd-stats em{ font-size:11px; }
+  .contents_div .mgd-flow{ margin-top:26px; }
+  .contents_div .mgd-steps{ grid-template-columns:1fr; gap:26px; }
+  .contents_div .mgd-step{ padding:16px 14px 15px; border-radius:12px; }
+  .contents_div .mgd-step + .mgd-step::before{ left:50%; top:-18px; width:9px; height:9px; margin:0 0 0 -5px; border-radius:0; box-shadow:none; background:none; border-top:2px solid var(--c-cobalt); border-right:2px solid var(--c-cobalt); transform:rotate(135deg); }
+  .contents_div .mgd-step-hd{ flex-direction:row; justify-content:center; gap:8px; }
+  .contents_div .mgd-step-num{ font-size:18px; }
+  .contents_div .mgd-step-tx{ margin-top:6px; }
+  .contents_div .mgd-facts{ margin-top:18px; }
+  .contents_div .mgd-fact{ padding:12px 2px; }
+  .contents_div .mgd-fact b{ letter-spacing:-0.02em; }
+  .contents_div .mgd-fact:first-child b{ font-size:20px; }
+  .contents_div .mgd-fact em{ margin-top:4px; font-size:12px; }
+  .contents_div .mgd-notice{ gap:10px; margin-top:18px; padding:16px 17px; border-radius:14px; }
+  .contents_div .mgd-notice p{ font-weight:400; }
+  .contents_div .mgd-chk{ width:24px; height:22px; padding-top:5px; font-size:12px; }
+  .contents_div .mgd-notice.mgd-notice--foot{ margin:0 0 26px; }
+  /* 카드: 모바일은 사진 전면 배경 + 내용 오버레이(레퍼런스 모바일형) */
+  .contents_div .mgd-cards{ grid-template-columns:1fr; gap:0; margin:22px -22px 0; }
+  .contents_div .mgd-card{ position:relative; flex-direction:column; aspect-ratio:2/3; overflow:visible; width:100%; min-width:0; /* 내용이 많으면 카드가 늘어나게(2:3은 최소) */ border:0; border-radius:0; box-shadow:none; background:var(--c-navy); }
+  .contents_div .mgd-card + .mgd-card{ border-top:3px solid #e3e5ea; }
+  .contents_div .mgd-card .mgd-fig,
+  .contents_div .mgd-card--wide .mgd-fig{ position:absolute; inset:0; z-index:0; flex:none; min-height:0; }
+  .contents_div .mgd-card .mgd-fig::before,
+  .contents_div .mgd-card--wide .mgd-fig::before{ padding-top:0; min-height:0; }
+  .contents_div .mgd-card .mgd-fig::after{
+    content:''; position:absolute; left:0; right:0; top:0; height:46%; z-index:1; pointer-events:none;
+    background:linear-gradient(180deg,rgba(10,20,45,.55) 0%,rgba(10,20,45,.3) 45%,rgba(10,20,45,0) 100%);
+  }
+  .contents_div .mgd-sl-nav{ height:100%; aspect-ratio:auto; padding:0 8px; }
+  .contents_div .mgd-card .mgd-sl-nav{ width:100%; }
+  .contents_div .mgd-sl-btn{ width:31.5px; height:31.5px; background-size:20.16px; }
+  .contents_div .mgd-credit{ top:auto; bottom:7px; right:12px; font-size:10px; } /* 출처: 카드 하단 오른쪽 */
+  .contents_div .mgd-card .mgd-credit{ left:auto; right:12px; transform:none; }
+  .contents_div .mgd-card-body{ position:relative; z-index:1; padding:21px var(--card-ph) 28px; } /* 하단 28px: 정보박스를 올려 아래에 출처 자리 확보 */
+  .contents_div .mgd-h3{ color:#fff; text-shadow:0 1px 5px rgba(0,0,0,.4); }
+  .contents_div .mgd-num{
+    display:inline-flex; align-items:center; justify-content:center; padding:5px 8px 4px;
+    border-radius:8px; background:var(--acc); color:#fff; font-size:13px; text-shadow:none;
+  }
+  .contents_div .mgd-card-hd{ flex-direction:row; align-items:flex-start; justify-content:space-between; gap:10px; }
+  .contents_div .mgd-card-hd .mgd-h3{ flex:1 1 auto; min-width:0; }
+  .contents_div .mgd-card-hd .mgd-posts{ align-self:flex-start; flex:0 0 auto; flex-wrap:nowrap; margin:0; padding-top:1px; }
+  .contents_div .mgd-posts-lb{ color:#fff; text-shadow:0 0 4px rgba(0,0,0,.5); }
+  .contents_div .mgd-posts a{ background:rgba(255,255,255,.92); }
+  .contents_div .mgd-posts a.mgd-home{ border-color:transparent; padding:0 9px 0 10px; }
+  .contents_div .mgd-desc{
+    margin-bottom:150px;
+    margin-top:12px; padding:6.9px 12px 8.5px; /* 한글 글리프가 아래로 붙어 보여 위를 0.8px 줄여 시각 균형 */ border:1px solid #292929; border-radius:0; background:#fff;
+    line-height:1.6;
+  }
+  .contents_div .mgd-info{ margin-top:auto; padding:9px 13px; border:0; border-radius:12px; background:#fff; }
+  .contents_div .mgd-info li{ gap:8px; }
+  .contents_div .mgd-info li + li{ margin-top:3px; }
+  .contents_div .mgd-info li,
+  .contents_div .mgd-info .mgd-lb{ line-height:1.45; }
+  .contents_div .mgd-lb{ gap:5px; }
+  .contents_div .mgd-lb::after{ margin-left:5px; }
+  .contents_div .mgd-cta-wrap{ margin-top:0; padding-top:8px; }
+  .contents_div .mgd-tags{ gap:2px 10px; }
+}
+@media (max-width:480px){
+  .contents_div .mgd-sec{ padding-left:15px; padding-right:15px; }
+  .contents_div .mgd-cards{ margin-left:-15px; margin-right:-15px; }
+}
+@media (max-width:402px){
+  /* 글자 전체: 402px까지 모바일 크기 유지 → 350px까지 본문 14.5→13.5px와 같은 비율로 살짝씩 축소 → 그 아래는 고정 */
+  .contents_div .mgd-wrap{
+    --fs-h1:clamp(26.069px, calc(13.072px + 3.714vw), 28px);
+    --fs-sub:clamp(13.966px, calc(7.003px + 1.989vw), 15px);
+    --fs-h2:clamp(20.483px, calc(10.271px + 2.918vw), 22px);
+    --fs-theme:clamp(18.343px, calc(9.197px + 2.613vw), 19.7px); /* 375px = 19px */
+    --fs-h3:clamp(18.621px, calc(9.337px + 2.653vw), 20px);
+    --fs-body:clamp(13.034px, calc(6.536px + 1.857vw), 14px);
+    --fs-desc:clamp(13.034px, calc(6.536px + 1.857vw), 14px);
+    --fs-lead:clamp(12.569px, calc(6.302px + 1.79vw), 13.5px);
+    --fs-info:clamp(13.034px, calc(6.536px + 1.857vw), 14px);
+    --fs-kicker:clamp(9.31px, calc(4.668px + 1.326vw), 10px);
+    --fs-tag:clamp(10.241px, calc(5.135px + 1.459vw), 11px);
+    --fs-lb:clamp(9.31px, calc(4.668px + 1.326vw), 10px);
+    --fs-cta:clamp(13.034px, calc(6.536px + 1.857vw), 14px);
+    --fs-arw:clamp(13.966px, calc(7.003px + 1.989vw), 15px);
+    --fs-stat:clamp(22.345px, calc(11.204px + 3.183vw), 24px);
+    --fs-ava:clamp(13.034px, calc(6.536px + 1.857vw), 14px);
+  }
+  .contents_div .mgd-stats em{ font-size:clamp(10.241px, calc(5.135px + 1.459vw), 11px); }
+  .contents_div .mgd-fact em{ font-size:clamp(11.172px, calc(5.602px + 1.592vw), 12px); }
+  .contents_div .mgd-desc,
+  .contents_div .mgd-info li{ font-size:clamp(13.5px, calc(6.769px + 1.923vw), 14.5px); }
+}
+@media (max-width:402px){
+  /* 넘버링·키커·H2 한 덩어리: 402px까지 지금 크기 유지 → 350px까지 살짝씩 축소(두 줄 유지) */
+  .contents_div .mgd-head--num{ container-type:inline-size; gap:0; }
+  .contents_div .mgd-head-mark{ margin:clamp(-6px, calc(0.494px + -1.615vw), -5.16px) clamp(6.881px, calc(-0.659px + 2.154vw), 8.001px) 0 clamp(-3px, calc(0.247px + -0.808vw), -2.58px); }
+  .contents_div .mgd-head-no{ font-size:clamp(57.62px, calc(-5.515px + 18.038vw), 67px); margin-right:clamp(-8.001px, calc(0.659px + -2.154vw), -6.881px); }
+  .contents_div .mgd-head--num .mgd-kicker{ top:clamp(24.941px, calc(-2.387px + 7.808vw), 29.002px); left:clamp(2.58px, calc(-0.247px + 0.808vw), 3px); font-size:clamp(10.32px, calc(-0.988px + 3.231vw), 12px); }
+  .contents_div .mgd-head--num .mgd-h2{ font-size:clamp(19.139px, calc(-0.11px + 5.5vw), 21.999px); }
+}
+@media (max-width:349px){
+  /* 350px 미만: 화면 폭에 비례해 함께 축소(넘침 방지) */
+  .contents_div .mgd-head-mark{ margin:-1.792cqw 2.389cqw 0 -0.896cqw; }
+  .contents_div .mgd-head-no{ font-size:20.007cqw; margin-right:-2.389cqw; }
+  .contents_div .mgd-head--num .mgd-kicker{ top:8.66cqw; left:0.896cqw; font-size:max(10px, 3.583cqw); }
+  .contents_div .mgd-head--num .mgd-h2{ font-size:6.546cqw; }
+}
+@media (max-width:380px){
+  .contents_div .mgd-wrap{
+    --lens:28px; --ava:28px;
+    --card-pv:19px; --card-ph:14px;
+  }
+  .contents_div .mgd-search{ gap:8px; padding-left:21px; padding-right:11px; }
+}
+/* 히어로 바: 화면이 넓어도 들어간 자리가 600px 이하면 모바일 크기 */
+@container gdh (max-width:600px){
+  .contents_div .gdh-bars{ grid-template-columns:repeat(5, 22px); gap:5px; }
+  .contents_div .gdh-bar{ height:2.5px; }
+}
+</style>
+
+<!-- TEST: 확인 후 이 줄 삭제 --><div class="jngj-test-spacer" aria-hidden="true" style="height:900px;max-width:800px;margin:auto;display:grid;place-items:center;border:1px solid #cb9;background:linear-gradient(to top right,#0000 calc(50% - 1px),#cb9,#0000 calc(50% + 1px)),linear-gradient(to top left,#0000 calc(50% - 1px),#cb9,#0000 calc(50% + 1px)) #fffdef;font:700 16px sans-serif;color:#7E5E50"><b style="padding:10px 20px;background:#fffdef;border:1px solid #cb9;border-radius:99px">테스트 영역 · 아래로 스크롤 ↓</b></div>
+
+<div class="mgd-wrap">
+
+  <!-- 히어로 -->
+  <div class="gdh-wrap">
+    <section class="gdh-hero" aria-label="주말에 카페 말고 정원 어때요?">
+      <h1 class="gdh-sr">주말에 카페 말고 정원 어때요? 대한민국이 반한 전남광주 13곳!</h1>
+      <div class="gdh-photos">
+        <figure class="gdh-photo is-on"><img src="img/히어로배경1.webp" alt="분홍 핑크뮬리 너머로 펼쳐진 초록 잔디 언덕" width="880" height="876" fetchpriority="high" loading="eager"></figure>
+        <figure class="gdh-photo"><img src="img/히어로배경2.webp" alt="대숲 사이로 보이는 한옥 정원" width="880" height="876" loading="eager"></figure>
+        <figure class="gdh-photo"><img src="img/히어로배경3.webp" alt="단풍으로 물든 정원과 잔디밭을 하늘에서 내려다본 모습" width="880" height="876" loading="eager"></figure>
+        <figure class="gdh-photo"><img src="img/히어로배경4.webp" alt="팜파스 그라스 오솔길 너머로 보이는 바다와 섬" width="880" height="876" loading="eager"></figure>
+        <figure class="gdh-photo"><img src="img/히어로배경5.webp" alt="나무 그늘 아래 잔디 정원과 하얀 집" width="880" height="876" loading="eager"></figure>
+      </div>
+      <div class="gdh-title" aria-hidden="true"><img src="img/히어로텍스트.webp" alt="" width="880" height="876" fetchpriority="high" loading="eager"></div>
+      <ul class="gdh-bars" aria-hidden="true">
+        <li class="gdh-bar is-on"></li>
+        <li class="gdh-bar"></li>
+        <li class="gdh-bar"></li>
+        <li class="gdh-bar"></li>
+        <li class="gdh-bar"></li>
+      </ul>
+    </section>
+  </div>
+
+  <!-- 인트로 -->
+  <section class="mgd-sec mgd-intro" data-sec="intro">
+    <div class="mgd-sec-in">
+      <span class="mgd-kicker">대한민국 아름다운 민간정원</span>
+      <p class="mgd-intro-sub">무려 절반이 전남광주통합특별시입니다</p>
+      <ul class="mgd-stats">
+        <li><b>184<span>개</span></b><em>전국 민간정원</em></li>
+        <li><b>30<span>선</span></b><em>아름다운 민간정원</em></li>
+        <li><b>15<span>곳</span></b><em>전남광주 선정</em></li>
+      </ul>
+      <div class="mgd-chat mgd-rise">
+        <div class="mgd-chat-top" aria-hidden="true">
+          <span class="mgd-chat-bk">&#8249;</span>
+          <span class="mgd-chat-name">모두의 전남광주</span>
+          <span class="mgd-chat-ic"></span>
+          <span class="mgd-chat-ham">&#9776;</span>
+        </div>
+        <div class="mgd-chat-body">
+          <div class="mgd-msg">
+            <span class="mgd-ava" aria-hidden="true">모</span>
+            <p class="mgd-lead"><span class="mgd-bub">산림청과 한국수목원정원관리원이 선정한 2026 대한민국 아름다운 민간정원 30선에서 전남광주통합특별시의 민간정원 <span class="mgd-pop">15곳</span>이 이름을 올리는 쾌거를 이뤘어요.</span> <span class="mgd-bub"><span class="mgd-pop">전국에서 가장 많이</span> 선정된 것인데요.</span> <span class="mgd-bub">전국 184개 민간정원 중 전문가 pick으로 인정받은, 가을에 나들이 떠나기 좋은 통합특별시의 대표 민간정원을 소개합니다.</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 선정 과정 -->
+  <section class="mgd-sec mgd-sec--cream" data-sec="sel">
+    <div class="mgd-sec-in">
+      <div class="mgd-head mgd-head--num mgd-rise">
+        <div class="mgd-head-mark">
+          <span class="mgd-head-no" aria-hidden="true">01</span>
+          <span class="mgd-kicker">선정 과정</span>
+        </div>
+        <h2 class="mgd-h2">대한민국 민간정원<br>30선은 이렇게 선정되었어요</h2>
+      </div>
+      <p class="mgd-lead mgd-lead--plain mgd-rise">산림청·한국수목원정원관리원에서는 민간정원의 아름다운 가치와 정원주의 특별한 이야기를 국민과 나누기 위해 최종 30곳을 선정했습니다.</p>
+      <div class="mgd-flow mgd-rise">
+      <ol class="mgd-steps">
+        <li class="mgd-step">
+          <div class="mgd-step-hd"><span class="mgd-step-num">01</span><p class="mgd-step-tt">정원주 신청</p></div>
+          <p class="mgd-step-tx">지난 5월 신청 접수</p>
+        </li>
+        <li class="mgd-step">
+          <div class="mgd-step-hd"><span class="mgd-step-num">02</span><p class="mgd-step-tt">1차 서류심사</p></div>
+          <p class="mgd-step-tx"><strong>45개소</strong> 선정</p>
+        </li>
+        <li class="mgd-step">
+          <div class="mgd-step-hd"><span class="mgd-step-num">03</span><p class="mgd-step-tt">현장평가 · <span class="mgd-nw">온라인 투표</span></p></div>
+          <p class="mgd-step-tx">외부 전문 심사단 현장평가와<span class="mgd-br mgd-br--mo"></span> 국민 <strong>19,204명</strong> 참여 온라인 투표 종합</p>
+        </li>
+        <li class="mgd-step">
+          <div class="mgd-step-hd"><span class="mgd-step-num">04</span><p class="mgd-step-tt">최종 선정</p></div>
+          <p class="mgd-step-tx"><strong>30곳</strong> 선정, ‘아름다운 민간정원 마크’ 지원</p>
+        </li>
+      </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- 최다 선정 이유 -->
+  <section class="mgd-sec mgd-sec--sky" data-sec="why">
+    <div class="mgd-sec-in">
+      <div class="mgd-head mgd-head--num mgd-rise">
+        <div class="mgd-head-mark">
+          <span class="mgd-head-no" aria-hidden="true">02</span>
+          <span class="mgd-kicker">최다 선정 이유</span>
+        </div>
+        <h2 class="mgd-h2">전남광주 민간정원,<br>최다 선정 이유는 무엇일까?</h2>
+      </div>
+      <div class="mgd-msg mgd-rise">
+        <span class="mgd-ava" aria-hidden="true">모</span>
+        <div class="mgd-msg-col">
+          <p class="mgd-lead mgd-bub">대한민국에서도 자연경관이 뛰어나기로 소문난 지역인 데다 심미안을 가진 시민들이 정원을 가꾼 이유가 가장 크겠지만, <strong>전남광주통합특별시도 정원에 진심</strong>이기 때문이에요.</p>
+          <p class="mgd-lead mgd-bub">통합특별시는 그동안 민간정원을 지역소멸 대응 관광자원과 생활권 정원문화 거점으로 육성하기 위해 <strong>전국 최초로 ‘예쁜정원 콘테스트’</strong>를 추진했답니다.</p>
+          <p class="mgd-lead mgd-bub">이를 통해 <strong>우수정원 68개소</strong>를 발굴했으며, 이 가운데 <strong>15개소를 민간정원으로 등록</strong>했어요.</p>
+        </div>
+      </div>
+      <ul class="mgd-facts mgd-rise">
+        <li class="mgd-fact mgd-acc--pink"><b>전국 최초</b><em>예쁜정원 콘테스트</em></li>
+        <li class="mgd-fact mgd-acc--green"><b>68<span>개소</span></b><em>우수정원 발굴</em></li>
+        <li class="mgd-fact mgd-acc--orange"><b>15<span>개소</span></b><em>민간정원 등록</em></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 정원 15곳 소개 -->
+  <section class="mgd-sec mgd-sec--navy" data-sec="list">
+    <div class="mgd-sec-in">
+      <div class="mgd-head mgd-head--num mgd-rise">
+        <div class="mgd-head-mark">
+          <span class="mgd-head-no" aria-hidden="true">03</span>
+          <span class="mgd-kicker">정원 15곳</span>
+        </div>
+        <h2 class="mgd-h2">대한민국이 인정한<br>전남광주의 민간정원 15곳</h2>
+      </div>
+      <div class="mgd-msg mgd-rise">
+        <span class="mgd-ava" aria-hidden="true">모</span>
+        <p class="mgd-lead mgd-bub">그럼 지금부터 본격적으로 대한민국이 인정한 전남광주의 민간정원 15곳을 소개할게요.</p>
+      </div>
+      <div class="mgd-notice mgd-rise">
+        <span class="mgd-chk" aria-hidden="true">!</span>
+        <p>민간정원은 국가정원과는 달리 개인이 운영하기 때문에 운영시간, 입장료, 예약 여부가 정원마다 달라요. 방문 전 미리 확인이 필수랍니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 테마 1 -->
+  <section class="mgd-sec mgd-sec--cream mgd-acc--pink" data-sec="t1">
+    <div class="mgd-sec-in">
+      <div class="mgd-head mgd-rise">
+        <div class="mgd-search"><h2 class="mgd-h2">풍류와 정취를 담은 정원</h2><span class="mgd-lens" aria-hidden="true"></span></div>
+      </div>
+      <div class="mgd-cards">
+        <article class="mgd-card mgd-rise">
+          <!-- [보관] 반반 레이아웃: <div class="mgd-fig mgd-fig--duo"><img src="img/구례 반야원.webp" alt="" loading="lazy" decoding="async"><img src="img/구례 반야원2.webp" alt="" loading="lazy" decoding="async"></div> -->
+          <!-- [보관] 배경 + 작은 사각형 레이아웃: <div class="mgd-fig"><img src="img/구례 반야원.webp" alt="" loading="lazy" decoding="async"><img class="mgd-fig-sub" src="img/구례 반야원2.webp" alt="" loading="lazy" decoding="async"></div> -->
+          <div class="mgd-fig mgd-fig--slide"><div class="mgd-slides"><img src="img/구례 반야원.webp" alt="" loading="lazy" decoding="async"><img src="img/구례 반야원2.webp" alt="" loading="lazy" decoding="async"></div></div>
+          <div class="mgd-sl-nav"><button type="button" class="mgd-sl-btn mgd-sl-prev" aria-label="이전 사진"></button><button type="button" class="mgd-sl-btn mgd-sl-next" aria-label="다음 사진"></button></div>
+          <p class="mgd-credit">출처: 반야원</p>
+          <div class="mgd-card-body">
+            <div class="mgd-card-hd">
+              <h3 class="mgd-h3"><span class="mgd-num">01</span><a class="mgd-h3-link" href="https://map.naver.com/p/search/%EA%B5%AC%EB%A1%80%20%EB%B0%98%EC%95%BC%EC%9B%90" target="_blank" rel="noopener" aria-label="구례 반야원 네이버 지도(새 창)">구례 반야원</a></h3>
+            </div>
+            <p class="mgd-desc">플라타너스 군락과 연못, 지리산뷰 카페가 있는 약 2만㎡의 정원으로 전문 가드너가 가꾼 야생화와 수목이 계절마다 다른 풍경을 선사하는 곳.</p>
+            <ul class="mgd-info">
+              <li><span class="mgd-lb mgd-lb--loc">위치</span><span class="mgd-val">구례군 광의면 한국통신로 <span class="mgd-nw">83-22</span></span></li>
+              <li><span class="mgd-lb mgd-lb--time">운영</span><span class="mgd-val">연중무휴 9:00~19:00</span></li>
+            </ul>
+          </div>
+        </article>
+        <article class="mgd-card mgd-rise">
+          <div class="mgd-fig mgd-fig--slide"><div class="mgd-slides"><img src="img/구례 쌍산재.webp" alt="" loading="lazy" decoding="async"><img src="img/구례 쌍산재2.webp" alt="" loading="lazy" decoding="async"></div></div>
+          <div class="mgd-sl-nav"><button type="button" class="mgd-sl-btn mgd-sl-prev" aria-label="이전 사진"></button><button type="button" class="mgd-sl-btn mgd-sl-next" aria-label="다음 사진"></button></div>
+          <p class="mgd-credit">출처: 구례군 블로그, 공식누리집</p>
+          <div class="mgd-card-body">
+            <div class="mgd-card-hd">
+              <h3 class="mgd-h3"><span class="mgd-num">02</span><a class="mgd-h3-link" href="https://map.naver.com/p/search/%EA%B5%AC%EB%A1%80%20%EC%8C%8D%EC%82%B0%EC%9E%AC" target="_blank" rel="noopener" aria-label="구례 쌍산재 네이버 지도(새 창)">구례 쌍산재</a></h3>
+              <p class="mgd-posts"><a class="mgd-home" href="https://www.ssangsanje.com/" target="_blank" rel="noopener" aria-label="구례 쌍산재 누리집 바로가기(새 창)">누리집<span class="mgd-home-arw" aria-hidden="true">↗</span></a></p>
+            </div>
+            <p class="mgd-desc">정원과 고택이 어우러져 계절별로 색채를 달리하는 전통정원을 품은 고택. 관람과 숙박이 가능.</p>
+            <ul class="mgd-info">
+              <li><span class="mgd-lb mgd-lb--loc">위치</span><span class="mgd-val">구례군 마산면 장수길 <span class="mgd-nw">3-2</span></span></li>
+              <li><span class="mgd-lb mgd-lb--time">운영</span><span class="mgd-val">11:00~16:30 · <b class="mgd-em">매주 화 휴관</b></span></li>
+              <li><span class="mgd-lb mgd-lb--fee">입장료</span><span class="mgd-val">1인 1만원(웰컴티 제공)</span></li>
+            </ul>
+          </div>
+        </article>
+        <article class="mgd-card mgd-rise">
+          <!-- [보관] 배경 + 작은 사각형: <div class="mgd-fig"><img src="img/보성 갈멜정원.webp" alt="" loading="lazy" decoding="async"><img class="mgd-fig-sub" src="img/보성 갈멜정원2.webp" alt="" loading="lazy" decoding="async"></div> -->
+          <!-- [보관] 위아래 2칸: <div class="mgd-fig mgd-fig--duo"><img src="img/보성 갈멜정원.webp" alt="" loading="lazy" decoding="async"><img src="img/보성 갈멜정원2.webp" alt="" loading="lazy" decoding="async"></div> -->
+          <div class="mgd-fig mgd-fig--slide"><div class="mgd-slides"><img src="img/보성 갈멜정원.webp" alt="" loading="lazy" decoding="async"><img src="img/보성 갈멜정원2.webp" alt="" loading="lazy" decoding="async"></div></div>
+          <div class="mgd-sl-nav"><button type="button" class="mgd-sl-btn mgd-sl-prev" aria-label="이전 사진"></button><button type="button" class="mgd-sl-btn mgd-sl-next" aria-label="다음 사진"></button></div>
+          <p class="mgd-credit">출처: 보성군 블로그</p>
+          <div class="mgd-card-body">
+            <div class="mgd-card-hd">
+              <h3 class="mgd-h3"><span class="mgd-num">03</span><a class="mgd-h3-link" href="https://map.naver.com/p/search/%EB%B3%B4%EC%84%B1%20%EA%B0%88%EB%A9%9C%EC%A0%95%EC%9B%90" target="_blank" rel="noopener" aria-label="보성 갈멜정원 네이버 지도(새 창)">보성 갈멜정원</a></h3>
+              <p class="mgd-posts"><a class="mgd-home" href="https://blog.naver.com/loj9835" target="_blank" rel="noopener" aria-label="보성 갈멜정원 공식 블로그(새 창)">공식 블로그<span class="mgd-home-arw" aria-hidden="true">↗</span></a></p>
+            </div>
+            <p class="mgd-desc">‘신의 정원’이라는 뜻처럼 소나무·향나무·미국산딸나무 등 사계절 정원수와 사슴정원을 품었으며, 보기 힘든 황금실화백나무의 아름다운 자태로 유명한 곳.</p>
+            <ul class="mgd-info">
+              <li><span class="mgd-lb mgd-lb--loc">위치</span><span class="mgd-val">보성군 웅치면 일림로 <span class="mgd-nw">530-26</span></span></li>
+              <li><span class="mgd-lb mgd-lb--time">운영</span><span class="mgd-val">연중무휴 9:00~18:00</span></li>
+            </ul>
+          </div>
+        </article>
+        <article class="mgd-card mgd-rise">
+          <div class="mgd-fig mgd-fig--slide"><div class="mgd-slides"><img src="img/화순 솔매음정원.webp" alt="" loading="lazy" decoding="async"><img src="img/화순 솔매음정원2.webp" alt="" loading="lazy" decoding="async"></div></div>
+          <div class="mgd-sl-nav"><button type="button" class="mgd-sl-btn mgd-sl-prev" aria-label="이전 사진"></button><button type="button" class="mgd-sl-btn mgd-sl-next" aria-label="다음 사진"></button></div>
+          <p class="mgd-credit">출처: 화순여행 블로그</p>
+          <div class="mgd-card-body">
+            <div class="mgd-card-hd">
+              <h3 class="mgd-h3"><span class="mgd-num">04</span><a class="mgd-h3-link" href="https://map.naver.com/p/search/%ED%99%94%EC%88%9C%20%EC%86%94%EB%A7%A4%EC%9D%8C%EC%A0%95%EC%9B%90" target="_blank" rel="noopener" aria-label="화순 솔매음정원 네이버 지도(새 창)">화순 솔매음정원</a></h3>
+            </div>
+            <p class="mgd-desc">2만 6,320㎡ 규모에 웰컴정원·멸종위기 식물원·자생화원 등 주제정원이 펼쳐지며, 1,000여 종의 수목과 초화류가 자라는 식물의 보고.</p>
+            <ul class="mgd-info">
+              <li><span class="mgd-lb mgd-lb--loc">위치</span><span class="mgd-val">화순군 이양면 개기로 1105</span></li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 테마 2 -->
+  <section class="mgd-sec mgd-sec--sky mgd-acc--green" data-sec="t2">
+    <div class="mgd-sec-in">
+      <div class="mgd-head mgd-rise">
+        <div class="mgd-search"><h2 class="mgd-h2">전원의 낭만을 즐기는 정원</h2><span class="mgd-lens" aria-hidden="true"></span></div>
+      </div>
+      <div class="mgd-cards">
+        <article class="mgd-card mgd-rise">
+          <div class="mgd-fig mgd-fig--slide"><div class="mgd-slides"><img src="img/여수 꿈꾸는 정원.webp" alt="" loading="lazy" decoding="async"><img src="img/여수 꿈꾸는 정원2.webp" alt="" loading="lazy" decoding="async"></div></div>
+          <div class="mgd-sl-nav"><button type="button" class="mgd-sl-btn mgd-sl-prev" aria-label="이전 사진"></button><button type="button" class="mgd-sl-btn mgd-sl-next" aria-label="다음 사진"></button></div>
+          <p class="mgd-credit">출처: 꿈꾸는 정원</p>
+          <div class="mgd-card-body">
+            <div class="mgd-card-hd">
+              <h3 class="mgd-h3"><span class="mgd-num">01</span><a class="mgd-h3-link" href="https://map.naver.com/p/entry/place/2065762951" target="_blank" rel="noopener" aria-label="여수 꿈꾸는 정원 네이버 지도(새 창)">여수 꿈꾸는 정원</a></h3>
+              <p class="mgd-posts"><a class="mgd-home" href="https://map.naver.com/p/entry/place/2065762951" target="_blank" rel="noopener" aria-label="여수 꿈꾸는 정원 네이버 예약(새 창)">네이버 예약<span class="mgd-home-arw" aria-hidden="true">↗</span></a></p>
+            </div>
+            <p class="mgd-desc">여수의 민간정원 제1호로 여수 바다를 배경으로 계절마다 피어나는 꽃과 다채로운 정원 경관을 감상할 수 있는 곳.</p>
+            <ul class="mgd-info">
+              <li><span class="mgd-lb mgd-lb--loc">위치</span><span class="mgd-val">여수시 소호12길 <span class="mgd-nw">15-8</span></span></li>
+              <li><span class="mgd-lb mgd-lb--time">운영</span><span class="mgd-val">화~일 9:00~18:00</span></li>
+              <li><span class="mgd-lb mgd-lb--fee">입장료</span><span class="mgd-val">네이버 사전예약 필수<br>성인 1만원(어린이~고등학생 무료)</span></li>
+            </ul>
+          </div>
+        </article>
+        <article class="mgd-card mgd-rise">
+          <div class="mgd-fig mgd-fig--slide"><div class="mgd-slides"><img src="img/함평천지 몽베르.webp" alt="" loading="lazy" decoding="async"><img src="img/함평천지 몽베르2.webp" alt="" loading="lazy" decoding="async"><img src="img/함평천지 몽베르3.webp" alt="" loading="lazy" decoding="async"></div></div>
+          <div class="mgd-sl-nav"><button type="button" class="mgd-sl-btn mgd-sl-prev" aria-label="이전 사진"></button><button type="button" class="mgd-sl-btn mgd-sl-next" aria-label="다음 사진"></button></div>
+          <p class="mgd-credit">출처: 몽베르</p>
+          <div class="mgd-card-body">
+            <h3 class="mgd-h3"><span class="mgd-num">02</span><a class="mgd-h3-link" href="https://map.naver.com/p/search/%ED%95%A8%ED%8F%89%EC%B2%9C%EC%A7%80%20%EB%AA%BD%EB%B2%A0%EB%A5%B4" target="_blank" rel="noopener" aria-label="함평천지 몽베르 네이버 지도(새 창)">함평천지 몽베르</a></h3>
+            <p class="mgd-desc">300년 전부터 한 집안이 터를 잡고 살던 옛 땅을 가꿔 만든 언덕 위 정원으로, 함평의 너른 들녘까지 한눈에 담기는 풍경이 매력.</p>
+            <ul class="mgd-info">
+              <li><span class="mgd-lb mgd-lb--loc">위치</span><span class="mgd-val">함평군 학교면 둔기길 <span class="mgd-nw">59-26</span></span></li>
+              <li><span class="mgd-lb mgd-lb--time">운영</span><span class="mgd-val">(카페) 10:30~18:30</span></li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 테마 3 -->
+  <section class="mgd-sec mgd-sec--cream mgd-acc--orange" data-sec="t3">
+    <div class="mgd-sec-in">
+      <div class="mgd-head mgd-rise">
+        <div class="mgd-search"><h2 class="mgd-h2">예술과 문화가 있는 정원</h2><span class="mgd-lens" aria-hidden="true"></span></div>
+      </div>
+      <div class="mgd-cards">
+        <article class="mgd-card mgd-rise">
+          <div class="mgd-fig mgd-fig--slide"><div class="mgd-slides"><img src="img/순천 화가의 정원산책.webp" alt="" loading="lazy" decoding="async"><img src="img/순천 화가의 정원산책2.webp" alt="" loading="lazy" decoding="async"></div></div>
+          <div class="mgd-sl-nav"><button type="button" class="mgd-sl-btn mgd-sl-prev" aria-label="이전 사진"></button><button type="button" class="mgd-sl-btn mgd-sl-next" aria-label="다음 사진"></button></div>
+          <p class="mgd-credit">출처: 화가의 정원산책</p>
+          <div class="mgd-card-body">
+            <div class="mgd-card-hd">
+              <h3 class="mgd-h3"><span class="mgd-num">01</span><a class="mgd-h3-link" href="https://map.naver.com/p/search/%EC%88%9C%EC%B2%9C%20%ED%99%94%EA%B0%80%EC%9D%98%20%EC%A0%95%EC%9B%90%EC%82%B0%EC%B1%85" target="_blank" rel="noopener" aria-label="순천 화가의 정원산책 네이버 지도(새 창)">순천 화가의 정원산책</a></h3>
+              <p class="mgd-posts"><a class="mgd-home" href="https://www.instagram.com/garden_darrang_e/?hl=ko" target="_blank" rel="noopener" aria-label="순천 화가의 정원산책 인스타그램(새 창)">인스타그램<span class="mgd-home-arw" aria-hidden="true">↗</span></a></p>
+            </div>
+            <p class="mgd-desc">자연지형을 최대한 살려 조성한 산책로와 다양한 야생화와 미니 정원수, 상록수와 낙엽수를 활용해 사계절 볼거리가 있는 정원.</p>
+            <ul class="mgd-info">
+              <li><span class="mgd-lb mgd-lb--loc">위치</span><span class="mgd-val">순천시 별량면 장학길 34</span></li>
+              <li><span class="mgd-lb mgd-lb--time">운영</span><span class="mgd-val">10:00~17:00</span></li>
+              <li><span class="mgd-lb mgd-lb--fee">입장료</span><span class="mgd-val">성인 5천원, 학생 3천원</span></li>
+            </ul>
+          </div>
+        </article>
+        <article class="mgd-card mgd-rise">
+          <div class="mgd-fig mgd-fig--slide"><div class="mgd-slides"><img src="img/고흥 하담정.webp" alt="" loading="lazy" decoding="async"><img src="img/고흥 하담정2.webp" alt="" loading="lazy" decoding="async"></div></div>
+          <div class="mgd-sl-nav"><button type="button" class="mgd-sl-btn mgd-sl-prev" aria-label="이전 사진"></button><button type="button" class="mgd-sl-btn mgd-sl-next" aria-label="다음 사진"></button></div>
+          <p class="mgd-credit">출처: 정원누리</p>
+          <div class="mgd-card-body">
+            <div class="mgd-card-hd">
+              <h3 class="mgd-h3"><span class="mgd-num">02</span><a class="mgd-h3-link" href="https://map.naver.com/p/search/%EA%B3%A0%ED%9D%A5%20%ED%95%98%EB%8B%B4%EC%A0%95" target="_blank" rel="noopener" aria-label="고흥 하담정 네이버 지도(새 창)">고흥 하담정</a></h3>
+            </div>
+            <p class="mgd-desc">폐교를 활용해 만든 정원으로 90여 종의 수목과 200여 종의 야생화 그리고 미술관까지 정원의 아름다움과 문화예술을 함께 만나는 곳.</p>
+            <ul class="mgd-info">
+              <li><span class="mgd-lb mgd-lb--loc">위치</span><span class="mgd-val">고흥군 영남면 팔영로 1081</span></li>
+              <li><span class="mgd-lb mgd-lb--time">운영</span><span class="mgd-val">수~일 10:00~17:00</span></li>
+              <li><span class="mgd-lb mgd-lb--fee">입장료</span><span class="mgd-val">일반 5천원(남포미술관 관람 포함)</span></li>
+            </ul>
+          </div>
+        </article>
+        <article class="mgd-card mgd-card--wide mgd-rise">
+          <div class="mgd-fig mgd-fig--slide"><div class="mgd-slides"><img src="img/해남 산이정원.webp" alt="" loading="lazy" decoding="async"><img src="img/해남 산이정원2.webp" alt="" loading="lazy" decoding="async"><img src="img/해남 산이정원3.webp" alt="" loading="lazy" decoding="async"><img src="img/해남 산이정원4.webp" alt="" loading="lazy" decoding="async"></div></div>
+          <div class="mgd-sl-nav"><button type="button" class="mgd-sl-btn mgd-sl-prev" aria-label="이전 사진"></button><button type="button" class="mgd-sl-btn mgd-sl-next" aria-label="다음 사진"></button></div>
+          <p class="mgd-credit">출처: 산이정원</p>
+          <div class="mgd-card-body">
+            <div class="mgd-card-hd">
+              <h3 class="mgd-h3"><span class="mgd-num">03</span><a class="mgd-h3-link" href="https://map.naver.com/p/search/%ED%95%B4%EB%82%A8%20%EC%82%B0%EC%9D%B4%EC%A0%95%EC%9B%90" target="_blank" rel="noopener" aria-label="해남 산이정원 네이버 지도(새 창)">해남 산이정원</a></h3>
+              <p class="mgd-posts"><a class="mgd-home" href="https://sanigarden.com/" target="_blank" rel="noopener" aria-label="해남 산이정원 누리집 바로가기(새 창)">누리집<span class="mgd-home-arw" aria-hidden="true">↗</span></a></p>
+            </div>
+            <p class="mgd-desc">‘산이 정원이 된다’는 뜻으로 산이면 일대의 경관을 살려 정원 내 수목원, 산책로, 미술관, 카페, 놀이터 등이 있는 자연과 예술이 함께하는 복합예술공간.</p>
+            <ul class="mgd-info">
+              <li><span class="mgd-lb mgd-lb--loc">위치</span><span class="mgd-val">해남군 산이면 구성리 664</span></li>
+              <li><span class="mgd-lb mgd-lb--time">운영</span><span class="mgd-val">월~일 8:00~18:00</span></li>
+              <li><span class="mgd-lb mgd-lb--fee">입장료</span><span class="mgd-val">성인 1만원(주말 1만 2천원), 학생·경로 9천원, 어린이 5천원</span></li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 테마 4 -->
+  <section class="mgd-sec mgd-sec--sky mgd-acc--violet" data-sec="t4">
+    <div class="mgd-sec-in">
+      <div class="mgd-head mgd-rise">
+        <div class="mgd-search"><h2 class="mgd-h2">쉼과 회복을 선사하는 정원</h2><span class="mgd-lens" aria-hidden="true"></span></div>
+      </div>
+      <div class="mgd-cards">
+        <article class="mgd-card mgd-rise">
+          <div class="mgd-fig mgd-fig--slide"><div class="mgd-slides"><img src="img/고흥 힐링파크 쑥섬쑥섬.webp" alt="" loading="lazy" decoding="async"><img src="img/고흥 힐링파크 쑥섬쑥섬2.webp" alt="" loading="lazy" decoding="async"></div></div>
+          <div class="mgd-sl-nav"><button type="button" class="mgd-sl-btn mgd-sl-prev" aria-label="이전 사진"></button><button type="button" class="mgd-sl-btn mgd-sl-next" aria-label="다음 사진"></button></div>
+          <p class="mgd-credit">출처: 힐링파크 쑥섬쑥섬</p>
+          <div class="mgd-card-body">
+            <div class="mgd-card-hd">
+              <h3 class="mgd-h3"><span class="mgd-num">01</span><a class="mgd-h3-link" href="https://map.naver.com/p/search/%EA%B3%A0%ED%9D%A5%20%ED%9E%90%EB%A7%81%ED%8C%8C%ED%81%AC%20%EC%91%A5%EC%84%AC%EC%91%A5%EC%84%AC" target="_blank" rel="noopener" aria-label="고흥 힐링파크 쑥섬쑥섬 네이버 지도(새 창)">고흥 힐링파크 쑥섬쑥섬</a></h3>
+              <p class="mgd-posts"><a class="mgd-home" href="https://www.ssookseom.com/" target="_blank" rel="noopener" aria-label="고흥 힐링파크 쑥섬쑥섬 누리집 바로가기(새 창)">누리집<span class="mgd-home-arw" aria-hidden="true">↗</span></a></p>
+            </div>
+            <p class="mgd-desc">배를 타고 3분이면 닿는 섬 속 해상정원으로, 꽃정원·달정원·태양정원·수국정원을 품고 있으며 고양이가 많아 ‘고양이 천국’으로도 불리는 곳.</p>
+            <ul class="mgd-info">
+              <li><span class="mgd-lb mgd-lb--loc">위치</span><span class="mgd-val">고흥군 봉래면 애도길 41</span></li>
+              <li><span class="mgd-lb mgd-lb--time">운영</span><span class="mgd-val">월~일 7:30~17:00</span></li>
+              <li><span class="mgd-lb mgd-lb--fee">입장료</span><span class="mgd-val">쑥섬 탐방비 6천원 <small class="mgd-sm">(쑥섬호 왕복 선비 2천원)</small></span></li>
+            </ul>
+          </div>
+        </article>
+        <article class="mgd-card mgd-rise">
+          <div class="mgd-fig mgd-fig--slide"><div class="mgd-slides"><img src="img/보성 성림정원.webp" alt="" loading="lazy" decoding="async"><img src="img/보성 성림정원2.webp" alt="" loading="lazy" decoding="async"></div></div>
+          <div class="mgd-sl-nav"><button type="button" class="mgd-sl-btn mgd-sl-prev" aria-label="이전 사진"></button><button type="button" class="mgd-sl-btn mgd-sl-next" aria-label="다음 사진"></button></div>
+          <p class="mgd-credit">출처: 보성군 블로그</p>
+          <div class="mgd-card-body">
+            <div class="mgd-card-hd">
+              <h3 class="mgd-h3"><span class="mgd-num">02</span><a class="mgd-h3-link" href="https://map.naver.com/p/search/%EB%B3%B4%EC%84%B1%20%EC%84%B1%EB%A6%BC%EC%A0%95%EC%9B%90" target="_blank" rel="noopener" aria-label="보성 성림정원 네이버 지도(새 창)">보성 성림정원</a></h3>
+            </div>
+            <p class="mgd-desc">안개나무원·수국원·치유원·희망의 정원에 넓은 잔디마당까지 더해져 숲정원의 싱그러움이 가득.</p>
+            <ul class="mgd-info">
+              <li><span class="mgd-lb mgd-lb--loc">위치</span><span class="mgd-val">보성군 겸백면 수남리 <span class="mgd-nw">1-6</span></span></li>
+              <li><span class="mgd-lb mgd-lb--time">운영</span><span class="mgd-val">8:00~18:00</span></li>
+              <li><span class="mgd-lb mgd-lb--fee">입장료</span><span class="mgd-val mgd-val--tight">성인 7천원, 청소년 6천원, 유아 5천원</span></li>
+            </ul>
+          </div>
+        </article>
+        <article class="mgd-card mgd-rise">
+          <div class="mgd-fig"><img src="img/보성 꿈꾸는 숲 선유원.webp" alt="" loading="lazy" decoding="async"></div>
+          <p class="mgd-credit">출처: 정원누리</p>
+          <div class="mgd-card-body">
+            <div class="mgd-card-hd">
+              <h3 class="mgd-h3"><span class="mgd-num">03</span><a class="mgd-h3-link" href="https://map.naver.com/p/search/%EB%B3%B4%EC%84%B1%20%EA%BF%88%EA%BE%B8%EB%8A%94%20%EC%88%B2%20%EC%84%A0%EC%9C%A0%EC%9B%90" target="_blank" rel="noopener" aria-label="보성 꿈꾸는 숲 선유원 네이버 지도(새 창)">보성 꿈꾸는 숲 선유원</a></h3>
+            </div>
+            <p class="mgd-desc">30년 이상 된 편백나무가 주종을 이루며, 인위적 손길을 최소화하고 자연 그대로의 모습을 살린 편안한 숲속 쉼터.</p>
+            <ul class="mgd-info">
+              <li><span class="mgd-lb mgd-lb--loc">위치</span><span class="mgd-val">보성군 보성읍 녹차로 <span class="mgd-nw">1047-135</span></span></li>
+              <li><span class="mgd-lb mgd-lb--time">운영</span><span class="mgd-val">10:00~14:00</span></li>
+            </ul>
+          </div>
+        </article>
+        <article class="mgd-card mgd-rise">
+          <div class="mgd-fig mgd-fig--slide"><div class="mgd-slides"><img src="img/장흥 하늘빛 수목정원.webp" alt="" loading="lazy" decoding="async"><img src="img/장흥 하늘빛 수목정원2.webp" alt="" loading="lazy" decoding="async"></div></div>
+          <div class="mgd-sl-nav"><button type="button" class="mgd-sl-btn mgd-sl-prev" aria-label="이전 사진"></button><button type="button" class="mgd-sl-btn mgd-sl-next" aria-label="다음 사진"></button></div>
+          <p class="mgd-credit">출처: 하늘빛 수목정원</p>
+          <div class="mgd-card-body">
+            <div class="mgd-card-hd">
+              <h3 class="mgd-h3"><span class="mgd-num">04</span><a class="mgd-h3-link" href="https://map.naver.com/p/search/%EC%9E%A5%ED%9D%A5%20%ED%95%98%EB%8A%98%EB%B9%9B%20%EC%88%98%EB%AA%A9%EC%A0%95%EC%9B%90" target="_blank" rel="noopener" aria-label="장흥 하늘빛 수목정원 네이버 지도(새 창)">장흥 하늘빛 수목정원</a></h3>
+              <p class="mgd-posts"><a class="mgd-home" href="https://xn--wh1b06mc5cnzev8guny.com/" target="_blank" rel="noopener" aria-label="장흥 하늘빛 수목정원 누리집 바로가기(새 창)">누리집<span class="mgd-home-arw" aria-hidden="true">↗</span></a></p>
+            </div>
+            <p class="mgd-desc">300여 종의 명품 조경수와 500여 종의 지피식물 및 야생화, 치유의 숲, 편백수가 어우러진 힐링 정원.</p>
+            <ul class="mgd-info">
+              <li><span class="mgd-lb mgd-lb--loc">위치</span><span class="mgd-val">장흥군 용산면 장흥대로 2746</span></li>
+              <li><span class="mgd-lb mgd-lb--time">운영</span><span class="mgd-val">월~일 9:00~18:00</span></li>
+              <li><span class="mgd-lb mgd-lb--fee">입장료</span><span class="mgd-val mgd-val--tight">성인 6천원, 청소년 4천원, 유치원생 3천원</span></li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 테마 5 -->
+  <section class="mgd-sec mgd-sec--cream mgd-acc--cobalt" data-sec="t5">
+    <div class="mgd-sec-in">
+      <div class="mgd-head mgd-rise">
+        <div class="mgd-search"><h2 class="mgd-h2">특별한 테마를 가진 정원</h2><span class="mgd-lens" aria-hidden="true"></span></div>
+      </div>
+      <div class="mgd-cards">
+        <article class="mgd-card mgd-rise">
+          <div class="mgd-fig mgd-fig--slide"><div class="mgd-slides"><img src="img/담양 죽화경.webp" alt="" loading="lazy" decoding="async"><img src="img/담양 죽화경2.webp" alt="" loading="lazy" decoding="async"></div></div>
+          <div class="mgd-sl-nav"><button type="button" class="mgd-sl-btn mgd-sl-prev" aria-label="이전 사진"></button><button type="button" class="mgd-sl-btn mgd-sl-next" aria-label="다음 사진"></button></div>
+          <p class="mgd-credit">출처: 죽화경, 담양군블로그</p>
+          <div class="mgd-card-body">
+            <div class="mgd-card-hd">
+              <h3 class="mgd-h3"><span class="mgd-num">01</span><a class="mgd-h3-link" href="https://map.naver.com/p/search/%EB%8B%B4%EC%96%91%20%EC%A3%BD%ED%99%94%EA%B2%BD" target="_blank" rel="noopener" aria-label="담양 죽화경 네이버 지도(새 창)">담양 죽화경</a></h3>
+              <p class="mgd-posts"><a class="mgd-home" href="http://www.bambooflower.co.kr/" target="_blank" rel="noopener" aria-label="담양 죽화경 누리집 바로가기(새 창)">누리집<span class="mgd-home-arw" aria-hidden="true">↗</span></a></p>
+            </div>
+            <p class="mgd-desc">동양의 대나무와 서양의 장미로 동서양, 전통과 현대의 조화를 그려내 꽃과 나무가 어우러진 남도 풍경을 만날 수 있는 곳.</p>
+            <ul class="mgd-info">
+              <li><span class="mgd-lb mgd-lb--loc">위치</span><span class="mgd-val">담양군 봉산면 유산길 <span class="mgd-nw">73-16</span></span></li>
+              <li><span class="mgd-lb mgd-lb--time">운영</span><span class="mgd-val">9:30~18:00 · <b class="mgd-em">매주 월 휴무</b></span></li>
+              <li><span class="mgd-lb mgd-lb--fee">입장료</span><span class="mgd-val mgd-val--tight">성인 5천원, 학생·경로 4천원, 유아 3천원</span></li>
+            </ul>
+          </div>
+        </article>
+        <article class="mgd-card mgd-rise">
+          <div class="mgd-fig mgd-fig--slide"><div class="mgd-slides"><img src="img/화순 무등산 바우정원.webp" alt="" loading="lazy" decoding="async"><img src="img/화순 무등산 바우정원2.webp" alt="" loading="lazy" decoding="async"></div></div>
+          <div class="mgd-sl-nav"><button type="button" class="mgd-sl-btn mgd-sl-prev" aria-label="이전 사진"></button><button type="button" class="mgd-sl-btn mgd-sl-next" aria-label="다음 사진"></button></div>
+          <p class="mgd-credit">출처: 무등산 바우정원</p>
+          <div class="mgd-card-body">
+            <div class="mgd-card-hd">
+              <h3 class="mgd-h3"><span class="mgd-num">02</span><a class="mgd-h3-link" href="https://map.naver.com/p/search/%ED%99%94%EC%88%9C%20%EB%AC%B4%EB%93%B1%EC%82%B0%20%EB%B0%94%EC%9A%B0%EC%A0%95%EC%9B%90" target="_blank" rel="noopener" aria-label="화순 무등산 바우정원 네이버 지도(새 창)">화순 무등산 바우정원</a></h3>
+              <p class="mgd-posts"><a class="mgd-home" href="https://blog.naver.com/asp5300" target="_blank" rel="noopener" aria-label="화순 무등산 바우정원 누리집 바로가기(새 창)">누리집<span class="mgd-home-arw" aria-hidden="true">↗</span></a></p>
+            </div>
+            <p class="mgd-desc">무등산 자연휴양림 근처, 바위의 전라도 방언인 ‘바우’라는 이름처럼 바위를 활용해 꾸민 테마별 야생 정원. 자연이 살아 숨 쉬는 풍경이 매력.</p>
+            <ul class="mgd-info">
+              <li><span class="mgd-lb mgd-lb--loc">위치</span><span class="mgd-val">화순군 화순읍 안양산로 <span class="mgd-nw">616-2</span></span></li>
+              <li><span class="mgd-lb mgd-lb--time">운영</span><span class="mgd-val">월~일 10:00~17:00</span></li>
+              <li><span class="mgd-lb mgd-lb--fee">입장료</span><span class="mgd-val">일반 1만 2천원, 학생 1만원</span></li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 푸터 -->
+  <footer class="mgd-sec mgd-sec--navy">
+    <div class="mgd-notice mgd-notice--foot">
+      <span class="mgd-chk" aria-hidden="true">!</span>
+      <p>민간정원은 개인이 운영하는 곳이라 운영시간, 입장료, 휴무일 등이 언제든지 바뀔 수 있어요. 방문 전 각 정원의 누리집이나 공식 블로그에서 꼭 확인하고 방문하세요.</p>
+    </div>
+    <ul class="mgd-tags">
+      <li>#아름다운민간정원</li>
+      <li>#민간정원30선</li>
+      <li>#전남광주통합특별시</li>
+      <li>#전남광주정원</li>
+      <li>#가을나들이</li>
+      <li>#정원여행</li>
+      <li>#예쁜정원콘테스트</li>
+      <li>#산림청</li>
+      <li>#한국수목원정원관리원</li>
+      <li>#남도정원</li>
+    </ul>
+  </footer>
+
+</div>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"ItemList",
+  "name":"2026 대한민국 아름다운 민간정원 30선 중 전남광주통합특별시 민간정원 15곳",
+  "numberOfItems":15,
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"item":{"@type":"TouristAttraction","name":"구례 반야원","address":"구례군 광의면 한국통신로 83-22"}},
+    {"@type":"ListItem","position":2,"item":{"@type":"TouristAttraction","name":"구례 쌍산재","address":"구례군 마산면 장수길 3-2","url":"https://www.ssangsanje.com/"}},
+    {"@type":"ListItem","position":3,"item":{"@type":"TouristAttraction","name":"보성 갈멜정원","address":"보성군 웅치면 일림로 530-26"}},
+    {"@type":"ListItem","position":4,"item":{"@type":"TouristAttraction","name":"화순 솔매음정원","address":"화순군 이양면 개기로 1105"}},
+    {"@type":"ListItem","position":5,"item":{"@type":"TouristAttraction","name":"여수 꿈꾸는 정원","address":"여수시 소호12길 15-8"}},
+    {"@type":"ListItem","position":6,"item":{"@type":"TouristAttraction","name":"함평천지 몽베르","address":"함평군 학교면 둔기길 59-26"}},
+    {"@type":"ListItem","position":7,"item":{"@type":"TouristAttraction","name":"순천 화가의 정원산책","address":"순천시 별량면 장학길 34"}},
+    {"@type":"ListItem","position":8,"item":{"@type":"TouristAttraction","name":"고흥 하담정","address":"고흥군 영남면 팔영로 1081"}},
+    {"@type":"ListItem","position":9,"item":{"@type":"TouristAttraction","name":"해남 산이정원","address":"해남군 산이면 구성리 664","url":"https://sanigarden.com/"}},
+    {"@type":"ListItem","position":10,"item":{"@type":"TouristAttraction","name":"고흥 힐링파크 쑥섬쑥섬","address":"고흥군 봉래면 애도길 41","url":"https://www.ssookseom.com/"}},
+    {"@type":"ListItem","position":11,"item":{"@type":"TouristAttraction","name":"보성 성림정원","address":"보성군 겸백면 수남리 1-6"}},
+    {"@type":"ListItem","position":12,"item":{"@type":"TouristAttraction","name":"보성 꿈꾸는 숲 선유원","address":"보성군 보성읍 녹차로 1047-135"}},
+    {"@type":"ListItem","position":13,"item":{"@type":"TouristAttraction","name":"장흥 하늘빛 수목정원","address":"장흥군 용산면 장흥대로 2746","url":"https://xn--wh1b06mc5cnzev8guny.com/"}},
+    {"@type":"ListItem","position":14,"item":{"@type":"TouristAttraction","name":"담양 죽화경","address":"담양군 봉산면 유산길 73-16","url":"http://www.bambooflower.co.kr/"}},
+    {"@type":"ListItem","position":15,"item":{"@type":"TouristAttraction","name":"화순 무등산 바우정원","address":"화순군 화순읍 안양산로 616-2","url":"https://blog.naver.com/asp5300"}}
+  ]
+}
+</script>
+
+<script>
+/* 정보박스 라벨 균등 배분 (타이포그래피-기준 8장 A안) */
+(function () {
+  var root = document.currentScript && document.currentScript.parentNode
+    ? document.currentScript.parentNode
+    : document.querySelector('.contents_div');
+  if (!root) return;
+  var wrap = root.querySelector('.mgd-wrap');
+  if (!wrap) return;
+
+  function readLS(el) {
+    var v = window.getComputedStyle(el).letterSpacing;
+    return v === 'normal' ? 0 : (parseFloat(v) || 0);
+  }
+
+  function balanceLabels() {
+    var boxes = wrap.querySelectorAll('.mgd-info');
+    for (var b = 0; b < boxes.length; b++) {
+      var lbs = boxes[b].querySelectorAll('.mgd-lb');
+      if (lbs.length < 2) continue;
+
+      var items = [], i, lb, sp, target = 0;
+
+      for (i = 0; i < lbs.length; i++) {
+        lb = lbs[i];
+        sp = lb.firstElementChild;
+        if (!sp || !sp.hasAttribute('data-fit')) {
+          sp = document.createElement('span');
+          sp.setAttribute('data-fit', '');
+          sp.style.display = 'inline-block';
+          sp.textContent = (lb.textContent || '').replace(/^\s+|\s+$/g, '');
+          lb.textContent = '';
+          lb.appendChild(sp);
+        }
+        sp.style.letterSpacing = '';
+        sp.style.marginRight = '';
+        items.push({ sp: sp, len: sp.textContent.length, ls: readLS(lb) });
+      }
+
+      for (i = 0; i < items.length; i++) {
+        items[i].run = items[i].sp.getBoundingClientRect().width - items[i].ls;
+        if (items[i].run > target) target = items[i].run;
+      }
+
+      for (i = 0; i < items.length; i++) {
+        if (items[i].len < 2) continue;
+        var ls = items[i].ls + (target - items[i].run) / (items[i].len - 1);
+        items[i].sp.style.letterSpacing = ls.toFixed(3) + 'px';
+        items[i].sp.style.marginRight = (-ls).toFixed(3) + 'px';
+      }
+    }
+  }
+
+  balanceLabels();
+  window.addEventListener('load', balanceLabels);
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(balanceLabels)['catch'](function () {});
+  }
+  var rt;
+  window.addEventListener('resize', function () {
+    clearTimeout(rt);
+    rt = setTimeout(balanceLabels, 150);
+  });
+})();
+
+/* 사진 슬라이드: 좌우 버튼 + 가로 스와이프 — 끝없이 같은 방향으로 순환 */
+(function () {
+  var root = document.querySelector('.contents_div');
+  if (!root) return;
+  var cards = root.querySelectorAll('.mgd-card');
+  for (var c = 0; c < cards.length; c++) (function (card) {
+    var track = card.querySelector('.mgd-fig--slide .mgd-slides');
+    if (!track) return;
+    var n = track.children.length;
+    if (n < 2) return;
+    // 맨 앞·뒤에 복제본을 붙여 이어지는 것처럼 보이게
+    var first = track.children[0].cloneNode(true), last = track.children[n - 1].cloneNode(true);
+    first.setAttribute('aria-hidden', 'true'); last.setAttribute('aria-hidden', 'true');
+    track.appendChild(first); track.insertBefore(last, track.children[0]);
+    var i = 1, busy = false;
+    var prev = card.querySelector('.mgd-sl-prev'), next = card.querySelector('.mgd-sl-next');
+    if (prev) prev.disabled = false;
+    if (next) next.disabled = false;
+    function set(k, anim) {
+      track.style.transition = anim ? '' : 'none';
+      track.style.transform = 'translateX(' + (-100 * k) + '%)';
+      if (!anim) { void track.offsetWidth; }
+    }
+    function go(d) {
+      if (busy) return; busy = true;
+      i += d; set(i, true);
+    }
+    track.addEventListener('transitionend', function () {
+      if (i === n + 1) { i = 1; set(i, false); }
+      if (i === 0) { i = n; set(i, false); }
+      busy = false;
+    });
+    // 동작 줄이기 설정 등으로 transition이 없을 때도 순환
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce) {
+      go = function (d) { i += d; if (i > n) i = 1; if (i < 1) i = n; set(i, false); };
+    }
+    if (prev) prev.addEventListener('click', function () { go(-1); });
+    if (next) next.addEventListener('click', function () { go(1); });
+    var sx = 0, sy = 0, on = false;
+    card.addEventListener('touchstart', function (e) {
+      if (e.target.closest('a,button')) return;
+      on = true; sx = e.touches[0].clientX; sy = e.touches[0].clientY;
+    }, { passive: true });
+    card.addEventListener('touchend', function (e) {
+      if (!on) return; on = false;
+      var dx = e.changedTouches[0].clientX - sx, dy = e.changedTouches[0].clientY - sy;
+      if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy) * 1.5) go(dx < 0 ? 1 : -1);
+    }, { passive: true });
+    set(i, false);
+  })(cards[c]);
+})();
+
+/* 입장료 한 줄 맞춤: 여유 있으면 그대로, 넘칠 때만 자간·크기를 조금씩 줄이고(최소 90%), 그래도 넘치면 줄바꿈 */
+(function () {
+  var root = document.querySelector('.contents_div');
+  if (!root) return;
+  var els = root.querySelectorAll('.mgd-val--tight');
+  if (!els.length) return;
+  var steps = [[1, 0], [1, -0.02], [0.97, -0.03], [0.94, -0.04], [0.92, -0.05], [0.9, -0.05]];
+  function fit() {
+    for (var i = 0; i < els.length; i++) {
+      var el = els[i], ok = false;
+      el.style.whiteSpace = 'nowrap';
+      for (var k = 0; k < steps.length; k++) {
+        el.style.fontSize = steps[k][0] === 1 ? '' : steps[k][0] + 'em';
+        el.style.letterSpacing = steps[k][1] ? steps[k][1] + 'em' : '';
+        if (el.scrollWidth <= el.clientWidth + 1) { ok = true; break; }
+      }
+      if (!ok) { el.style.whiteSpace = ''; el.style.fontSize = ''; el.style.letterSpacing = ''; }
+    }
+  }
+  fit();
+  window.addEventListener('load', fit);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit)['catch'](function () {});
+  var t; window.addEventListener('resize', function () { clearTimeout(t); t = setTimeout(fit, 120); });
+})();
+
+/* 히어로: 배경 1→5 디졸브, 화면 30% 진입 + 이미지 준비 후 시작 */
+(function(){
+  var root = document.querySelector('.contents_div');
+  if(!root) return;
+  var hero = root.querySelector('.gdh-hero');
+  if(!hero) return;
+
+  var photos = hero.querySelectorAll('.gdh-photo');
+  var bars = hero.querySelectorAll('.gdh-bar');
+  var FADE = 1600;                 /* 디졸브 시간 (CSS gdhFade와 동일) */
+  var HOLD = 2650;                 /* 장면 전환 간격 → 온전히 보이는 시간 1.05초 */
+  var FIRST = HOLD - FADE + 500;   /* 첫 이미지만 0.5초 더: 1.55초 */
+  var idx = 0, started = false, ready = false, inView = false;
+
+  function next(){
+    hero.classList.add('gdh-hero--fx');
+    for(var i = 0; i < photos.length; i++) photos[i].classList.remove('is-prev');
+    photos[idx].classList.remove('is-on');
+    photos[idx].classList.add('is-prev');
+    bars[idx].classList.remove('is-on');
+    idx = (idx + 1) % photos.length;
+    photos[idx].classList.add('is-on');
+    bars[idx].classList.add('is-on');
+  }
+
+  function tryStart(){
+    if(started || !ready || !inView) return;
+    started = true;
+    setTimeout(function(){
+      next();
+      setInterval(next, HOLD);
+    }, FIRST);
+  }
+
+  var imgs = hero.querySelectorAll('.gdh-photo img');
+  var jobs = [];
+  for(var i = 0; i < imgs.length; i++){
+    jobs.push(imgs[i].decode ? imgs[i].decode()['catch'](function(){}) : null);
+  }
+  function onReady(){ ready = true; tryStart(); }
+  if(window.Promise){ Promise.all(jobs).then(onReady); } else { onReady(); }
+
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          inView = true; tryStart();
+          io.disconnect();
+        }
+      });
+    }, { threshold:0.3 });
+    io.observe(hero);
+  }else{
+    inView = true; tryStart();
+  }
+})();
+
+/* 스크롤 진입 시 등장 애니메이션 */
+(function () {
+  var root = document.querySelector('.contents_div');
+  if (!root) return;
+  var wrap = root.querySelector('.mgd-wrap');
+  if (!wrap || !window.IntersectionObserver) return;
+  var els = wrap.querySelectorAll('.mgd-rise');
+  if (!els.length) return;
+  wrap.classList.add('is-anim');
+  var io = new IntersectionObserver(function (entries) {
+    for (var i = 0; i < entries.length; i++) {
+      if (entries[i].isIntersecting) {
+        entries[i].target.classList.add('is-in');
+        io.unobserve(entries[i].target);
+      }
+    }
+  }, { threshold: 0.12 });
+  for (var j = 0; j < els.length; j++) io.observe(els[j]);
+})();
+
+</script>
+</div>
