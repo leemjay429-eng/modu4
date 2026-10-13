@@ -569,6 +569,11 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   .contents_div .mgd-card--wide .mgd-fig{ position:absolute; inset:0; z-index:0; flex:none; min-height:0; }
   .contents_div .mgd-card .mgd-fig::before,
   .contents_div .mgd-card--wide .mgd-fig::before{ padding-top:0; min-height:0; }
+  /* 하단 음영: 상단과 같은 색, 높이는 정보박스 윗선(최소 66px)을 넘지 않게 */
+  .contents_div .mgd-card .mgd-fig::before{
+    content:''; position:absolute; left:0; right:0; bottom:0; height:64px; z-index:1; pointer-events:none;
+    background:linear-gradient(0deg,rgba(10,20,45,.25) 0%,rgba(10,20,45,.12) 45%,rgba(10,20,45,0) 100%); /* 아주 연하게 */
+  }
   .contents_div .mgd-card .mgd-fig::after{
     content:''; position:absolute; left:0; right:0; top:0; height:46%; z-index:1; pointer-events:none;
     background:linear-gradient(180deg,rgba(10,20,45,.55) 0%,rgba(10,20,45,.3) 45%,rgba(10,20,45,0) 100%);
@@ -577,7 +582,12 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   .contents_div .mgd-card .mgd-sl-nav{ width:100%; }
   .contents_div .mgd-sl-btn{ width:31.5px; height:31.5px; background-size:20.16px; }
   .contents_div .mgd-credit{ top:auto; bottom:7px; right:12px; font-size:10px; } /* 출처: 카드 하단 오른쪽 */
-  .contents_div .mgd-card .mgd-credit{ left:auto; right:12px; transform:none; padding:0; background:none; color:rgba(255,255,255,.72); text-shadow:0 0 3px rgba(0,0,0,.35), 0 0 8px rgba(0,0,0,.22); } /* 모바일은 배경 없이 그대로 */
+  .contents_div .mgd-card .mgd-credit{ left:auto; right:12px; transform:none; padding:0; background:none; color:rgba(255,255,255,.72); text-shadow:0 0 2px rgba(0,0,0,.4); }
+  /* 모바일 출처: 경계가 흐린 반투명 검은 캡슐을 글자 뒤에 */
+  .contents_div .mgd-card .mgd-credit::before{
+    content:''; position:absolute; z-index:-1; inset:3.5px 0; /* 위아래는 글자보다 안쪽으로 줄이고, 흐림으로 좌우 약 3px만 번지게 */
+    border-radius:999px; background:rgba(0,0,0,.65); filter:blur(4px);
+  }
   .contents_div .mgd-card-body{ position:relative; z-index:1; padding:21px var(--card-ph) 28px; } /* 하단 28px: 정보박스를 올려 아래에 출처 자리 확보 */
   .contents_div .mgd-h3{ color:#fff; text-shadow:0 1px 5px rgba(0,0,0,.4); }
   .contents_div .mgd-num{
