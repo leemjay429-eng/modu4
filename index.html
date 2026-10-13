@@ -385,7 +385,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   border:1px solid rgba(29,41,68,.07); border-radius:22px;
   box-shadow:0 6px 20px rgba(23,61,42,.07);
 }
-.contents_div .mgd-card-body{ flex:1; display:flex; flex-direction:column; justify-content:center; padding:var(--card-pv) var(--card-ph); } /* 웹: 사진 높이가 더 길면 내용을 위아래 가운데로 */
+.contents_div .mgd-card-body{ flex:1; min-width:0; display:flex; flex-direction:column; justify-content:center; padding:var(--card-pv) var(--card-ph); } /* 웹: 사진 높이가 더 길면 내용을 위아래 가운데로 */
 .contents_div .mgd-h3{
   display:flex; align-items:center; gap:10px;
   font-size:var(--fs-h3); font-weight:700; line-height:1.45; letter-spacing:-0.01em; color:var(--c-ink);
@@ -505,7 +505,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 }
 
 /* ===== 반응형 ===== */
-@media (max-width:600px){
+@media (max-width:650px){
   .contents_div .mgd-sec[data-sec="t2"] .mgd-card,
   .contents_div .mgd-sec[data-sec="t4"] .mgd-card{ flex-direction:column; } /* 모바일은 반전 없음 */
   .contents_div .mgd-sec[data-sec="t2"] .mgd-card .mgd-credit,
@@ -615,12 +615,23 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   .contents_div .mgd-cta-wrap{ margin-top:0; padding-top:8px; }
   .contents_div .mgd-tags{ gap:2px 10px; }
 }
+@media (min-width:421px) and (max-width:650px){
+  /* 넓은 모바일: 정원 섹션 위아래 여백 추가 (420px 이하는 그대로) */
+  .contents_div .mgd-sec[data-sec^="t"]{ padding-top:56px; padding-bottom:36px; }
+  .contents_div .mgd-sec[data-sec^="t"] .mgd-cards{ margin-top:30px; }
+  /* 카드 안 위아래 여백: 텍스트가 카드 위아래 끝에 몰리지 않게 */
+  .contents_div .mgd-card-body{ padding-top:40px; padding-bottom:46px; }
+  .contents_div .mgd-card .mgd-credit{ bottom:16px; }
+}
 @media (max-width:500px){
   .contents_div .mgd-br--m500{ display:inline; }
 }
 @media (max-width:480px){
   .contents_div .mgd-sec{ padding-left:15px; padding-right:15px; }
   .contents_div .mgd-cards{ margin-left:-15px; margin-right:-15px; }
+}
+@media (max-width:420px){
+  .contents_div .mgd-info{ position:relative; top:3px; } /* 정보박스 3px 아래로 */
 }
 @media (max-width:402px){
   /* 글자 전체: 402px까지 모바일 크기 유지 → 350px까지 본문 14.5→13.5px와 같은 비율로 살짝씩 축소 → 그 아래는 고정 */
@@ -670,7 +681,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   .contents_div .mgd-search{ gap:8px; padding-left:21px; padding-right:11px; }
 }
 /* 히어로 바: 화면이 넓어도 들어간 자리가 600px 이하면 모바일 크기 */
-@container gdh (max-width:600px){
+@container gdh (max-width:650px){
   .contents_div .gdh-bars{ grid-template-columns:repeat(5, 22px); gap:5px; }
   .contents_div .gdh-bar{ height:2.5px; }
 }
