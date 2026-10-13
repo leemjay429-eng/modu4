@@ -52,11 +52,11 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   --c-cobalt-bg:#e2f0e6;
   --acc:var(--c-cobalt); --acc-bg:var(--c-cobalt-bg); --acc-dot:#8fcf9f;
 
-  --fs-h1:40px; --fs-sub:20px; --fs-h2:28px; --fs-h3:24px; --fs-theme:25px;
+  --fs-h1:40px; --fs-sub:30px; --fs-h2:28px; --fs-h3:23px; --fs-theme:25px;
   --fs-body:17px; --fs-desc:16px; --fs-lead:16px; --fs-info:16px;
   --fs-kicker:15px; --fs-num:14px; --fs-tag:12.5px; --fs-lb:13px; --fs-cta:16px; --fs-arw:17px; --fs-chk:11px;
   --fs-stat:34px; --fs-ava:17px;
-  --fs-card:16.5px; /* 카드 설명·정보 글자 */
+  --fs-card:15.5px; /* 카드 설명·정보 글자 */
   --kick:32px; --cap:24px; --post:28px; --lens:40px; --ava:38px;
   --card-pv:26px; --card-ph:26px;
   --lens-img:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2.6' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='M16.5 16.5 21 21'/%3E%3C/svg%3E");
@@ -213,8 +213,18 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   transition:opacity .2s, background-color .2s;
 }
 .contents_div .mgd-sl-prev{ transform:scaleX(-1); }
-.contents_div .mgd-card .mgd-sl-nav{ width:36%; height:100%; aspect-ratio:auto; } /* PC 가로형 카드: 사진 영역에만 버튼 */
+.contents_div .mgd-card .mgd-sl-nav{ width:calc(36% + 20px); height:100%; aspect-ratio:auto; } /* PC 가로형 카드: 사진 영역에만 버튼 */
 .contents_div .mgd-sl-btn:disabled{ opacity:.3; cursor:default; }
+/* 슬라이드 페이지 표시: 웹에서 사진 영역 하단 가운데 */
+.contents_div .mgd-sl-dots{
+  position:absolute; left:0; bottom:12px; z-index:3; width:calc(36% + 20px);
+  display:flex; justify-content:center; align-items:center; gap:6px; pointer-events:none;
+}
+.contents_div .mgd-sl-dot{
+  width:7px; height:7px; border-radius:999px; background:rgba(255,255,255,.55);
+  box-shadow:0 0 4px rgba(0,0,0,.3); transition:width .3s ease, background-color .3s ease;
+}
+.contents_div .mgd-sl-dot.is-on{ width:18px; background:#fff; }
 @media (hover:hover) and (pointer:fine){
   .contents_div .mgd-sl-btn:not(:disabled):hover{ background-color:rgba(0,0,0,.5); }
 }
@@ -267,7 +277,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 }
 .contents_div .mgd-intro-sub{
   margin-top:14px; font-family:'Paperozi','Pretendard',sans-serif;
-  font-size:var(--fs-sub); font-weight:600; line-height:1.4; letter-spacing:-0.01em; color:var(--c-pink-l);
+  font-size:var(--fs-sub); font-weight:800; line-height:1.4; letter-spacing:-0.01em; color:var(--c-pink-l);
 }
 
 /* 채팅창 */
@@ -301,7 +311,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 .contents_div .mgd-stats li + li{ border-left:1px solid rgba(255,255,255,.22); }
 .contents_div .mgd-stats b{
   display:block; font-family:'Paperozi','Pretendard',sans-serif; font-weight:800;
-  font-size:var(--fs-stat); line-height:1.2; color:var(--c-ivory); letter-spacing:-0.01em;
+  font-size:var(--fs-stat); line-height:1.2; color:var(--c-ivory); letter-spacing:-0.01em; font-variant-numeric:tabular-nums;
 }
 .contents_div .mgd-stats li:last-child b{ color:var(--c-pink-l); }
 .contents_div .mgd-stats b span{ font-size:.55em; font-weight:700; margin-left:2px; }
@@ -347,7 +357,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 .contents_div .mgd-fact + .mgd-fact{ border-left:1px solid var(--c-line); }
 .contents_div .mgd-fact b{
   display:block; font-family:'Paperozi','Pretendard',sans-serif; font-weight:800;
-  font-size:calc(var(--fs-stat) - 2px); line-height:1.2; color:var(--c-cobalt); letter-spacing:-0.01em;
+  font-size:calc(var(--fs-stat) - 2px); line-height:1.2; color:var(--c-cobalt); letter-spacing:-0.01em; font-variant-numeric:tabular-nums;
 }
 .contents_div .mgd-fact:first-child b{ font-size:26px; }
 .contents_div .mgd-fact b span{ font-size:.55em; font-weight:700; margin-left:2px; }
@@ -375,7 +385,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   border:1px solid rgba(29,41,68,.07); border-radius:22px;
   box-shadow:0 6px 20px rgba(23,61,42,.07);
 }
-.contents_div .mgd-card-body{ flex:1; display:flex; flex-direction:column; padding:var(--card-pv) var(--card-ph); }
+.contents_div .mgd-card-body{ flex:1; display:flex; flex-direction:column; justify-content:center; padding:var(--card-pv) var(--card-ph); } /* 웹: 사진 높이가 더 길면 내용을 위아래 가운데로 */
 .contents_div .mgd-h3{
   display:flex; align-items:center; gap:10px;
   font-size:var(--fs-h3); font-weight:700; line-height:1.45; letter-spacing:-0.01em; color:var(--c-ink);
@@ -385,8 +395,9 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 }
 .contents_div .mgd-h3-link{ color:inherit; }
 .contents_div .mgd-posts{ order:-1; align-self:flex-end; display:flex; flex-wrap:wrap; align-items:center; gap:6px; margin:0 0 10px; }
-.contents_div .mgd-card-hd{ display:flex; flex-direction:column-reverse; }
-.contents_div .mgd-card-hd .mgd-posts{ order:0; align-self:flex-end; margin:0 0 10px; }
+.contents_div .mgd-card-hd{ display:flex; flex-direction:row; align-items:center; justify-content:space-between; gap:10px; } /* 정원명 · 누리집 한 줄 */
+.contents_div .mgd-card-hd .mgd-h3{ flex:1 1 auto; min-width:0; }
+.contents_div .mgd-card-hd .mgd-posts{ order:0; align-self:center; flex:0 0 auto; flex-wrap:nowrap; margin:0; }
 .contents_div .mgd-posts-lb{ margin-right:2px; font-size:var(--fs-lb); font-weight:600; line-height:1.4; color:var(--c-sub); }
 .contents_div .mgd-posts a{
   display:inline-flex; align-items:center; justify-content:center; width:var(--post); height:var(--post);
@@ -431,6 +442,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 /* 조건부 줄바꿈: <br> 대신 빈 span */
 .contents_div .mgd-br::before{ content:'\A'; white-space:pre; }
 .contents_div .mgd-br--mo{ display:none; }
+.contents_div .mgd-br--m500{ display:none; }
 /* .mgd-val--tight: 아래 스크립트가 한 줄에 안 들어갈 때만 글자를 조금씩 줄임(여유 있으면 다른 정보와 같은 크기) */
 .contents_div .mgd-sm{ font-size:.74em; letter-spacing:-0.04em; color:var(--c-sub); white-space:nowrap; }
 .contents_div .mgd-cta-wrap{ margin-top:auto; padding-top:18px; }
@@ -450,11 +462,11 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   text-shadow:0 0 3px rgba(0,0,0,.35), 0 0 8px rgba(0,0,0,.22);
   font-size:11px; font-weight:400; line-height:1.4; letter-spacing:-0.01em; white-space:nowrap; pointer-events:none;
 }
-.contents_div .mgd-card .mgd-credit{ right:auto; left:calc(36% - 10px); transform:translateX(-100%); }
+.contents_div .mgd-card .mgd-credit{ right:auto; left:calc(36% + 10px); transform:translateX(-100%); }
 
-/* PC: 모든 카드 가로 배치(사진 왼쪽 36% 세로형 · 내용 오른쪽) */
-.contents_div .mgd-card .mgd-fig{ flex:0 0 36%; }
-.contents_div .mgd-card .mgd-fig::before{ padding-top:130%; } /* 최소 세로형 1:1.3, 내용이 길면 더 길어짐 */
+/* PC: 모든 카드 가로 배치(사진 왼쪽 36%+20px · 내용 오른쪽) */
+.contents_div .mgd-card .mgd-fig{ flex:0 0 calc(36% + 20px); }
+.contents_div .mgd-card .mgd-fig::before{ padding-top:120%; } /* 최소 1:1.2, 내용이 길면 더 길어짐 */
 
 /* ===== 등장 애니메이션 (스크롤 진입 시) ===== */
 .contents_div .mgd-wrap.is-anim .mgd-rise{ opacity:0; transform:translateY(24px); transition:opacity .6s ease, transform .6s ease; }
@@ -485,11 +497,12 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 
 /* ===== 반응형 ===== */
 @media (max-width:600px){
+  .contents_div .mgd-sl-dots{ display:none; }
   .contents_div .mgd-br--mo{ display:inline; }
   .contents_div .gdh-bars{ grid-template-columns:repeat(5, 22px); gap:5px; }
   .contents_div .gdh-bar{ height:2.5px; }
   .contents_div .mgd-wrap{
-    --fs-h1:28px; --fs-sub:15px; --fs-h2:22px; --fs-h3:20px; --fs-theme:19.7px;
+    --fs-h1:28px; --fs-sub:22px; --fs-h2:22px; --fs-h3:20px; --fs-theme:19.7px;
     --fs-body:14px; --fs-desc:14px; --fs-lead:13.5px; --fs-info:14px;
     --fs-kicker:10px; --fs-num:10px; --fs-tag:11px; --fs-lb:10px; --fs-cta:14px; --fs-arw:15px; --fs-chk:10px;
     --fs-stat:24px; --fs-ava:14px;
@@ -579,6 +592,9 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   .contents_div .mgd-cta-wrap{ margin-top:0; padding-top:8px; }
   .contents_div .mgd-tags{ gap:2px 10px; }
 }
+@media (max-width:500px){
+  .contents_div .mgd-br--m500{ display:inline; }
+}
 @media (max-width:480px){
   .contents_div .mgd-sec{ padding-left:15px; padding-right:15px; }
   .contents_div .mgd-cards{ margin-left:-15px; margin-right:-15px; }
@@ -587,7 +603,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   /* 글자 전체: 402px까지 모바일 크기 유지 → 350px까지 본문 14.5→13.5px와 같은 비율로 살짝씩 축소 → 그 아래는 고정 */
   .contents_div .mgd-wrap{
     --fs-h1:clamp(26.069px, calc(13.072px + 3.714vw), 28px);
-    --fs-sub:clamp(13.966px, calc(7.003px + 1.989vw), 15px);
+    --fs-sub:clamp(16px, calc(-3.935px + 6.452vw), 22px); /* 402→340px: 22→18px, 한 줄 유지 */
     --fs-h2:clamp(20.483px, calc(10.271px + 2.918vw), 22px);
     --fs-theme:clamp(18.343px, calc(9.197px + 2.613vw), 19.7px); /* 375px = 19px */
     --fs-h3:clamp(18.621px, calc(9.337px + 2.653vw), 20px);
@@ -647,10 +663,10 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
       <h1 class="gdh-sr">주말에 카페 말고 정원 어때요? 대한민국이 반한 전남광주 13곳!</h1>
       <div class="gdh-photos">
         <figure class="gdh-photo is-on"><img src="img/히어로배경1.webp" alt="분홍 핑크뮬리 너머로 펼쳐진 초록 잔디 언덕" width="880" height="876" fetchpriority="high" loading="eager"></figure>
-        <figure class="gdh-photo"><img src="img/히어로배경2.webp" alt="대숲 사이로 보이는 한옥 정원" width="880" height="876" loading="eager"></figure>
-        <figure class="gdh-photo"><img src="img/히어로배경3.webp" alt="단풍으로 물든 정원과 잔디밭을 하늘에서 내려다본 모습" width="880" height="876" loading="eager"></figure>
-        <figure class="gdh-photo"><img src="img/히어로배경4.webp" alt="팜파스 그라스 오솔길 너머로 보이는 바다와 섬" width="880" height="876" loading="eager"></figure>
-        <figure class="gdh-photo"><img src="img/히어로배경5.webp" alt="나무 그늘 아래 잔디 정원과 하얀 집" width="880" height="876" loading="eager"></figure>
+        <figure class="gdh-photo"><img src="img/히어로배경2.webp" alt="대숲 사이로 보이는 한옥 정원" width="880" height="876" fetchpriority="low" loading="eager"></figure>
+        <figure class="gdh-photo"><img src="img/히어로배경3.webp" alt="단풍으로 물든 정원과 잔디밭을 하늘에서 내려다본 모습" width="880" height="876" fetchpriority="low" loading="eager"></figure>
+        <figure class="gdh-photo"><img src="img/히어로배경4.webp" alt="팜파스 그라스 오솔길 너머로 보이는 바다와 섬" width="880" height="876" fetchpriority="low" loading="eager"></figure>
+        <figure class="gdh-photo"><img src="img/히어로배경5.webp" alt="나무 그늘 아래 잔디 정원과 하얀 집" width="880" height="876" fetchpriority="low" loading="eager"></figure>
       </div>
       <div class="gdh-title" aria-hidden="true"><img src="img/히어로텍스트.webp" alt="" width="880" height="876" fetchpriority="high" loading="eager"></div>
       <ul class="gdh-bars" aria-hidden="true">
@@ -667,7 +683,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   <section class="mgd-sec mgd-intro" data-sec="intro">
     <div class="mgd-sec-in">
       <span class="mgd-kicker">대한민국 아름다운 민간정원</span>
-      <p class="mgd-intro-sub">무려 절반이 전남광주통합특별시입니다</p>
+      <p class="mgd-intro-sub">무려 절반이<span class="mgd-br mgd-br--m500"></span> 전남광주통합특별시입니다</p>
       <ul class="mgd-stats">
         <li><b>184<span>개</span></b><em>전국 민간정원</em></li>
         <li><b>30<span>선</span></b><em>아름다운 민간정원</em></li>
@@ -1199,9 +1215,16 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
     track.appendChild(first); track.insertBefore(last, track.children[0]);
     var i = 1, busy = false;
     var prev = card.querySelector('.mgd-sl-prev'), next = card.querySelector('.mgd-sl-next');
+    // 페이지 표시(웹 전용, 모바일은 CSS로 숨김) — 복제본 제외 실제 순서 기준
+    var dotWrap = document.createElement('div'), dots = [];
+    dotWrap.className = 'mgd-sl-dots'; dotWrap.setAttribute('aria-hidden', 'true');
+    for (var d = 0; d < n; d++) { var dt = document.createElement('span'); dt.className = 'mgd-sl-dot'; dotWrap.appendChild(dt); dots.push(dt); }
+    card.appendChild(dotWrap);
     if (prev) prev.disabled = false;
     if (next) next.disabled = false;
     function set(k, anim) {
+      var real = ((k - 1) % n + n) % n;
+      for (var q = 0; q < n; q++) dots[q].classList.toggle('is-on', q === real);
       track.style.transition = anim ? '' : 'none';
       track.style.transform = 'translateX(' + (-100 * k) + '%)';
       if (!anim) { void track.offsetWidth; }
@@ -1316,6 +1339,48 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   }else{
     inView = true; tryStart();
   }
+})();
+
+/* 숫자 카운트업: 수치 박스가 화면에 들어오면 0부터 올라감 (텍스트 숫자만, '전국 최초'는 제외) */
+(function () {
+  var root = document.querySelector('.contents_div');
+  if (!root) return;
+  var bs = root.querySelectorAll('.mgd-stats b, .mgd-fact b');
+  var items = [];
+  for (var i = 0; i < bs.length; i++) {
+    var t = bs[i].firstChild;
+    if (!t || t.nodeType !== 3) continue;
+    var n = parseInt(t.nodeValue.replace(/[^0-9]/g, ''), 10);
+    if (!n) continue;
+    items.push({ node: t, to: n, el: bs[i] });
+  }
+  if (!items.length) return;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce || !window.IntersectionObserver || !window.requestAnimationFrame) return;
+
+  var DUR = 1400;
+  function run(it) {
+    var t0 = null;
+    function step(ts) {
+      if (t0 === null) t0 = ts;
+      var p = Math.min((ts - t0) / DUR, 1);
+      var e = 1 - Math.pow(1 - p, 3);              /* easeOutCubic */
+      it.node.nodeValue = String(Math.round(it.to * e));
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  for (var k = 0; k < items.length; k++) items[k].node.nodeValue = '0';
+  var io = new IntersectionObserver(function (entries) {
+    for (var j = 0; j < entries.length; j++) {
+      if (!entries[j].isIntersecting) continue;
+      for (var m = 0; m < items.length; m++) {
+        if (items[m].el === entries[j].target) { run(items[m]); break; }
+      }
+      io.unobserve(entries[j].target);
+    }
+  }, { threshold: 0.6 });
+  for (var q = 0; q < items.length; q++) io.observe(items[q].el);
 })();
 
 /* 스크롤 진입 시 등장 애니메이션 */
