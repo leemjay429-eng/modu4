@@ -463,10 +463,19 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   font-size:11px; font-weight:400; line-height:1.4; letter-spacing:-0.01em; white-space:nowrap; pointer-events:none;
 }
 .contents_div .mgd-card .mgd-credit{ right:auto; left:calc(36% + 10px); transform:translateX(-100%); }
+/* PC: 출처는 반투명 검은 직사각형 배경 */
+.contents_div .mgd-card .mgd-credit{ padding:3px 8px; background:rgba(0,0,0,.5); color:rgba(255,255,255,.92); text-shadow:none; }
 
 /* PC: 모든 카드 가로 배치(사진 왼쪽 36%+20px · 내용 오른쪽) */
 .contents_div .mgd-card .mgd-fig{ flex:0 0 calc(36% + 20px); }
 .contents_div .mgd-card .mgd-fig::before{ padding-top:120%; } /* 최소 1:1.2, 내용이 길면 더 길어짐 */
+/* PC: 테마 2·4는 좌우 반전(내용 왼쪽 · 사진 오른쪽) */
+.contents_div .mgd-sec[data-sec="t2"] .mgd-card,
+.contents_div .mgd-sec[data-sec="t4"] .mgd-card{ flex-direction:row-reverse; }
+.contents_div .mgd-sec[data-sec="t2"] .mgd-sl-nav, .contents_div .mgd-sec[data-sec="t2"] .mgd-sl-dots,
+.contents_div .mgd-sec[data-sec="t4"] .mgd-sl-nav, .contents_div .mgd-sec[data-sec="t4"] .mgd-sl-dots{ left:auto; right:0; }
+.contents_div .mgd-sec[data-sec="t2"] .mgd-card .mgd-credit,
+.contents_div .mgd-sec[data-sec="t4"] .mgd-card .mgd-credit{ left:auto; right:14px; transform:none; }
 
 /* ===== 등장 애니메이션 (스크롤 진입 시) ===== */
 .contents_div .mgd-wrap.is-anim .mgd-rise{ opacity:0; transform:translateY(24px); transition:opacity .6s ease, transform .6s ease; }
@@ -497,6 +506,10 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 
 /* ===== 반응형 ===== */
 @media (max-width:600px){
+  .contents_div .mgd-sec[data-sec="t2"] .mgd-card,
+  .contents_div .mgd-sec[data-sec="t4"] .mgd-card{ flex-direction:column; } /* 모바일은 반전 없음 */
+  .contents_div .mgd-sec[data-sec="t2"] .mgd-card .mgd-credit,
+  .contents_div .mgd-sec[data-sec="t4"] .mgd-card .mgd-credit{ right:12px; }
   .contents_div .mgd-sl-dots{ display:none; }
   .contents_div .mgd-br--mo{ display:inline; }
   .contents_div .gdh-bars{ grid-template-columns:repeat(5, 22px); gap:5px; }
@@ -564,7 +577,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   .contents_div .mgd-card .mgd-sl-nav{ width:100%; }
   .contents_div .mgd-sl-btn{ width:31.5px; height:31.5px; background-size:20.16px; }
   .contents_div .mgd-credit{ top:auto; bottom:7px; right:12px; font-size:10px; } /* 출처: 카드 하단 오른쪽 */
-  .contents_div .mgd-card .mgd-credit{ left:auto; right:12px; transform:none; }
+  .contents_div .mgd-card .mgd-credit{ left:auto; right:12px; transform:none; padding:0; background:none; color:rgba(255,255,255,.72); text-shadow:0 0 3px rgba(0,0,0,.35), 0 0 8px rgba(0,0,0,.22); } /* 모바일은 배경 없이 그대로 */
   .contents_div .mgd-card-body{ position:relative; z-index:1; padding:21px var(--card-ph) 28px; } /* 하단 28px: 정보박스를 올려 아래에 출처 자리 확보 */
   .contents_div .mgd-h3{ color:#fff; text-shadow:0 1px 5px rgba(0,0,0,.4); }
   .contents_div .mgd-num{
