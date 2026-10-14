@@ -478,6 +478,11 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 .contents_div .mgd-sec[data-sec="t4"] .mgd-sl-nav, .contents_div .mgd-sec[data-sec="t4"] .mgd-sl-dots{ left:auto; right:0; }
 .contents_div .mgd-sec[data-sec="t2"] .mgd-card .mgd-credit,
 .contents_div .mgd-sec[data-sec="t4"] .mgd-card .mgd-credit{ left:auto; right:14px; transform:none; }
+/* PC: 좌우 반전 테마(전원의 낭만 · 쉼과 회복)는 연한 초록 배경 */
+@media (min-width:651px){
+  .contents_div .mgd-sec[data-sec="t2"],
+  .contents_div .mgd-sec[data-sec="t4"]{ background:#eaf4e4; }
+}
 
 /* ===== 등장 애니메이션 (스크롤 진입 시) ===== */
 .contents_div .mgd-wrap.is-anim .mgd-rise{ opacity:0; transform:translateY(24px); transition:opacity .6s ease, transform .6s ease; }
@@ -634,6 +639,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 }
 @media (max-width:420px){
   .contents_div .mgd-info{ position:relative; top:3px; } /* 정보박스 3px 아래로 */
+  .contents_div .mgd-sl-btn{ width:38.12px; height:38.12px; background-size:24.4px; } /* 슬라이드 버튼 10% 더 확대 */
 }
 @media (max-width:402px){
   /* 글자 전체: 402px까지 모바일 크기 유지 → 350px까지 본문 14.5→13.5px와 같은 비율로 살짝씩 축소 → 그 아래는 고정 */
