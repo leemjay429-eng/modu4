@@ -1,0 +1,981 @@
+<!-- 모바일 좌우 패딩 16 -->
+<script>
+if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
+  var s=document.createElement('style');
+  s.textContent='body{margin:0}@media(max-width:700px){.contents_div{padding:0 16px}}@media(max-width:576px){.contents_div br{display:inline!important}}';
+  document.head.appendChild(s);
+}
+</script>
+<script>
+(function(){
+  try{
+    if(!document.querySelector('meta[name="viewport"]')){
+      var m=document.createElement('meta');
+      m.setAttribute('name','viewport');
+      m.setAttribute('content','width=device-width, initial-scale=1');
+      (document.head||document.getElementsByTagName('head')[0]||document.documentElement).appendChild(m);
+    }
+  }catch(e){}
+})();
+</script>
+
+<div class="contents_div">
+<style>
+@font-face{font-family:'Pretendard';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2') format('woff2');font-weight:100;font-display:swap}
+@font-face{font-family:'Pretendard';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraLight.woff2') format('woff2');font-weight:200;font-display:swap}
+@font-face{font-family:'Pretendard';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Light.woff2') format('woff2');font-weight:300;font-display:swap}
+@font-face{font-family:'Pretendard';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Pretendard';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Medium.woff2') format('woff2');font-weight:500;font-display:swap}
+@font-face{font-family:'Pretendard';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-SemiBold.woff2') format('woff2');font-weight:600;font-display:swap}
+@font-face{font-family:'Pretendard';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Pretendard';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraBold.woff2') format('woff2');font-weight:800;font-display:swap}
+@font-face{font-family:'Pretendard';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Black.woff2') format('woff2');font-weight:900;font-display:swap}
+@font-face{font-family:'Paperozi';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-1Thin.woff2') format('woff2');font-weight:100;font-display:swap}
+@font-face{font-family:'Paperozi';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-2ExtraLight.woff2') format('woff2');font-weight:200;font-display:swap}
+@font-face{font-family:'Paperozi';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-3Light.woff2') format('woff2');font-weight:300;font-display:swap}
+@font-face{font-family:'Paperozi';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-4Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Paperozi';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-5Medium.woff2') format('woff2');font-weight:500;font-display:swap}
+@font-face{font-family:'Paperozi';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-6SemiBold.woff2') format('woff2');font-weight:600;font-display:swap}
+@font-face{font-family:'Paperozi';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-7Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Paperozi';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-8ExtraBold.woff2') format('woff2');font-weight:800;font-display:swap}
+@font-face{font-family:'Paperozi';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-9Black.woff2') format('woff2');font-weight:900;font-display:swap}
+
+/* ===== 변수 ===== */
+.contents_div .ndhb-wrap{
+  container-type:inline-size;
+  /* Title */
+  --fs-h2:clamp(20px, min(23px + (100cqi - 388px) * 0.02185, 22px + (100cqi - 343px) * 0.02223, 20px + (100cqi - 318px) * 0.08), 32px); --fs-foot:27px; --fs-h3:21px;
+  /* Body */
+  --fs-body:17px; --fs-lead:16px; --fs-info:16px; --fs-cta:16px; --fs-arrow:17px;
+  --fs-nav:16px; --fs-kicker:15px; --fs-num:14px; --fs-tagcap:13.5px;
+  --fs-label:13px; --fw-label:700; --fs-check:11px; --fs-caption:11px; --fs-hash:12.5px;
+  /* 간격 */
+  --gut:clamp(22px, 6.25cqi, 50px);
+  --band:clamp(40px, calc(7.9cqi + 6.8px), 70px);
+  --card-py:30px; --card-px:28px;
+  --kick:32px; --lb-h:24px; --lb-px:11px;
+  --img-ratio:62.5%;
+  --img-stop:75%;
+  --pin-w:30.6px; --pin-h:39.6px; --road:7px; --road-y:48px; --row-gap:30px; --turn:32px; --turn-r:50px;
+  --c-road:#F2BE6E;
+  --wave-h:34px; --day-gap:44px;
+  --nav-h:70px;
+  --sticker:5px;
+  /* 색 — 히어로 단풍·억새·핀 */
+  --c-ink:#3E2311;
+  --c-brown:#5B3317;
+  --c-brown-d:#47270F;
+  --c-orange:#EE7A23;
+  --c-yellow:#FFE93F;
+  --c-cream:#FFF8EC;
+  --c-sand:#FFEFD6;
+  --c-pink:#FBD7CF;
+  --c-gold:#F5C97A;
+  --c-red:#D6232E;
+  --c-line:#E6CBA6;
+
+  max-width:800px; margin:0 auto;
+  font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  font-size:var(--fs-body); line-height:1.6; letter-spacing:-0.02em;
+  color:var(--c-ink); word-break:keep-all;
+}
+
+/* ===== Reset ===== */
+.contents_div .ndhb-wrap, .contents_div .ndhb-wrap *,
+.contents_div .ndhb-wrap *::before, .contents_div .ndhb-wrap *::after{ box-sizing:border-box; }
+.contents_div .ndhb-wrap :where(h1,h2,h3,h4,p,ul,ol,li,dl,dt,dd,figure,table,th,td){ margin:0; padding:0; }
+.contents_div .ndhb-wrap :where(ul,ol){ list-style:none; }
+.contents_div .ndhb-wrap :where(img){ max-width:100%; display:block; border:0; }
+.contents_div .ndhb-wrap :where(a){ color:inherit; text-decoration:none; }
+.contents_div .ndhb-wrap :where(button){ font:inherit; color:inherit; background:none; border:0; cursor:pointer; }
+.contents_div .ndhb-wrap :where(h1,h2,h3),
+.contents_div .ndhb-foot-title{ font-family:'Paperozi','Pretendard',sans-serif; word-break:keep-all; }
+.contents_div .ndhb-wrap :where(section){ outline:none; }
+
+/* ===== 공통 ===== */
+.contents_div .ndhb-sec{ width:100%; padding:var(--band) var(--gut); }
+.contents_div .ndhb-br::before{ content:'\A'; white-space:pre; }
+.contents_div .ndhb-br--mo,
+.contents_div .ndhb-br--mo-wide,
+.contents_div .ndhb-br--m420{ display:none; }
+
+.contents_div .ndhb-head{ text-align:center; margin-bottom:36px; }
+.contents_div .ndhb-kicker{
+  display:inline-flex; align-items:center; height:var(--kick); padding:0 16px;
+  border:2px solid var(--c-brown); border-radius:999px; background:var(--c-yellow);
+  color:var(--c-brown-d); font-size:var(--fs-kicker); font-weight:800; line-height:1.2; letter-spacing:0.01em;
+}
+/* 남도한바퀴 키커 — 접힌 지도 + 깃발 */
+.contents_div .ndhb-kicker.ndhb-kicker--map{
+  position:relative; isolation:isolate; height:auto; margin-top:1.5em; padding:0.7em 1.9em 0.8em;
+  border:0; border-radius:0; background:none;
+  font-family:'Paperozi','Pretendard',sans-serif;
+  font-size:var(--fs-h3); font-weight:900; line-height:1.2; letter-spacing:0; color:var(--c-brown-d);
+}
+.contents_div .ndhb-kicker--map em{ font-style:normal; color:var(--c-red); }
+/* 테두리는 한 덩어리로 — 글자 뒤 복제본에만 외곽선 */
+.contents_div .ndhb-map-txt{ position:relative; }
+.contents_div .ndhb-map-txt::before{
+  content:attr(data-text); position:absolute; left:0; top:0; z-index:-1; white-space:nowrap;
+  color:#222; text-shadow:1.5px 0px 0 #fff,1.3px 0.75px 0 #fff,0.75px 1.3px 0 #fff,0px 1.5px 0 #fff,-0.75px 1.3px 0 #fff,-1.3px 0.75px 0 #fff,-1.5px 0px 0 #fff,-1.3px -0.75px 0 #fff,-0.75px -1.3px 0 #fff,-0px -1.5px 0 #fff,0.75px -1.3px 0 #fff,1.3px -0.75px 0 #fff,3px 0px 0 #fff,2.9px 0.78px 0 #fff,2.6px 1.5px 0 #fff,2.12px 2.12px 0 #fff,1.5px 2.6px 0 #fff,0.78px 2.9px 0 #fff,0px 3px 0 #fff,-0.78px 2.9px 0 #fff,-1.5px 2.6px 0 #fff,-2.12px 2.12px 0 #fff,-2.6px 1.5px 0 #fff,-2.9px 0.78px 0 #fff,-3px 0px 0 #fff,-2.9px -0.78px 0 #fff,-2.6px -1.5px 0 #fff,-2.12px -2.12px 0 #fff,-1.5px -2.6px 0 #fff,-0.78px -2.9px 0 #fff,-0px -3px 0 #fff,0.78px -2.9px 0 #fff,1.5px -2.6px 0 #fff,2.12px -2.12px 0 #fff,2.6px -1.5px 0 #fff,2.9px -0.78px 0 #fff,4px 0px 0 #fff,3.92px 0.78px 0 #fff,3.7px 1.53px 0 #fff,3.33px 2.22px 0 #fff,2.83px 2.83px 0 #fff,2.22px 3.33px 0 #fff,1.53px 3.7px 0 #fff,0.78px 3.92px 0 #fff,0px 4px 0 #fff,-0.78px 3.92px 0 #fff,-1.53px 3.7px 0 #fff,-2.22px 3.33px 0 #fff,-2.83px 2.83px 0 #fff,-3.33px 2.22px 0 #fff,-3.7px 1.53px 0 #fff,-3.92px 0.78px 0 #fff,-4px 0px 0 #fff,-3.92px -0.78px 0 #fff,-3.7px -1.53px 0 #fff,-3.33px -2.22px 0 #fff,-2.83px -2.83px 0 #fff,-2.22px -3.33px 0 #fff,-1.53px -3.7px 0 #fff,-0.78px -3.92px 0 #fff,-0px -4px 0 #fff,0.78px -3.92px 0 #fff,1.53px -3.7px 0 #fff,2.22px -3.33px 0 #fff,2.83px -2.83px 0 #fff,3.33px -2.22px 0 #fff,3.7px -1.53px 0 #fff,3.92px -0.78px 0 #fff,4.5px 0px 0 #222,4.44px 0.7px 0 #222,4.28px 1.39px 0 #222,4.01px 2.04px 0 #222,3.64px 2.65px 0 #222,3.18px 3.18px 0 #222,2.65px 3.64px 0 #222,2.04px 4.01px 0 #222,1.39px 4.28px 0 #222,0.7px 4.44px 0 #222,0px 4.5px 0 #222,-0.7px 4.44px 0 #222,-1.39px 4.28px 0 #222,-2.04px 4.01px 0 #222,-2.65px 3.64px 0 #222,-3.18px 3.18px 0 #222,-3.64px 2.65px 0 #222,-4.01px 2.04px 0 #222,-4.28px 1.39px 0 #222,-4.44px 0.7px 0 #222,-4.5px 0px 0 #222,-4.44px -0.7px 0 #222,-4.28px -1.39px 0 #222,-4.01px -2.04px 0 #222,-3.64px -2.65px 0 #222,-3.18px -3.18px 0 #222,-2.65px -3.64px 0 #222,-2.04px -4.01px 0 #222,-1.39px -4.28px 0 #222,-0.7px -4.44px 0 #222,-0px -4.5px 0 #222,0.7px -4.44px 0 #222,1.39px -4.28px 0 #222,2.04px -4.01px 0 #222,2.65px -3.64px 0 #222,3.18px -3.18px 0 #222,3.64px -2.65px 0 #222,4.01px -2.04px 0 #222,4.28px -1.39px 0 #222,4.44px -0.7px 0 #222,5px 0px 0 #222,4.94px 0.78px 0 #222,4.76px 1.55px 0 #222,4.46px 2.27px 0 #222,4.05px 2.94px 0 #222,3.54px 3.54px 0 #222,2.94px 4.05px 0 #222,2.27px 4.46px 0 #222,1.55px 4.76px 0 #222,0.78px 4.94px 0 #222,0px 5px 0 #222,-0.78px 4.94px 0 #222,-1.55px 4.76px 0 #222,-2.27px 4.46px 0 #222,-2.94px 4.05px 0 #222,-3.54px 3.54px 0 #222,-4.05px 2.94px 0 #222,-4.46px 2.27px 0 #222,-4.76px 1.55px 0 #222,-4.94px 0.78px 0 #222,-5px 0px 0 #222,-4.94px -0.78px 0 #222,-4.76px -1.55px 0 #222,-4.46px -2.27px 0 #222,-4.05px -2.94px 0 #222,-3.54px -3.54px 0 #222,-2.94px -4.05px 0 #222,-2.27px -4.46px 0 #222,-1.55px -4.76px 0 #222,-0.78px -4.94px 0 #222,-0px -5px 0 #222,0.78px -4.94px 0 #222,1.55px -4.76px 0 #222,2.27px -4.46px 0 #222,2.94px -4.05px 0 #222,3.54px -3.54px 0 #222,4.05px -2.94px 0 #222,4.46px -2.27px 0 #222,4.76px -1.55px 0 #222,4.94px -0.78px 0 #222;
+}
+.contents_div .ndhb-kicker--map::before{
+  content:''; position:absolute; inset:0; z-index:-1;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-2 -2 404 104' preserveAspectRatio='none'%3E%3Cpath d='M0 12L100 0V88L0 100Z' fill='%23FFF3C8'/%3E%3Cpath d='M100 0L200 12V100L100 88Z' fill='%23FFE38A'/%3E%3Cpath d='M200 12L300 0V88L200 100Z' fill='%23FFF3C8'/%3E%3Cpath d='M300 0L400 12V100L300 88Z' fill='%23FFE38A'/%3E%3Cpath d='M0 12L100 0L200 12L300 0L400 12V100L300 88L200 100L100 88L0 100Z' fill='none' stroke='%23222' stroke-width='1' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+}
+.contents_div .ndhb-map-flag{
+  position:absolute; left:calc(14% + 1.43em); bottom:calc(70% - 0.09em); width:0.18em; height:2.4em; z-index:-2;
+  background:var(--c-brown-d); border-radius:0.1em; box-shadow:0 0 0 1px #222; transform:rotate(-12deg); transform-origin:center bottom;
+}
+.contents_div .ndhb-map-flag::after{
+  content:'LET\2019S GO!'; position:absolute; left:100%; top:0.58em;
+  padding:0.2em 0.75em 0.2em 0.6em; border-radius:0 0.6em 0.6em 0;
+  background:var(--c-red); box-shadow:0 0 0 1px #222; color:#fff; text-shadow:none; font-family:'Pretendard',sans-serif;
+  font-size:max(10px, 0.5em); font-weight:800; line-height:1.3; letter-spacing:0.02em; white-space:nowrap;
+}
+.contents_div .ndhb-map-spark::before,
+.contents_div .ndhb-map-spark::after{
+  content:''; position:absolute;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-1 -1 102 102'%3E%3Cpath d='M50 0L62 38L100 50L62 62L50 100L38 62L0 50L38 38Z' fill='%23FFF8EC' stroke='%23222' stroke-width='1' vector-effect='non-scaling-stroke' stroke-linejoin='round'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+}
+.contents_div .ndhb-map-spark::before{ left:calc(-0.93em - 5px); top:-0.15em; width:0.8em; height:0.8em; }
+.contents_div .ndhb-map-spark::after{ right:calc(-0.83em - 5px); bottom:-0.2em; width:0.65em; height:0.65em; }
+
+.contents_div .ndhb-h2{
+  margin-top:14px; font-size:calc(var(--fs-h2) + 4px); font-weight:800; line-height:1.25; letter-spacing:-0.01em; color:var(--c-brown-d);
+}
+.contents_div .ndhb-lead{ margin-top:14px; font-size:var(--fs-lead); line-height:1.6; color:var(--c-brown); }
+
+/* ===== 히어로 ===== */
+.contents_div .ndhb-hero{ background:#F59A3C; }
+.contents_div .ndhb-hero img{ width:100%; height:auto; }
+
+/* ===== 앵커 내비 ===== */
+.contents_div .ndhb-nav{ background:var(--c-brown); padding:0 var(--gut); }
+.contents_div .ndhb-nav ul{ display:grid; grid-template-columns:repeat(3,1fr); }
+.contents_div .ndhb-nav li{ position:relative; }
+.contents_div .ndhb-nav li + li::before{
+  content:''; position:absolute; left:0; top:50%; width:1px; height:14px; margin-top:-7px; background:rgba(255,248,236,.35);
+}
+.contents_div .ndhb-nav-btn{
+  display:flex; align-items:center; justify-content:center; width:100%; height:var(--nav-h);
+  font-size:var(--fs-nav); font-weight:700; line-height:1.4; letter-spacing:-0.03em; color:var(--c-cream);
+  -webkit-tap-highlight-color:transparent; outline:none; transition:color .2s;
+}
+.contents_div .ndhb-nav-btn span{ position:relative; padding:4px 0; }
+.contents_div .ndhb-nav-btn span::after{
+  content:''; position:absolute; left:0; right:0; bottom:-2px; height:3px; border-radius:3px;
+  background:var(--c-yellow); transform:scaleX(0); transition:transform .25s;
+}
+.contents_div .ndhb-nav-btn.is-on{ color:var(--c-yellow); }
+.contents_div .ndhb-nav-btn.is-on span::after{ transform:scaleX(1); }
+.contents_div .ndhb-nav-btn:active{ color:var(--c-yellow); }
+
+/* ===== 인트로 ===== */
+.contents_div .ndhb-intro{ background:var(--c-sand); text-align:center; }
+.contents_div .ndhb-h1{ font-size:var(--fs-h2); font-weight:900; line-height:1.35; letter-spacing:-0.01em; color:var(--c-brown-d); }
+.contents_div .ndhb-h1 em{ font-style:normal; color:var(--c-red); }
+.contents_div .ndhb-intro-sub{
+  display:inline-block; margin-top:18px; padding:2px 12px;
+  background:var(--c-orange); color:#fff; font-size:var(--fs-h3); font-weight:800; line-height:1.45; transform:rotate(-1.5deg);
+}
+.contents_div .ndhb-intro .ndhb-lead{ margin-top:18px; }
+
+.contents_div .ndhb-sum{ margin-top:32px; width:100%; border-collapse:collapse; table-layout:fixed; font-size:var(--fs-info); line-height:1.5; }
+.contents_div .ndhb-sum th,
+.contents_div .ndhb-sum td{ padding:12px 10px; border:1.5px solid var(--c-line); vertical-align:middle; text-align:center; }
+.contents_div .ndhb-sum thead th{ background:var(--c-brown); border-color:var(--c-brown); color:var(--c-cream); font-weight:700; }
+.contents_div .ndhb-sum tbody th{ width:22%; background:#F9E0BC; color:var(--c-brown-d); font-weight:700; }
+.contents_div .ndhb-sum td{ background:var(--c-cream); }
+.contents_div .ndhb-sum strong{ color:var(--c-red); font-weight:800; }
+
+/* ===== 1. 매력 요소 ===== */
+.contents_div .ndhb-point{ background:var(--c-orange); }
+.contents_div .ndhb-point .ndhb-h2{ color:var(--c-cream); }
+.contents_div .ndhb-point .ndhb-lead{ color:var(--c-cream); font-weight:400; }
+.contents_div .ndhb-points{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
+.contents_div .ndhb-points li{
+  display:flex; flex-direction:column; align-items:center; gap:12px; padding:var(--card-py) var(--card-px); text-align:center;
+  background:var(--c-cream); border:2px solid var(--c-brown); border-radius:16px;
+  box-shadow:var(--sticker) var(--sticker) 0 var(--c-brown);
+  font-size:var(--fs-body); font-weight:600; line-height:1.5; color:var(--c-brown-d);
+}
+.contents_div .ndhb-num{
+  flex:0 0 auto; display:inline-flex; align-items:center; justify-content:center;
+  width:var(--kick); height:var(--kick); border-radius:50%; background:var(--c-red); color:#fff;
+  font-size:var(--fs-num); font-weight:800; line-height:1;
+}
+.contents_div .ndhb-nowrap{ white-space:nowrap; }
+.contents_div .ndhb-points strong{ font-weight:800; color:var(--c-red); }
+
+/* ===== 2·3. 코스 ===== */
+.contents_div .ndhb-seoul{ background:var(--c-pink); --day2:#F8C6BB; --book:#F2B0A3; }
+.contents_div .ndhb-busan{ background:var(--c-gold); --day2:#F2BC62; --book:#ECAC48; --c-road:#E0913A; }
+.contents_div .ndhb-h2 em{ font-style:normal; color:var(--c-red); }
+
+/* DAY별 띠 — 섹션 좌우 끝까지, DAY2는 한 톤 진한 색 + 위아래 물결 */
+.contents_div .ndhb-day{ position:relative; margin:0 calc(var(--gut) * -1); padding:0 var(--gut); }
+.contents_div .ndhb-day + .ndhb-day{
+  margin-top:calc(var(--wave-h) + var(--day-gap)); padding-top:var(--day-gap); padding-bottom:var(--day-gap);
+  background:var(--day2);
+}
+.contents_div .ndhb-day + .ndhb-day::before{
+  content:''; position:absolute; left:0; right:0; height:var(--wave-h); background:var(--day2);
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 40' preserveAspectRatio='none'%3E%3Cpath d='M0 24 C130 4 270 2 400 16 S650 40 800 12 V40 H0Z'/%3E%3C/svg%3E") no-repeat 0 0 / 100% 100%;
+          mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 40' preserveAspectRatio='none'%3E%3Cpath d='M0 24 C130 4 270 2 400 16 S650 40 800 12 V40 H0Z'/%3E%3C/svg%3E") no-repeat 0 0 / 100% 100%;
+}
+.contents_div .ndhb-day + .ndhb-day::before{ bottom:100%; }
+.contents_div .ndhb-seoul .ndhb-day + .ndhb-day{ --c-road:#ECA03A; }  /* 진한 분홍 위 도로 대비 */
+/* DAY1·DAY2 경계에 걸치는 장식 이미지(배경 투명) — 웹은 경계 정중앙, 모바일은 DAY2 쪽으로 */
+.contents_div .ndhb-deco{
+  position:absolute; z-index:2; right:var(--gut); top:calc(var(--wave-h) * -0.5);
+  width:min(192px, 25.6cqi); aspect-ratio:1 / 0.85; transform:translateY(-50%); pointer-events:none;
+}
+.contents_div .ndhb-deco img{ width:100%; height:100%; object-fit:contain; }
+/* 부산 DAY2 — 웹은 왼쪽 아래 빈 칸, 모바일은 도착 옆 오른쪽 아래 */
+.contents_div .ndhb-deco--b{ top:auto; right:auto; left:var(--gut); bottom:var(--day-gap); width:min(206px, 26.9cqi); transform:none; }
+.contents_div .ndhb-deco--b2{
+  top:auto; right:auto; left:calc(var(--gut) - 7px); width:min(120px, 15.7cqi); aspect-ratio:1 / 0.9; transform:none;
+  bottom:calc(var(--day-gap) + min(206px, 26.9cqi) * 0.85 + 16px);   /* 기존 부산 데코 위 16px */
+}
+/* 여행일자·요금·예약 버튼·섹션 하단 여백까지 DAY2 색으로 이어짐 */
+.contents_div .ndhb-book{
+  margin:0 calc(var(--gut) * -1) calc(var(--band) * -1); padding:var(--day-gap) var(--gut) var(--band);
+  background:var(--book);
+}
+.contents_div .ndhb-book .ndhb-info{ margin-top:0; }
+/* 서울·부산 출발 키커 — 승차권(양옆 반원 홈, 1px 테두리, 왼쪽 점선) + 오른쪽 아래 2px 단색 그림자 */
+.contents_div .ndhb-seoul .ndhb-kicker,
+.contents_div .ndhb-busan .ndhb-kicker{
+  justify-content:center; width:114px; height:40px; padding:0 2px 2px 16px; transform:rotate(-8deg); border:0; border-radius:0;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='114' height='40' viewBox='0 0 114 40'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23FFE93F'/%3E%3Cstop offset='1' stop-color='%23FFC22E'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M2.5 2.5H20.0A2.5 2.5 0 0 0 25.0 2.5H113.5V13.5A7.5 7.5 0 0 0 113.5 28.5V39.5H25.0A2.5 2.5 0 0 0 20.0 39.5H2.5V28.5A7.5 7.5 0 0 0 2.5 13.5Z' fill='%2347270F' stroke='%2347270F'/%3E%3Cpath d='M0.5 0.5H18.0A2.5 2.5 0 0 0 23.0 0.5H111.5V11.5A7.5 7.5 0 0 0 111.5 26.5V37.5H23.0A2.5 2.5 0 0 0 18.0 37.5H0.5V26.5A7.5 7.5 0 0 0 0.5 11.5Z' fill='url(%23g)' stroke='%2347270F'/%3E%3Cpath d='M20.5 6.20V8.80' stroke='%2347270F' stroke-width='1.8' stroke-linecap='round'/%3E%3Cpath d='M20.5 12.00V14.60' stroke='%2347270F' stroke-width='1.8' stroke-linecap='round'/%3E%3Cpath d='M20.5 17.80V20.40' stroke='%2347270F' stroke-width='1.8' stroke-linecap='round'/%3E%3Cpath d='M20.5 23.60V26.20' stroke='%2347270F' stroke-width='1.8' stroke-linecap='round'/%3E%3C/svg%3E") 0 0 / 100% 100% no-repeat;
+  color:var(--c-brown-d); letter-spacing:0.04em;
+}
+/* 부산 출발 키커 — 노랑 배경 위라 흰색 계열 그라데이션 */
+.contents_div .ndhb-busan .ndhb-kicker{ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='114' height='40' viewBox='0 0 114 40'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23FFFFFF'/%3E%3Cstop offset='1' stop-color='%23FFEFD6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M2.5 2.5H20.0A2.5 2.5 0 0 0 25.0 2.5H113.5V13.5A7.5 7.5 0 0 0 113.5 28.5V39.5H25.0A2.5 2.5 0 0 0 20.0 39.5H2.5V28.5A7.5 7.5 0 0 0 2.5 13.5Z' fill='%2347270F' stroke='%2347270F'/%3E%3Cpath d='M0.5 0.5H18.0A2.5 2.5 0 0 0 23.0 0.5H111.5V11.5A7.5 7.5 0 0 0 111.5 26.5V37.5H23.0A2.5 2.5 0 0 0 18.0 37.5H0.5V26.5A7.5 7.5 0 0 0 0.5 11.5Z' fill='url(%23g)' stroke='%2347270F'/%3E%3Cpath d='M20.5 6.20V8.80' stroke='%2347270F' stroke-width='1.8' stroke-linecap='round'/%3E%3Cpath d='M20.5 12.00V14.60' stroke='%2347270F' stroke-width='1.8' stroke-linecap='round'/%3E%3Cpath d='M20.5 17.80V20.40' stroke='%2347270F' stroke-width='1.8' stroke-linecap='round'/%3E%3Cpath d='M20.5 23.60V26.20' stroke='%2347270F' stroke-width='1.8' stroke-linecap='round'/%3E%3C/svg%3E"); }
+/* DAY 배지 — 진행 방향 화살표 표지 */
+.contents_div .ndhb-day-no{
+  display:inline-flex; align-items:center; height:var(--kick); padding:0 24px 0 14px;
+  background:var(--c-red); color:#fff; font-size:var(--fs-kicker); font-weight:800; line-height:1.2; letter-spacing:0.06em;
+  border-radius:6px 0 0 6px; clip-path:polygon(0 0, calc(100% - 12px) 0, 100% 50%, calc(100% - 12px) 100%, 0 100%);
+}
+.contents_div .ndhb-h3{ margin-top:10px; font-size:var(--fs-h3); font-weight:700; line-height:1.45; color:var(--c-brown-d); }
+
+/* ㄹ자 코스 — 3칸, 짝수 줄은 오른쪽에서 왼쪽 */
+.contents_div .ndhb-route{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); row-gap:var(--row-gap); margin:16px calc(var(--turn) + 14px) 0 calc(var(--turn) - 14px); position:relative; }  /* 오른쪽 U턴만 있는 경로: 왼쪽으로 시각 보정 */
+/* 웹: 경로선을 스크립트가 한 줄(직선+곡선+양끝 원)로 그림 — 이음매 없음. 스크립트가 없으면 아래 CSS 선이 그대로 보임 */
+.contents_div .ndhb-day-body{ position:relative; isolation:isolate; }
+.contents_div .ndhb-route-svg{ position:absolute; left:0; top:0; overflow:visible; pointer-events:none; z-index:-1; }
+.contents_div .ndhb-route-svg path{ fill:none; stroke:var(--c-road); }
+.contents_div .ndhb-route-svg circle{ fill:var(--c-road); }
+.contents_div .ndhb-route.is-svg > li:nth-child(n):nth-child(n):nth-child(n)::before,
+.contents_div .ndhb-route.is-svg > li:nth-child(n):nth-child(n):nth-child(n)::after{ display:none; }
+.contents_div .ndhb-route--both{ margin-left:var(--turn); margin-right:var(--turn); }  /* 좌우 U턴이 모두 있는 경로: 대칭 */
+.contents_div .ndhb-route > li{ position:relative; padding:calc(var(--road-y) + 20px) 12px 0; }
+.contents_div .ndhb-route > li:nth-child(6n+1){ grid-column:1; }
+.contents_div .ndhb-route > li:nth-child(6n+2){ grid-column:2; }
+.contents_div .ndhb-route > li:nth-child(6n+3){ grid-column:3; }
+.contents_div .ndhb-route > li:nth-child(6n+4){ grid-column:3; }
+.contents_div .ndhb-route > li:nth-child(6n+5){ grid-column:2; }
+.contents_div .ndhb-route > li:nth-child(6n+6){ grid-column:1; }
+.contents_div .ndhb-route > li:nth-child(-n+3){ grid-row:1; }
+.contents_div .ndhb-route > li:nth-child(n+4):nth-child(-n+6){ grid-row:2; }
+.contents_div .ndhb-route > li:nth-child(n+7):nth-child(-n+9){ grid-row:3; }
+.contents_div .ndhb-route > li::before{
+  content:''; position:absolute; left:-1px; right:-1px; top:var(--road-y); height:0; border-top:var(--road) solid var(--c-road);
+}
+.contents_div .ndhb-route > li:first-child::before{ left:12px; }  /* 출발 앞으로 선을 빼 좌우 균형 */
+.contents_div .ndhb-route > li:last-child:nth-child(6n+1)::before,
+.contents_div .ndhb-route > li:last-child:nth-child(6n+2)::before,
+.contents_div .ndhb-route > li:last-child:nth-child(6n+3)::before{ right:12px; }
+.contents_div .ndhb-route > li:last-child:nth-child(6n+4)::before,
+.contents_div .ndhb-route > li:last-child:nth-child(6n+5)::before,
+.contents_div .ndhb-route > li:last-child:nth-child(6n+6)::before{ left:12px; }
+/* 경로 시작·끝 둥근 마감 */
+.contents_div .ndhb-route > li:first-child::after,
+.contents_div .ndhb-route > li:last-child::after{
+  content:''; position:absolute; left:50%; top:var(--road-y); width:var(--road); height:var(--road);
+  margin-left:calc(var(--road) / -2); border-radius:50%; background:var(--c-road);
+}
+/* 출발점·도착점 동그라미 — 핀 바깥으로 선을 빼 끝에 원 */
+.contents_div .ndhb-route > li:first-child::after,
+.contents_div .ndhb-route > li:last-child::after{
+  --dot:17px; width:var(--dot); height:var(--dot); margin:calc(var(--road) / 2 - var(--dot) / 2) 0 0 calc(var(--dot) / -2);
+}
+.contents_div .ndhb-route > li:first-child::after{ left:12px; }
+.contents_div .ndhb-route > li:last-child:nth-child(6n+1)::after,
+.contents_div .ndhb-route > li:last-child:nth-child(6n+2)::after,
+.contents_div .ndhb-route > li:last-child:nth-child(6n+3)::after{ left:calc(100% - 12px); }
+.contents_div .ndhb-route > li:last-child:nth-child(6n+4)::after,
+.contents_div .ndhb-route > li:last-child:nth-child(6n+5)::after,
+.contents_div .ndhb-route > li:last-child:nth-child(6n+6)::after{ left:12px; }
+/* U턴 곡선이 시작되는 지점에서 직선을 끊어 겹침 방지 */
+.contents_div .ndhb-route > li:nth-child(6n+3):not(:last-child)::before,
+.contents_div .ndhb-route > li:nth-child(6n+4)::before{ right:calc(var(--turn-r) - var(--turn) - 2px); }
+.contents_div .ndhb-route > li:nth-child(6n+6):not(:last-child)::before,
+.contents_div .ndhb-route > li:nth-child(6n+7)::before{ left:calc(var(--turn-r) - var(--turn) - 2px); }
+.contents_div .ndhb-route > li:nth-child(6n+3):not(:last-child)::after,
+.contents_div .ndhb-route > li:nth-child(6n+6):not(:last-child)::after{
+  content:''; position:absolute; top:var(--road-y); width:var(--turn-r);
+  height:calc(100% + var(--row-gap) + var(--road)); border:var(--road) solid var(--c-road);
+}
+.contents_div .ndhb-route > li:nth-child(6n+3):not(:last-child)::after{ left:calc(100% + var(--turn) - var(--turn-r)); border-left:0; border-radius:0 var(--turn-r) var(--turn-r) 0; }
+.contents_div .ndhb-route > li:nth-child(6n+6):not(:last-child)::after{ right:calc(100% + var(--turn) - var(--turn-r)); border-right:0; border-radius:var(--turn-r) 0 0 var(--turn-r); }
+
+/* 좌우가 빈 칸은 두 칸 폭으로 — 사진 왼쪽, 설명 오른쪽 */
+.contents_div .ndhb-route > li.ndhb-stop--wide{
+  grid-column:2 / 4; display:grid; align-content:start;
+  /* 사진은 다른 칸 사진과 같은 폭, 설명 폭은 그대로 — 왼쪽 빈 여백 21px를 끌어씀 */
+  grid-template-columns:calc((100cqi - 2 * var(--gut) - 2 * var(--turn)) / 3 - 24px) minmax(0,1fr); column-gap:16px;
+  margin-left:-21px; padding-left:0;
+}
+.contents_div .ndhb-stop--wide .ndhb-stop-head{ padding-left:21px; }
+.contents_div .ndhb-stop--wide .ndhb-pin{ margin-left:calc(var(--pin-w) / -2 + 10.5px); }
+.contents_div .ndhb-route > li.ndhb-stop--wide + li{ grid-column:1; }
+/* 왼쪽 칸이 비어 설명만 1.3배 폭으로 왼쪽까지 펼침 */
+.contents_div .ndhb-stop--wtext p{ width:130%; margin-left:calc(-30% + 30px); }
+.contents_div .ndhb-stop--wtext-r p{ width:130%; }
+.contents_div .ndhb-route .ndhb-stop--wide .ndhb-stop-head{ grid-column:1 / -1; }
+.contents_div .ndhb-stop--wide .ndhb-stop-fig{ grid-column:1; align-self:start; }
+.contents_div .ndhb-stop--wide .ndhb-stop-fig::before{ padding-top:80%; }
+.contents_div .ndhb-stop--wide p{ grid-column:2; margin-top:12px; }
+
+.contents_div .ndhb-pin{
+  position:absolute; z-index:1; left:50%; top:calc(var(--road-y) + var(--road) / 2 - var(--pin-h));
+  width:var(--pin-w); height:var(--pin-h); margin-left:calc(var(--pin-w) / -2);
+  background:center / contain no-repeat;
+}
+.contents_div .ndhb-pin--move{ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 46'%3E%3Cpath d='M18 1C8.6 1 1 8.6 1 18c0 12.2 17 27 17 27s17-14.8 17-27C35 8.6 27.4 1 18 1z' fill='%235B3317' stroke='%235B3317' stroke-width='2'/%3E%3Ccircle cx='18' cy='17' r='7' fill='%23fff'/%3E%3C/svg%3E"); }
+.contents_div .ndhb-pin--meal{ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 46'%3E%3Cpath d='M18 1C8.6 1 1 8.6 1 18c0 12.2 17 27 17 27s17-14.8 17-27C35 8.6 27.4 1 18 1z' fill='%23D6232E' stroke='%239C3035' stroke-width='2'/%3E%3Ccircle cx='18' cy='17' r='7' fill='%23fff'/%3E%3C/svg%3E"); }
+.contents_div .ndhb-pin--course{ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 46'%3E%3Cpath d='M18 1C8.6 1 1 8.6 1 18c0 12.2 17 27 17 27s17-14.8 17-27C35 8.6 27.4 1 18 1z' fill='%23EE7A23' stroke='%23B0612E' stroke-width='2'/%3E%3Ccircle cx='18' cy='17' r='7' fill='%23fff'/%3E%3C/svg%3E"); }
+
+.contents_div .ndhb-stop-head{ display:flex; flex-direction:column; align-items:center; gap:6px; text-align:center;
+  min-height:calc(var(--lb-h) + 6px + var(--fs-body) * 1.45 * 2); }  /* 장소명 2줄 높이로 맞춰 같은 줄 사진 위치 통일 */
+.contents_div .ndhb-tag{
+  flex:0 0 auto; display:inline-flex; align-items:center; gap:0.3em; height:var(--lb-h); padding:0 var(--lb-px);
+  border-radius:999px; color:#fff; font-size:var(--fs-label); font-weight:var(--fw-label); line-height:1; white-space:nowrap;
+}
+.contents_div .ndhb-tag--move{ background:var(--c-brown); }
+/* 서울 DAY1 첫 줄 캡슐 글자 1px 아래로 (웹 시각 보정) */
+.contents_div .ndhb-seoul .ndhb-day:first-of-type .ndhb-route > li:nth-child(-n+3) .ndhb-tag{ padding-top:2px; }
+.contents_div .ndhb-tag--meal{ background:var(--c-red); }
+.contents_div .ndhb-tag--course{ background:var(--c-orange); }
+.contents_div .ndhb-stop-name{ font-size:var(--fs-body); font-weight:700; line-height:1.45; color:var(--c-brown-d); }
+.contents_div .ndhb-stop-sub{ font-size:max(10px, 0.74em); font-weight:500; white-space:nowrap; }
+.contents_div .ndhb-stop-fig{
+  position:relative; width:100%; margin-top:12px; overflow:hidden;
+  background:#eee; border:1px solid #D9BD94; border-radius:10px;
+}
+.contents_div .ndhb-stop-fig::before{ content:''; display:block; padding-top:var(--img-stop); }
+.contents_div .ndhb-stop-fig img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; }
+.contents_div .ndhb-ai{
+  position:absolute; right:0; bottom:0; z-index:1; padding:12px 8px 4px 26px;
+  background:radial-gradient(ellipse at 100% 100%, rgba(0,0,0,.45) 0, rgba(0,0,0,.3) 45%, rgba(0,0,0,0) 75%);  /* 출처 표시와 같은 스타일 */
+  color:#fff; font-size:var(--fs-caption); font-weight:300; line-height:1.35; text-shadow:0 0 3px rgba(0,0,0,.35);
+}
+.contents_div .ndhb-credit{
+  position:absolute; right:0; bottom:0; z-index:1; padding:12px 8px 4px 26px;
+  background:radial-gradient(ellipse at 100% 100%, rgba(0,0,0,.45) 0, rgba(0,0,0,.3) 45%, rgba(0,0,0,0) 75%);  /* 경계 없이 번지는 배경 */
+  color:#fff; font-size:var(--fs-caption); font-weight:300; line-height:1.35; text-shadow:0 0 3px rgba(0,0,0,.35);
+}
+.contents_div .ndhb-route p{ margin-top:10px; font-size:var(--fs-info); line-height:1.6; }
+
+.contents_div .ndhb-info{ margin-top:36px; border-top:2px solid var(--c-brown); }
+.contents_div .ndhb-info-row{ display:grid; grid-template-columns:110px 1fr; gap:16px; align-items:start; padding:18px 0; border-bottom:1.5px solid rgba(91,51,23,.25); }
+.contents_div .ndhb-lb{
+  display:inline-flex; align-items:center; justify-content:center; height:var(--lb-h); padding:0 var(--lb-px);
+  margin-top:calc((var(--fs-info) * 1.5 - var(--lb-h)) / 2);
+  border-radius:999px; background:var(--c-brown); color:var(--c-cream);
+  font-size:var(--fs-label); font-weight:var(--fw-label); line-height:1; white-space:nowrap; justify-self:start;
+}
+.contents_div .ndhb-info dd{ font-size:var(--fs-info); line-height:1.5; }
+.contents_div .ndhb-dates{ display:grid; grid-template-columns:repeat(auto-fill,minmax(122px,1fr)); gap:8px; }
+.contents_div .ndhb-dates li{
+  display:flex; align-items:center; gap:6px; padding:7px 10px; background:var(--c-cream);
+  border:1.5px solid var(--c-brown); border-radius:10px; white-space:nowrap;
+}
+.contents_div .ndhb-dates b{ color:var(--c-red); font-weight:800; }
+.contents_div .ndhb-price strong{ display:block; font-size:var(--fs-h3); font-weight:800; line-height:1.45; color:var(--c-red); }
+.contents_div .ndhb-price span{ display:block; color:var(--c-brown); }
+
+.contents_div .ndhb-cta{
+  display:flex; align-items:center; justify-content:center; gap:10px; width:62%; margin:28px auto 0; padding:16px 20px;
+  background:var(--c-red); color:#fff; border:2px solid var(--c-brown); border-radius:14px;
+  box-shadow:var(--sticker) var(--sticker) 0 var(--c-brown);
+  font-size:var(--fs-cta); font-weight:700; line-height:1.45; transition:transform .15s, box-shadow .15s;
+}
+.contents_div .ndhb-cta-arrow{ font-size:var(--fs-arrow); line-height:1; }
+.contents_div .ndhb-cta:active{ transform:translate(3px,3px); box-shadow:2px 2px 0 var(--c-brown); }
+
+/* ===== 푸터 ===== */
+.contents_div .ndhb-foot{ background:var(--c-brown-d); text-align:center; }
+.contents_div .ndhb-foot-title{ font-size:var(--fs-foot); font-weight:700; line-height:1.4; letter-spacing:-0.01em; color:var(--c-cream); }
+.contents_div .ndhb-foot-title em{ font-style:normal; color:var(--c-yellow); }
+.contents_div .ndhb-tags{ display:flex; flex-wrap:wrap; justify-content:center; gap:8px; margin-top:40px; }
+.contents_div .ndhb-tags li{
+  padding:6px 13px; border:1.5px solid rgba(255,248,236,.4); border-radius:999px;
+  color:var(--c-sand); font-size:var(--fs-tagcap); font-weight:700; line-height:1.25;
+}
+
+@media (hover:hover) and (pointer:fine){
+  .contents_div .ndhb-nav-btn:hover{ color:var(--c-yellow); }
+  .contents_div .ndhb-cta:hover{ transform:translate(2px,2px); box-shadow:3px 3px 0 var(--c-brown); }
+}
+
+/* ===== 반응형 ===== */
+@media (max-width:700px){
+  /* 코스: ㄹ자 → 세로 도로 */
+  .contents_div .ndhb-route{ grid-template-columns:1fr; row-gap:0; margin:18px 0 0; }
+  .contents_div .ndhb-wrap{ --img-stop:80%; }
+  .contents_div .ndhb-route > li:nth-child(n):nth-child(n){
+    grid-column:auto; grid-row:auto; padding:0 0 22px calc(var(--pin-w) + 12px);
+    display:grid; grid-template-columns:36% minmax(0,1fr); column-gap:16px; align-content:start;
+  }
+  .contents_div .ndhb-route > li:last-child{ padding-bottom:0; }
+  .contents_div .ndhb-stop--wide p{ margin-top:7px; }
+  .contents_div .ndhb-stop--wtext p{ width:auto; margin-left:0; }
+  .contents_div .ndhb-stop--wtext-r p{ width:auto; }
+  .contents_div .ndhb-route > li:nth-child(n):nth-child(n)::before{
+    left:calc(var(--pin-w) / 2 - var(--road) / 2); right:auto; width:0; top:0; bottom:0; height:auto; border-radius:0;
+    border-top:0; border-left:var(--road) solid var(--c-road);
+  }
+  .contents_div .ndhb-route > li:first-child:nth-child(n)::before{ top:calc(var(--pin-h) / 2); }
+  .contents_div .ndhb-route > li:last-child:nth-child(n):nth-child(n)::before{ bottom:auto; height:calc(var(--pin-h) / 2); }
+  .contents_div .ndhb-route > li:nth-child(n):nth-child(n)::after{ display:none; }
+  .contents_div .ndhb-pin{ left:0; top:0; margin-left:0; }
+  .contents_div .ndhb-route > li.ndhb-stop--wide{ margin-left:0; }
+  .contents_div .ndhb-stop--wide .ndhb-stop-head{ padding-left:0; }
+  .contents_div .ndhb-stop--wide .ndhb-pin{ margin-left:0; }
+  .contents_div .ndhb-stop-head{ min-height:0; flex-direction:row; align-items:flex-start; gap:7px; padding-top:calc(var(--pin-h) * 0.38 - var(--fs-body) * 0.725); text-align:left; }
+  .contents_div .ndhb-tag{ margin-top:calc((var(--fs-body) * 1.45 - var(--lb-h)) / 2); }
+  .contents_div .ndhb-seoul .ndhb-day:first-of-type .ndhb-route > li:nth-child(-n+3) .ndhb-tag{ padding-top:0; }
+  .contents_div .ndhb-stop-fig{ margin-top:10px; border-radius:8px; }
+  .contents_div .ndhb-deco--b{ left:auto; right:var(--gut); bottom:-38px; width:120px; aspect-ratio:1 / 1.05; }
+  /* 새 데코: 기존 데코 왼쪽 위 45° 방향으로 30px 떨어짐 (가로·세로 각 21px) */
+  .contents_div .ndhb-deco--b2{ left:auto; right:calc(var(--gut) + 120px + 21px - 36px); bottom:calc(-38px + 126px + 21px - 25px); width:84px; aspect-ratio:1 / 0.72; }
+  .contents_div .ndhb-route p{ grid-column:1 / -1; margin-top:7px; }
+  .contents_div .ndhb-stop-head{ grid-column:1 / -1; }
+  .contents_div .ndhb-stop-fig{ grid-column:1; align-self:start; }
+  .contents_div .ndhb-route .ndhb-stop-fig + p{ grid-column:2; margin-top:10px; }
+}
+@media (max-width:600px){
+  .contents_div .ndhb-wrap{
+    --fs-foot:clamp(16px, calc(16px + (100vw - 375px) * 0.0714), 18.5px);
+    --fs-h3:clamp(16px, calc(16px + (100vw - 375px) * 0.0286), 17px);
+    --fs-body:clamp(13.5px, calc(13.5px + (100vw - 375px) * 0.0143), 14px);
+    --fs-lead:var(--fs-body); --fs-info:var(--fs-body); --fs-cta:var(--fs-body);
+    --fs-arrow:15px; --fs-nav:12px; --fs-kicker:11.5px; --fs-num:10px; --fs-tagcap:10px;
+    --fs-label:10px; --fw-label:400; --fs-check:10px; --fs-caption:10px;
+    --fs-hash:clamp(10.5px, calc(10.5px + (100vw - 375px) * 0.0143), 11px);
+    --gut:22px;
+    --card-py:22px; --card-px:17px;
+    --kick:22px; --lb-h:17px; --lb-px:7px;
+    --img-ratio:75%;
+    --pin-w:23.4px; --pin-h:30.6px; --road:6px;
+    --nav-h:52px;
+    --wave-h:20px; --day-gap:32px;
+    --sticker:3px;
+  }
+  .contents_div .ndhb-br--web{ display:none; }
+  .contents_div .ndhb-br--mo,
+  .contents_div .ndhb-br--mo-wide{ display:inline; }
+
+  .contents_div .ndhb-head{ margin-bottom:26px; }
+  .contents_div .ndhb-kicker{ padding:0 11px; border-width:1.5px; }
+  .contents_div .ndhb-kicker.ndhb-kicker--map{ margin-top:1.9em; }
+  .contents_div .ndhb-map-spark::before{ left:calc(-0.93em - 5px); }
+  .contents_div .ndhb-map-spark::after{ right:calc(-0.83em - 5px); }
+  .contents_div .ndhb-map-flag{ bottom:calc(70% - 0.09em - 3px); width:0.205em; height:2.79em; }
+  .contents_div .ndhb-map-flag::after{ padding:0.19em 0.7em 0.19em 0.56em; font-weight:700; letter-spacing:0; }
+  .contents_div .ndhb-map-txt::before{ text-shadow:1.5px 0px 0 #fff,1.3px 0.75px 0 #fff,0.75px 1.3px 0 #fff,0px 1.5px 0 #fff,-0.75px 1.3px 0 #fff,-1.3px 0.75px 0 #fff,-1.5px 0px 0 #fff,-1.3px -0.75px 0 #fff,-0.75px -1.3px 0 #fff,-0px -1.5px 0 #fff,0.75px -1.3px 0 #fff,1.3px -0.75px 0 #fff,3px 0px 0 #fff,2.92px 0.67px 0 #fff,2.7px 1.3px 0 #fff,2.35px 1.87px 0 #fff,1.87px 2.35px 0 #fff,1.3px 2.7px 0 #fff,0.67px 2.92px 0 #fff,0px 3px 0 #fff,-0.67px 2.92px 0 #fff,-1.3px 2.7px 0 #fff,-1.87px 2.35px 0 #fff,-2.35px 1.87px 0 #fff,-2.7px 1.3px 0 #fff,-2.92px 0.67px 0 #fff,-3px 0px 0 #fff,-2.92px -0.67px 0 #fff,-2.7px -1.3px 0 #fff,-2.35px -1.87px 0 #fff,-1.87px -2.35px 0 #fff,-1.3px -2.7px 0 #fff,-0.67px -2.92px 0 #fff,-0px -3px 0 #fff,0.67px -2.92px 0 #fff,1.3px -2.7px 0 #fff,1.87px -2.35px 0 #fff,2.35px -1.87px 0 #fff,2.7px -1.3px 0 #fff,2.92px -0.67px 0 #fff,3.5px 0px 0 #222,3.45px 0.61px 0 #222,3.29px 1.2px 0 #222,3.03px 1.75px 0 #222,2.68px 2.25px 0 #222,2.25px 2.68px 0 #222,1.75px 3.03px 0 #222,1.2px 3.29px 0 #222,0.61px 3.45px 0 #222,0px 3.5px 0 #222,-0.61px 3.45px 0 #222,-1.2px 3.29px 0 #222,-1.75px 3.03px 0 #222,-2.25px 2.68px 0 #222,-2.68px 2.25px 0 #222,-3.03px 1.75px 0 #222,-3.29px 1.2px 0 #222,-3.45px 0.61px 0 #222,-3.5px 0px 0 #222,-3.45px -0.61px 0 #222,-3.29px -1.2px 0 #222,-3.03px -1.75px 0 #222,-2.68px -2.25px 0 #222,-2.25px -2.68px 0 #222,-1.75px -3.03px 0 #222,-1.2px -3.29px 0 #222,-0.61px -3.45px 0 #222,-0px -3.5px 0 #222,0.61px -3.45px 0 #222,1.2px -3.29px 0 #222,1.75px -3.03px 0 #222,2.25px -2.68px 0 #222,2.68px -2.25px 0 #222,3.03px -1.75px 0 #222,3.29px -1.2px 0 #222,3.45px -0.61px 0 #222,4px 0px 0 #222,3.94px 0.69px 0 #222,3.76px 1.37px 0 #222,3.46px 2px 0 #222,3.06px 2.57px 0 #222,2.57px 3.06px 0 #222,2px 3.46px 0 #222,1.37px 3.76px 0 #222,0.69px 3.94px 0 #222,0px 4px 0 #222,-0.69px 3.94px 0 #222,-1.37px 3.76px 0 #222,-2px 3.46px 0 #222,-2.57px 3.06px 0 #222,-3.06px 2.57px 0 #222,-3.46px 2px 0 #222,-3.76px 1.37px 0 #222,-3.94px 0.69px 0 #222,-4px 0px 0 #222,-3.94px -0.69px 0 #222,-3.76px -1.37px 0 #222,-3.46px -2px 0 #222,-3.06px -2.57px 0 #222,-2.57px -3.06px 0 #222,-2px -3.46px 0 #222,-1.37px -3.76px 0 #222,-0.69px -3.94px 0 #222,-0px -4px 0 #222,0.69px -3.94px 0 #222,1.37px -3.76px 0 #222,2px -3.46px 0 #222,2.57px -3.06px 0 #222,3.06px -2.57px 0 #222,3.46px -2px 0 #222,3.76px -1.37px 0 #222,3.94px -0.69px 0 #222; }
+  .contents_div .ndhb-h2{ margin-top:12px; line-height:1.4; font-size:calc(var(--fs-h2) + 2px); }
+  .contents_div .ndhb-lead{ margin-top:12px; }
+  .contents_div .ndhb-h1{ line-height:1.22; }
+  /* 모바일: h1 마지막 줄 주황 배경, 서브 문구는 리드문 첫 문장으로 */
+  .contents_div .ndhb-h1{ margin-bottom:14px; }
+  .contents_div .ndhb-h1-hl{
+    display:inline-block; margin-top:4px; padding:1px 10px; background:var(--c-orange); color:#fff; transform:rotate(-1.5deg);
+  }
+  .contents_div .ndhb-h1-hl em{ color:var(--c-yellow); }
+  .contents_div .ndhb-intro-sub,
+  .contents_div .ndhb-intro .ndhb-lead{ display:inline; margin:0; }
+  .contents_div .ndhb-intro-sub{
+    padding:0; background:none; transform:none; color:var(--c-brown);
+    font-size:var(--fs-lead); font-weight:400; line-height:1.6;
+  }
+  .contents_div .ndhb-intro-sub::after{ content:'. '; }
+
+  .contents_div .ndhb-sum{ margin-top:24px; }
+  .contents_div .ndhb-sum th,
+  .contents_div .ndhb-sum td{ padding:9px 6px; }
+  .contents_div .ndhb-sum thead th:first-child{ width:calc(var(--fs-info) * 4 + 12px); }
+  .contents_div .ndhb-sum tbody th{ padding:9px 5px; }
+
+  .contents_div .ndhb-points{ grid-template-columns:1fr; gap:10px; }
+  .contents_div .ndhb-points li{ flex-direction:row; gap:10px; padding:14px var(--card-px); border-width:1.5px; border-radius:12px; text-align:left; }
+
+  .contents_div .ndhb-day-no{ padding:0 17px 0 10px; border-radius:4px 0 0 4px; clip-path:polygon(0 0, calc(100% - 8px) 0, 100% 50%, calc(100% - 8px) 100%, 0 100%); }
+  .contents_div .ndhb-seoul .ndhb-kicker,
+  .contents_div .ndhb-busan .ndhb-kicker{ width:86px; height:30px; padding:0 2px 2px 11px;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='86' height='30' viewBox='0 0 86 30'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23FFE93F'/%3E%3Cstop offset='1' stop-color='%23FFC22E'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M2.5 2.5H14.5A2 2 0 0 0 18.5 2.5H85.5V10.5A5.5 5.5 0 0 0 85.5 21.5V29.5H18.5A2 2 0 0 0 14.5 29.5H2.5V21.5A5.5 5.5 0 0 0 2.5 10.5Z' fill='%2347270F' stroke='%2347270F'/%3E%3Cpath d='M0.5 0.5H12.5A2 2 0 0 0 16.5 0.5H83.5V8.5A5.5 5.5 0 0 0 83.5 19.5V27.5H16.5A2 2 0 0 0 12.5 27.5H0.5V19.5A5.5 5.5 0 0 0 0.5 8.5Z' fill='url(%23g)' stroke='%2347270F'/%3E%3Cpath d='M14.5 4.90V6.80' stroke='%2347270F' stroke-width='1.4' stroke-linecap='round'/%3E%3Cpath d='M14.5 9.20V11.10' stroke='%2347270F' stroke-width='1.4' stroke-linecap='round'/%3E%3Cpath d='M14.5 13.50V15.40' stroke='%2347270F' stroke-width='1.4' stroke-linecap='round'/%3E%3Cpath d='M14.5 17.80V19.70' stroke='%2347270F' stroke-width='1.4' stroke-linecap='round'/%3E%3C/svg%3E"); }
+  .contents_div .ndhb-busan .ndhb-kicker{ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='86' height='30' viewBox='0 0 86 30'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23FFFFFF'/%3E%3Cstop offset='1' stop-color='%23FFEFD6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M2.5 2.5H14.5A2 2 0 0 0 18.5 2.5H85.5V10.5A5.5 5.5 0 0 0 85.5 21.5V29.5H18.5A2 2 0 0 0 14.5 29.5H2.5V21.5A5.5 5.5 0 0 0 2.5 10.5Z' fill='%2347270F' stroke='%2347270F'/%3E%3Cpath d='M0.5 0.5H12.5A2 2 0 0 0 16.5 0.5H83.5V8.5A5.5 5.5 0 0 0 83.5 19.5V27.5H16.5A2 2 0 0 0 12.5 27.5H0.5V19.5A5.5 5.5 0 0 0 0.5 8.5Z' fill='url(%23g)' stroke='%2347270F'/%3E%3Cpath d='M14.5 4.90V6.80' stroke='%2347270F' stroke-width='1.4' stroke-linecap='round'/%3E%3Cpath d='M14.5 9.20V11.10' stroke='%2347270F' stroke-width='1.4' stroke-linecap='round'/%3E%3Cpath d='M14.5 13.50V15.40' stroke='%2347270F' stroke-width='1.4' stroke-linecap='round'/%3E%3Cpath d='M14.5 17.80V19.70' stroke='%2347270F' stroke-width='1.4' stroke-linecap='round'/%3E%3C/svg%3E"); }
+  .contents_div .ndhb-h3{ margin-top:8px; line-height:1.5; }
+
+  .contents_div .ndhb-info{ margin-top:26px; border-top-width:1.5px; }
+  .contents_div .ndhb-info-row{ grid-template-columns:1fr; gap:10px; padding:14px 0; }
+  .contents_div .ndhb-deco{ width:130px; transform:translateY(calc(-30% - 10px)); }
+  .contents_div .ndhb-deco--b{ width:115.2px; bottom:-30px; transform:none; }
+  .contents_div .ndhb-deco--b2{ right:calc(var(--gut) + 102px); bottom:calc(71.8px - var(--deco-dy, 0px)); width:70px; transform:none; }
+  .contents_div .ndhb-lb{ margin-top:0; height:calc(var(--lb-h) * 1.1); padding:0 calc(var(--lb-px) * 1.1); }
+  .contents_div .ndhb-dates{ grid-template-columns:repeat(2,1fr); gap:6px; }
+  .contents_div .ndhb-dates li{ padding:6px 8px; gap:5px; border-radius:8px; }
+  .contents_div .ndhb-cta{ width:100%; min-height:48px; margin-top:22px; padding:12px 16px; border-width:1.5px; border-radius:12px; }
+
+  .contents_div .ndhb-tags{ gap:4px 12px; margin-top:26px; }
+  .contents_div .ndhb-tags li{ padding:0; border:0; border-radius:0; background:none; font-size:var(--fs-hash); font-weight:400; line-height:1.35; }
+}
+@media (max-width:529px){
+  .contents_div .ndhb-wrap{ --deco-dy:13px; }   /* 부산 요소2만 13px 아래로 */
+}
+@media (max-width:500px){
+  .contents_div .ndhb-wrap{ --img-stop:62.5%; }
+  /* 490→350: 크기 90%까지, 위치 20px 더 아래로 연속 이동 */
+  .contents_div .ndhb-deco--b{
+    width:clamp(82.08px, calc(91.2px - (490px - 100vw) * 0.0651), 91.2px);
+    bottom:clamp(-74px, calc(-54px - (490px - 100vw) * 0.1429), -54px);
+  }
+  .contents_div .ndhb-deco--b2{
+    width:clamp(63px, calc(70px - (490px - 100vw) * 0.05), 70px);
+    right:calc(var(--gut) + clamp(64px, calc(98px - (490px - 100vw) * 0.2429), 98px));
+    bottom:calc(clamp(14px, calc(46.8px - (490px - 100vw) * 0.2343), 46.8px) - var(--deco-dy, 0px));
+  }
+  .contents_div .ndhb-stop--wide .ndhb-stop-fig::before{ padding-top:var(--img-stop); }
+  .contents_div .ndhb-route > li:nth-child(n):nth-child(n){ display:block; }
+  .contents_div .ndhb-route .ndhb-stop-fig + p{ margin-top:7px; }
+}
+@media (max-width:480px){
+  .contents_div .ndhb-wrap{
+    --fs-nav:clamp(11.5px, calc(11.5px + (100vw - 375px) * 0.0286), 12.5px);
+    --gut:15px;
+  }
+  .contents_div .ndhb-cta{ min-height:44px; }
+}
+@media (max-width:420px){
+  .contents_div .ndhb-wrap{
+    --band:40px;
+    --card-py:19px; --card-px:14px;
+  }
+  .contents_div .ndhb-br--mo-wide{ display:none; }
+  .contents_div .ndhb-br--m420{ display:inline; }
+}
+</style>
+
+<div class="ndhb-wrap">
+<article>
+
+  <!-- 히어로 -->
+  <figure class="ndhb-hero">
+    <img src="img/히어로.webp" alt="남도한바퀴 서울·부산발 1박 2일 상품 출시. 남도를 맛보고 남도를 거닐다. 단풍과 억새 사이 남도 지도 위에 여행지 핀이 꽂힌 그림" width="1600" height="1580" fetchpriority="high" loading="eager" decoding="async">
+  </figure>
+
+  <!-- 앵커 내비 -->
+  <nav class="ndhb-nav" aria-label="본문 바로가기">
+    <ul>
+      <li><button type="button" class="ndhb-nav-btn" data-go="ndhb-sec1"><span>남도한바퀴</span></button></li>
+      <li><button type="button" class="ndhb-nav-btn" data-go="ndhb-sec2"><span>서울 출발</span></button></li>
+      <li><button type="button" class="ndhb-nav-btn" data-go="ndhb-sec3"><span>부산 출발</span></button></li>
+    </ul>
+  </nav>
+
+  <!-- 인트로 -->
+  <section class="ndhb-sec ndhb-intro">
+    <h1 class="ndhb-h1">서울·부산 사람 모여라!<span class="ndhb-br ndhb-br--mo"></span> 1박 2일<span class="ndhb-br ndhb-br--web"></span> 남도 여행이<span class="ndhb-br ndhb-br--mo"></span> <span class="ndhb-h1-hl"><em>이 가격에</em> 가능하다고?</span></h1>
+    <p class="ndhb-intro-sub">먹으러 갔다가 반하고 옵니다</p>
+    <p class="ndhb-lead">서울러 부산러라면 주목하세요.<span class="ndhb-br ndhb-br--web"></span> 서울·부산에서 출발해 남도 대표 명소 6곳을 둘러보고 지역 대표음식 4식과<span class="ndhb-br ndhb-br--web"></span> 호텔 숙박을 즐기는 관광지 순환버스 ‘남도한바퀴’ 1박 2일 여행상품이 출시되었어요.</p>
+
+    <table class="ndhb-sum">
+      <thead>
+        <tr>
+          <th scope="col">구분</th>
+          <th scope="col">서울 출발</th>
+          <th scope="col">부산 출발</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">출발</th>
+          <td><time datetime="06:50">06:50</time><br>올림픽공원 주차장<br>(9호선 올림픽공원역 3번 출구)</td>
+          <td><time datetime="07:30">07:30</time><br>사상역 3번 출구 앞 버스정류장</td>
+        </tr>
+        <tr>
+          <th scope="row">도착</th>
+          <td>서울 올림픽공원역</td>
+          <td>부산 사상터미널</td>
+        </tr>
+        <tr>
+          <th scope="row">여행요금</th>
+          <td><strong>229,000원</strong></td>
+          <td><strong>239,000원</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 1. 남도한바퀴 -->
+  <div class="ndhb-group">
+  <section class="ndhb-sec ndhb-point" id="ndhb-sec1" tabindex="-1">
+    <div class="ndhb-head">
+      <p class="ndhb-kicker ndhb-kicker--map"><span class="ndhb-map-flag" aria-hidden="true"></span><span class="ndhb-map-spark" aria-hidden="true"></span><span class="ndhb-map-txt" data-text="남도한바퀴">남도<em>한바퀴</em></span></p>
+      <h2 class="ndhb-h2">수도권·영남권 관광객을 위한<br>체류형 관광상품</h2>
+      <p class="ndhb-lead">남도한바퀴의 눈길을 끌 만한 매력 요소는<span class="ndhb-br ndhb-br--mo"></span> 이렇게 정리할 수 있어요.</p>
+    </div>
+    <ol class="ndhb-points">
+      <li><span class="ndhb-num" aria-hidden="true">1</span><span>서울·부산에서 바로 출발하는 편리함</span></li>
+      <li><span class="ndhb-num" aria-hidden="true">2</span><span>남도 명소 6곳 + 지역 대표음식 4식 <span class="ndhb-nowrap">+ 호텔 숙박</span></span></li>
+      <li><span class="ndhb-num" aria-hidden="true">3</span><span>동일 코스 시중 여행상품 대비<span class="ndhb-br ndhb-br--m420"></span> <strong>30~40% 저렴한 가격</strong></span></li>
+    </ol>
+  </section>
+  </div>
+
+  <!-- 2. 서울 출발 -->
+  <div class="ndhb-group">
+  <section class="ndhb-sec ndhb-seoul" id="ndhb-sec2" tabindex="-1">
+    <div class="ndhb-head">
+      <p class="ndhb-kicker">서울 출발</p>
+      <h2 class="ndhb-h2"><em>서울 출발</em> 남도한바퀴</h2>
+    </div>
+
+    <section class="ndhb-day">
+      <div class="ndhb-day-body">
+        <p class="ndhb-day-no">DAY1</p>
+        <h3 class="ndhb-h3">보랏빛 해상 도로와 목포의 밤바다</h3>
+        <ol class="ndhb-route ndhb-route--both">
+          <li class="ndhb-stop">
+            <span class="ndhb-pin ndhb-pin--move" aria-hidden="true"></span>
+            <div class="ndhb-stop-head"><span class="ndhb-tag ndhb-tag--move">출발 <time datetime="06:50">06:50</time></span><h4 class="ndhb-stop-name">올림픽공원 주차장<span class="ndhb-br ndhb-br--web"></span> <span class="ndhb-stop-sub">(9호선 올림픽공원역 3번 출구)</span></h4></div>
+            <p>장거리 운전 스트레스 없이 우등버스로 편안하게 이동하세요.</p>
+          </li>
+          <li class="ndhb-stop">
+            <span class="ndhb-pin ndhb-pin--meal" aria-hidden="true"></span>
+            <div class="ndhb-stop-head"><span class="ndhb-tag ndhb-tag--meal">점심</span><h4 class="ndhb-stop-name">나주곰탕</h4></div>
+            <div class="ndhb-stop-fig"><img src="img/나주곰탕.webp" alt=""><span class="ndhb-ai">AI 생성 이미지</span></div>
+            <p>푹 고아낸 투명하고 깊은 육수에 큼직한 살코기가 듬뿍 들어간 맑은 나주곰탕으로 남도 여행의 시작을 열어요.</p>
+          </li>
+          <li class="ndhb-stop">
+            <span class="ndhb-pin ndhb-pin--course" aria-hidden="true"></span>
+            <div class="ndhb-stop-head"><span class="ndhb-tag ndhb-tag--course">코스1</span><h4 class="ndhb-stop-name">신안 퍼플섬 (반월·박지도)</h4></div>
+            <div class="ndhb-stop-fig"><img src="img/신안 퍼플섬.webp" alt=""><span class="ndhb-credit">출처: 한국관광공사</span></div>
+            <p>보랏빛으로 물든 단사교 다리와 보라색 지붕 마을을 배경으로 인생샷을 찍어보세요. 섬과 섬을 잇는 보랏빛 부교를 걸으며 바다 한가운데를 산책하는 이색 경험을 할 수도 있어요.</p>
+          </li>
+          <li class="ndhb-stop">
+            <span class="ndhb-pin ndhb-pin--course" aria-hidden="true"></span>
+            <div class="ndhb-stop-head"><span class="ndhb-tag ndhb-tag--course">코스2</span><h4 class="ndhb-stop-name">목포 해상케이블카</h4></div>
+            <div class="ndhb-stop-fig"><img src="img/목포 해상케이블카.webp" alt=""><span class="ndhb-credit">출처: 한국관광공사</span></div>
+            <p>국내 최장(3.23km)이자 최고 높이를 자랑하는 케이블카입니다. 유달산의 기암괴석을 지나 바다 위를 가로지를 때 펼쳐지는 목포 항구의 해 질 녘 풍경이 압권이랍니다.</p>
+          </li>
+          <li class="ndhb-stop">
+            <span class="ndhb-pin ndhb-pin--meal" aria-hidden="true"></span>
+            <div class="ndhb-stop-head"><span class="ndhb-tag ndhb-tag--meal">저녁</span><h4 class="ndhb-stop-name">남도 회정식</h4></div>
+            <div class="ndhb-stop-fig"><img src="img/남도 회정식.webp" alt=""><span class="ndhb-ai">AI 생성 이미지</span></div>
+            <p>목포 앞바다에서 갓 잡은 싱싱한 제철 활어회와 상다리가 부러질 듯 차려지는 수십 가지 밑반찬이 남도 미식의 정수를 보여줄 거예요.</p>
+          </li>
+          <li class="ndhb-stop">
+            <span class="ndhb-pin ndhb-pin--course" aria-hidden="true"></span>
+            <div class="ndhb-stop-head"><span class="ndhb-tag ndhb-tag--course">코스3</span><h4 class="ndhb-stop-name">목포 스카이워크</h4></div>
+            <div class="ndhb-stop-fig"><img src="img/목포 스카이워크.webp" alt=""><span class="ndhb-credit">출처: 한국관광공사</span></div>
+            <p>바다 위 15m 높이에 총길이는 120m, 바닥의 2/3 이상이 투명 강화유리로 되어 있어 짜릿한 스릴을 만끽할 수 있어요.</p>
+          </li>
+          <li class="ndhb-stop ndhb-stop--wtext-r">
+            <span class="ndhb-pin ndhb-pin--move" aria-hidden="true"></span>
+            <div class="ndhb-stop-head"><span class="ndhb-tag ndhb-tag--move">숙소</span><h4 class="ndhb-stop-name">해남 호텔 써던힐</h4></div>
+            <p>남도의 정취 속에 깔끔하게 정돈된 객실에서 피로를 풀어보세요.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="ndhb-day">
+      <div class="ndhb-deco"><img src="img/seoul-deco.webp" alt=""></div>
+      <div class="ndhb-day-body">
+        <p class="ndhb-day-no">DAY2</p>
+        <h3 class="ndhb-h3">1,200년 고찰의 기운과 생태 정원</h3>
+        <ol class="ndhb-route">
+          <li class="ndhb-stop">
+            <span class="ndhb-pin ndhb-pin--meal" aria-hidden="true"></span>
+            <div class="ndhb-stop-head"><span class="ndhb-tag ndhb-tag--meal">아침</span><h4 class="ndhb-stop-name">해남 백반정식</h4></div>
+            <div class="ndhb-stop-fig"><img src="img/해남 백반정식.webp" alt=""><span class="ndhb-ai">AI 생성 이미지</span></div>
+            <p>남도 손맛의 끝판왕 백반을 든든하게 먹고 남도 여행 이틀째를 시작해요.</p>
+          </li>
+          <li class="ndhb-stop">
+            <span class="ndhb-pin ndhb-pin--course" aria-hidden="true"></span>
+            <div class="ndhb-stop-head"><span class="ndhb-tag ndhb-tag--course">코스3</span><h4 class="ndhb-stop-name">해남 대흥사 (유네스코 세계문화유산)</h4></div>
+            <div class="ndhb-stop-fig"><img src="img/해남 대흥사.webp" alt=""><span class="ndhb-credit">출처: 한국관광공사</span></div>
+            <p>의상대사가 창건한 천년고찰로, 임진왜란 때 승병을 이끈 서산대사의 의발이 보관된 호국사찰입니다. 빽빽한 삼나무와 전나무 숲길을 걸어 들어가는 진입로부터 깊은 힐링을 선물해요.</p>
+          </li>
+          <li class="ndhb-stop">
+            <span class="ndhb-pin ndhb-pin--meal" aria-hidden="true"></span>
+            <div class="ndhb-stop-head"><span class="ndhb-tag ndhb-tag--meal">점심</span><h4 class="ndhb-stop-name">강진 닭코스 요리</h4></div>
+            <div class="ndhb-stop-fig"><img src="img/강진 닭코스 요리.webp" alt=""><span class="ndhb-ai">AI 생성 이미지</span></div>
+            <p>닭가슴살 육회, 닭불고기, 백숙, 닭죽까지 한 마리를 부위별 특색에 맞춰 코스로 즐기는 강진만의 별미예요.</p>
+          </li>
+          <li class="ndhb-stop ndhb-stop--wide">
+            <span class="ndhb-pin ndhb-pin--course" aria-hidden="true"></span>
+            <div class="ndhb-stop-head"><span class="ndhb-tag ndhb-tag--course">코스4</span><h4 class="ndhb-stop-name">강진만 생태공원 &amp; 백운동 정원</h4></div>
+            <div class="ndhb-stop-fig"><img src="img/강진만 생태공원.webp" alt=""><span class="ndhb-credit">출처: 한국관광공사</span></div>
+            <p>1,131종의 다양한 생물이 숨 쉬는 강진만 갈대밭과, 담양 소쇄원·보길도 세연정과 함께 ‘호남 3대 민간정원’으로 꼽히는 백운동 정원을 탐방합니다. 다산 정약용 선생이 아름다움에 반해 시를 남긴 조선 선비들의 숨은 휴식처예요.</p>
+          </li>
+          <li class="ndhb-stop">
+            <span class="ndhb-pin ndhb-pin--move" aria-hidden="true"></span>
+            <div class="ndhb-stop-head"><span class="ndhb-tag ndhb-tag--move">도착</span><h4 class="ndhb-stop-name">서울 올림픽공원역</h4></div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <div class="ndhb-book">
+      <dl class="ndhb-info">
+        <div class="ndhb-info-row">
+          <dt class="ndhb-lb">여행일자</dt>
+          <dd>
+            <ol class="ndhb-dates">
+              <li><b>1회</b><time datetime="2026-11-12">11/12(목)</time></li>
+              <li><b>2회</b><time datetime="2026-11-14">11/14(토)</time></li>
+              <li><b>3회</b><time datetime="2026-11-19">11/19(목)</time></li>
+              <li><b>4회</b><time datetime="2026-11-21">11/21(토)</time></li>
+              <li><b>5회</b><time datetime="2026-11-27">11/27(금)</time></li>
+              <li><b>6회</b><time datetime="2026-11-28">11/28(토)</time></li>
+              <li><b>7회</b><time datetime="2026-12-05">12/5(토)</time></li>
+            </ol>
+          </dd>
+        </div>
+        <div class="ndhb-info-row">
+          <dt class="ndhb-lb">여행요금</dt>
+          <dd class="ndhb-price"><strong>229,000원</strong><span>(왕복 우등버스비, 4식 식사비, 입장료, 숙박비 포함)</span></dd>
+        </div>
+      </dl>
+  
+      <a class="ndhb-cta" href="https://www.kumhoaround.com/Home/Namdo/Tour.aspx?PerfId=2512" target="_blank" rel="noopener">서울 남도한바퀴 예약하기<span class="ndhb-cta-arrow" aria-hidden="true">→</span></a>
+    </div>
+  </section>
+  </div>
+
+  <!-- 3. 부산 출발 -->
+  <div class="ndhb-group">
+  <section class="ndhb-sec ndhb-busan" id="ndhb-sec3" tabindex="-1">
+    <div class="ndhb-head">
+      <p class="ndhb-kicker">부산 출발</p>
+      <h2 class="ndhb-h2"><em>부산 출발</em> 남도한바퀴</h2>
+    </div>
+
+    <section class="ndhb-day">
+      <div class="ndhb-day-body">
+        <p class="ndhb-day-no">DAY1</p>
+        <h3 class="ndhb-h3">천년 아치교와 여수 밤바다의 미식</h3>
+        <ol class="ndhb-route">
+          <li class="ndhb-stop">
+            <span class="ndhb-pin ndhb-pin--move" aria-hidden="true"></span>
+            <div class="ndhb-stop-head"><span class="ndhb-tag ndhb-tag--move">출발 <time datetime="07:30">07:30</time></span><h4 class="ndhb-stop-name">사상역 3번 출구 앞 버스정류장</h4></div>
+            <p>장거리 운전 스트레스 없이 우등버스로 편안하게 이동하세요.</p>
+          </li>
+          <li class="ndhb-stop">
+            <span class="ndhb-pin ndhb-pin--course" aria-hidden="true"></span>
+            <div class="ndhb-stop-head"><span class="ndhb-tag ndhb-tag--course">코스1</span><h4 class="ndhb-stop-name">순천 선암사</h4></div>
+            <div class="ndhb-stop-fig"><img src="img/순천 선암사.webp" alt=""><span class="ndhb-credit">출처: 순천시</span></div>
+            <p>둥글게 돌을 쌓아 만든 승선교를 건너며 마음을 정화하고, 우리나라에서 가장 아름다운 간이 해우소(화장실)와 오래된 선암매의 정취를 느껴보세요.</p>
+          </li>
+          <li class="ndhb-stop">
+            <span class="ndhb-pin ndhb-pin--meal" aria-hidden="true"></span>
+            <div class="ndhb-stop-head"><span class="ndhb-tag ndhb-tag--meal">점심</span><h4 class="ndhb-stop-name">순천 꼬막비빔밥 정식</h4></div>
+            <div class="ndhb-stop-fig"><img src="img/순천 꼬막비빔밥 정식.webp" alt=""><span class="ndhb-ai">AI 생성 이미지</span></div>
+            <p>탱글탱글한 제철 꼬막을 매콤달콤한 양념에 쓱쓱 비벼 먹는 남도 대표 밥도둑입니다.</p>
+          </li>
+          <li class="ndhb-stop">
+            <span class="ndhb-pin ndhb-pin--course" aria-hidden="true"></span>
+            <div class="ndhb-stop-head"><span class="ndhb-tag ndhb-tag--course">코스2</span><h4 class="ndhb-stop-name">순천만국가정원 &amp; 여수 오동도</h4></div>
+            <div class="ndhb-stop-fig"><img src="img/순천만국가정원.webp" alt=""><span class="ndhb-credit">출처: 여수시 블로그</span></div>
+            <p>대한민국 1호 국가정원의 압도적인 풍경을 관람하고 동백섬으로 유명한 여수 오동도로 이동해요.</p>
+          </li>
+          <li class="ndhb-stop">
+            <span class="ndhb-pin ndhb-pin--meal" aria-hidden="true"></span>
+            <div class="ndhb-stop-head"><span class="ndhb-tag ndhb-tag--meal">저녁</span><h4 class="ndhb-stop-name">여수 꽃게장 정식</h4></div>
+            <div class="ndhb-stop-fig"><img src="img/여수 꽃게장 정식.webp" alt=""><span class="ndhb-ai">AI 생성 이미지</span></div>
+            <p>감칠맛이 폭발하는 간장게장과 칼칼한 양념게장! 제철 맞은 게의 꽉 찬 알과 살을 맛보세요.</p>
+          </li>
+          <li class="ndhb-stop">
+            <span class="ndhb-pin ndhb-pin--move" aria-hidden="true"></span>
+            <div class="ndhb-stop-head"><span class="ndhb-tag ndhb-tag--move">숙소</span><h4 class="ndhb-stop-name">여수 유탑 마리나 호텔</h4></div>
+            <p>여수 바다가 한눈에 들어오는 오션뷰 호텔에서 편안한 하룻밤을 보내며 여행의 피로를 풀어요.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="ndhb-day">
+      <div class="ndhb-deco ndhb-deco--b"><img src="img/busan-deco.webp" alt=""></div>
+      <div class="ndhb-deco ndhb-deco--b2"><img src="img/busan-deco2.webp" alt=""></div>
+      <div class="ndhb-day-body">
+        <p class="ndhb-day-no">DAY2</p>
+        <h3 class="ndhb-h3">미디어아트 체험과 시인의 숨은 이야기</h3>
+        <ol class="ndhb-route">
+          <li class="ndhb-stop">
+            <span class="ndhb-pin ndhb-pin--meal" aria-hidden="true"></span>
+            <div class="ndhb-stop-head"><span class="ndhb-tag ndhb-tag--meal">아침</span><h4 class="ndhb-stop-name">호텔 뷔페</h4></div>
+            <div class="ndhb-stop-fig"><img src="img/호텔 뷔페.webp" alt=""><span class="ndhb-credit">출처: 여수 유탑마리나</span></div>
+            <p>유탑마리나의 조식 뷔페를 든든하게 먹고 이틀째 남도한바퀴를 시작해 보세요.</p>
+          </li>
+          <li class="ndhb-stop">
+            <span class="ndhb-pin ndhb-pin--course" aria-hidden="true"></span>
+            <div class="ndhb-stop-head"><span class="ndhb-tag ndhb-tag--course">코스3</span><h4 class="ndhb-stop-name">여수 예술랜드 체험</h4></div>
+            <div class="ndhb-stop-fig"><img src="img/여수 예술랜드 체험.webp" alt=""><span class="ndhb-credit">출처: 여수 예술랜드</span></div>
+            <p>여수 남해바다를 배경으로 펼쳐지는 AR 미디어아트&amp;다채로운 조각 공원이에요. 다양한 포토존에서 인생샷을 찍어보세요.</p>
+          </li>
+          <li class="ndhb-stop">
+            <span class="ndhb-pin ndhb-pin--meal" aria-hidden="true"></span>
+            <div class="ndhb-stop-head"><span class="ndhb-tag ndhb-tag--meal">점심</span><h4 class="ndhb-stop-name">광양불고기 정식</h4></div>
+            <div class="ndhb-stop-fig"><img src="img/광양불고기 정식.webp" alt=""><span class="ndhb-ai">AI 생성 이미지</span></div>
+            <p>참숯 화로에 석쇠를 올리고 얇게 썬 소고기를 즉석에서 양념해 구워내는 광양의 맛, 우리나라 3대 불고기의 명성을 느껴보세요.</p>
+          </li>
+          <li class="ndhb-stop ndhb-stop--wtext">
+            <span class="ndhb-pin ndhb-pin--course" aria-hidden="true"></span>
+            <div class="ndhb-stop-head"><span class="ndhb-tag ndhb-tag--course">코스4</span><h4 class="ndhb-stop-name">백운산 자연휴양림 &amp; 윤동주 유고 보존 정병욱 가옥</h4></div>
+            <div class="ndhb-stop-fig"><img src="img/백운산 자연휴양림.webp" alt=""><span class="ndhb-credit">출처: 한국관광공사</span></div>
+            <p>울창한 삼림욕으로 여행의 피로를 풀고, 마지막으로 망덕포구의 정병욱 가옥으로 향합니다. 한국 문학사의 기적 같은 장소를 직접 확인해보세요.</p>
+          </li>
+          <li class="ndhb-stop">
+            <span class="ndhb-pin ndhb-pin--move" aria-hidden="true"></span>
+            <div class="ndhb-stop-head"><span class="ndhb-tag ndhb-tag--move">도착</span><h4 class="ndhb-stop-name">부산 사상터미널</h4></div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <div class="ndhb-book">
+      <dl class="ndhb-info">
+        <div class="ndhb-info-row">
+          <dt class="ndhb-lb">여행일정</dt>
+          <dd>
+            <ol class="ndhb-dates">
+              <li><b>1회</b><time datetime="2026-11-07">11/7(토)</time></li>
+              <li><b>2회</b><time datetime="2026-11-11">11/11(수)</time></li>
+              <li><b>3회</b><time datetime="2026-11-14">11/14(토)</time></li>
+              <li><b>4회</b><time datetime="2026-11-16">11/16(월)</time></li>
+              <li><b>5회</b><time datetime="2026-11-21">11/21(토)</time></li>
+              <li><b>6회</b><time datetime="2026-11-27">11/27(금)</time></li>
+              <li><b>7회</b><time datetime="2026-11-28">11/28(토)</time></li>
+            </ol>
+          </dd>
+        </div>
+        <div class="ndhb-info-row">
+          <dt class="ndhb-lb">여행요금</dt>
+          <dd class="ndhb-price"><strong>239,000원</strong><span>(왕복 우등버스비, 식사비, 입장료, 숙박비 포함)</span></dd>
+        </div>
+      </dl>
+  
+      <a class="ndhb-cta" href="https://www.kumhoaround.com/Home/Namdo/Tour.aspx?PerfId=2669" target="_blank" rel="noopener">부산 남도한바퀴 예약하기<span class="ndhb-cta-arrow" aria-hidden="true">→</span></a>
+    </div>
+  </section>
+  </div>
+
+  <!-- 푸터 -->
+  <footer class="ndhb-sec ndhb-foot">
+    <p class="ndhb-foot-title">남도의 명소를 편하게 즐기고<span class="ndhb-br ndhb-br--mo"></span> 알찬 먹거리까지,<span class="ndhb-br ndhb-br--web"></span> <em>남도한바퀴</em> 타고<span class="ndhb-br ndhb-br--mo"></span> 남도의 매력에 퐁당 빠져보세요!</p>
+    <ul class="ndhb-tags">
+      <li>#남도한바퀴</li>
+      <li>#남도여행</li>
+      <li>#전남여행</li>
+      <li>#1박2일여행</li>
+      <li>#서울출발여행</li>
+      <li>#부산출발여행</li>
+      <li>#신안퍼플섬</li>
+      <li>#목포해상케이블카</li>
+      <li>#순천만국가정원</li>
+      <li>#여수오동도</li>
+    </ul>
+  </footer>
+
+</article>
+</div>
+
+<script>
+(function(){
+  var root = document.querySelector('.contents_div');
+  if(!root) return;
+  var btns = root.querySelectorAll('.ndhb-nav-btn');
+
+  function setOn(id){
+    for(var i=0;i<btns.length;i++){
+      var on = btns[i].getAttribute('data-go') === id;
+      btns[i].classList.toggle('is-on', on);
+      if(on){ btns[i].setAttribute('aria-current','true'); } else { btns[i].removeAttribute('aria-current'); }
+    }
+  }
+
+  for(var i=0;i<btns.length;i++){
+    btns[i].addEventListener('click', function(){
+      var t = root.querySelector('#' + this.getAttribute('data-go'));
+      if(!t) return;
+      var y = t.getBoundingClientRect().top + (window.pageYOffset || document.documentElement.scrollTop);
+      try{ window.scrollTo({ top:y, behavior:'smooth' }); }catch(e){ window.scrollTo(0, y); }
+      try{ t.focus({ preventScroll:true }); }catch(e){}
+    });
+  }
+
+  /* 웹 경로선 — 직선·U턴·양끝 원을 하나의 SVG 경로로 그려 이음매 정렬 문제 제거 */
+  var NS='http://www.w3.org/2000/svg';
+  function px(el,name){ return parseFloat(getComputedStyle(el).getPropertyValue(name))||0; }
+  function drawRoutes(){
+    var routes=root.querySelectorAll('.ndhb-route');
+    for(var r=0;r<routes.length;r++){
+      var rt=routes[r], svg=rt.nextElementSibling; if(svg && svg.getAttribute('class')!=='ndhb-route-svg') svg=null;
+      var cols=getComputedStyle(rt).gridTemplateColumns.split(' ').length;
+      if(cols<3){ rt.classList.remove('is-svg'); if(svg) svg.style.display='none'; continue; }
+      var lis=rt.querySelectorAll(':scope > li'); if(!lis.length) continue;
+      var road=px(rt,'--road'), ry=px(rt,'--road-y'), turn=px(rt,'--turn'), tr=px(rt,'--turn-r');
+      var W=rt.clientWidth, rad=tr-road/2, rows=[], last=-1e9;
+      for(var i=0;i<lis.length;i++){ var t=lis[i].offsetTop; if(Math.abs(t-last)>2){ rows.push(t+ry+road/2); last=t; } }
+      var f=lis[0], e=lis[lis.length-1];
+      var sx=f.offsetLeft+12, ex, lastRow=rows.length-1;
+      ex=(lastRow%2===0)? e.offsetLeft+e.offsetWidth-12 : e.offsetLeft+12;
+      var xr=W+turn-road/2, xl=-turn+road/2, d='M'+sx+' '+rows[0];
+      for(var k=0;k<lastRow;k++){
+        var y=rows[k], y2=rows[k+1];
+        if(k%2===0) d+=' H'+(xr-rad)+' A'+rad+' '+rad+' 0 0 1 '+xr+' '+(y+rad)+' V'+(y2-rad)+' A'+rad+' '+rad+' 0 0 1 '+(xr-rad)+' '+y2;
+        else        d+=' H'+(xl+rad)+' A'+rad+' '+rad+' 0 0 0 '+xl+' '+(y+rad)+' V'+(y2-rad)+' A'+rad+' '+rad+' 0 0 0 '+(xl+rad)+' '+y2;
+      }
+      d+=' H'+ex;
+      if(!svg){
+        svg=document.createElementNS(NS,'svg'); svg.setAttribute('class','ndhb-route-svg'); svg.setAttribute('aria-hidden','true');
+        svg.appendChild(document.createElementNS(NS,'path'));
+        svg.appendChild(document.createElementNS(NS,'circle'));
+        svg.appendChild(document.createElementNS(NS,'circle'));
+        rt.parentNode.insertBefore(svg,rt.nextSibling);
+      }
+      svg.style.display=''; svg.style.left=rt.offsetLeft+'px'; svg.style.top=rt.offsetTop+'px'; svg.setAttribute('width',W); svg.setAttribute('height',rt.clientHeight);
+      var p=svg.querySelector('path'); p.setAttribute('d',d); p.setAttribute('stroke-width',road);
+      var c=svg.querySelectorAll('circle');
+      c[0].setAttribute('cx',sx); c[0].setAttribute('cy',rows[0]); c[0].setAttribute('r',8.5);
+      c[1].setAttribute('cx',ex); c[1].setAttribute('cy',rows[lastRow]); c[1].setAttribute('r',8.5);
+      rt.classList.add('is-svg');
+    }
+  }
+  drawRoutes();
+  if(document.fonts && document.fonts.ready){ document.fonts.ready.then(drawRoutes)['catch'](function(){}); }
+  var wrapEl=root.querySelector('.ndhb-wrap');
+  if(window.ResizeObserver && wrapEl){
+    var dt, lw=0;
+    new ResizeObserver(function(en){ var w=Math.round(en[0].contentRect.width); if(w===lw) return; lw=w; clearTimeout(dt); dt=setTimeout(drawRoutes,120); }).observe(wrapEl);
+  }
+  root.querySelectorAll('.ndhb-route img').forEach(function(im){ if(!im.complete) im.addEventListener('load',drawRoutes); });
+
+  if(window.IntersectionObserver){
+    var secs = root.querySelectorAll('#ndhb-sec1, #ndhb-sec2, #ndhb-sec3');
+    var io = new IntersectionObserver(function(entries){
+      for(var j=0;j<entries.length;j++){
+        if(entries[j].isIntersecting){ setOn(entries[j].target.id); }
+      }
+    }, { rootMargin:'-45% 0px -50% 0px' });
+    for(var k=0;k<secs.length;k++){ io.observe(secs[k]); }
+  }
+})();
+</script>
+</div>
