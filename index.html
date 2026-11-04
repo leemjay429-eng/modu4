@@ -677,6 +677,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   .contents_div .ndhb-br--mo-wide{ display:none; }
   .contents_div .ndhb-br--m420{ display:inline; }
   .contents_div .ndhb-intro .ndhb-h1{ margin-bottom:21px; }   /* 인트로 리드문 위 +7 */
+  .contents_div .ndhb-sum-sub{ font-size:11px; letter-spacing:-0.03em; }   /* (9호선 올림픽공원역 / 3번 출구) 두 줄 */
   .contents_div .ndhb-seoul .ndhb-deco{ transform:translateY(calc(-30% - 20px)); }   /* 서울 데코 10px 위로 */
   .contents_div .ndhb-deco--b{ bottom:calc(clamp(-74px, calc(-54px - (490px - 100vw) * 0.1429), -54px) + 21px + var(--b1-up, 0px) + var(--grp, 0px)); }   /* 부산 요소1: 500 이하 17px + 420 이하 4px 위로 */
   .contents_div .ndhb-deco:not(.ndhb-deco--b):not(.ndhb-deco--b2){ transform:translateY(calc(-30% - 20px)); }   /* 서울 요소 10px 더 위로 */
@@ -697,11 +698,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 <article>
 
   <!-- 히어로 -->
-<!-- TEST: 확인 후 이 줄 삭제 -->
-<div class="jngj-test-spacer" aria-hidden="true" style="height:900px;max-width:800px;margin:auto;display:grid;place-items:center;border:1px solid #cb9;background:linear-gradient(to top right,#0000 calc(50% - 1px),#cb9,#0000 calc(50% + 1px)),linear-gradient(to top left,#0000 calc(50% - 1px),#cb9,#0000 calc(50% + 1px)) #fffdef;font:700 16px sans-serif;color:#7E5E50"><b style="padding:10px 20px;background:#fffdef;border:1px solid #cb9;border-radius:99px">
-  테스트 영역 · 아래로 스크롤 ↓</b></div>
-<!-- TEST: 확인 후 이 줄 삭제  -->
-  <figure class="ndhb-hero" role="img" aria-label="남도한바퀴 서울·부산발 1박 2일 상품 출시. 남도를 맛보고 남도를 거닐다. 단풍과 억새 사이 남도 지도 위에 여행지 핀이 꽂힌 그림">
+<figure class="ndhb-hero" role="img" aria-label="남도한바퀴 서울·부산발 1박 2일 상품 출시. 남도를 맛보고 남도를 거닐다. 단풍과 억새 사이 남도 지도 위에 여행지 핀이 꽂힌 그림">
 
     <div class="ndhb-hero__layer ndhb-hero__bg" aria-hidden="true">
       <img alt="" width="1600" height="1580" fetchpriority="high" loading="eager" decoding="async"
@@ -801,7 +798,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
       <tbody>
         <tr>
           <th scope="row">출발</th>
-          <td><time datetime="06:50">06:50</time><br>올림픽공원 주차장<br>(9호선 올림픽공원역 3번 출구)</td>
+          <td><time datetime="06:50">06:50</time><br>올림픽공원 주차장<br><span class="ndhb-sum-sub">(9호선 올림픽공원역<span class="ndhb-br ndhb-br--m420"></span> 3번 출구)</span></td>
           <td><time datetime="07:30">07:30</time><br>사상역 3번 출구 앞 버스정류장</td>
         </tr>
         <tr>
