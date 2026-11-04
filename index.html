@@ -146,9 +146,55 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 }
 .contents_div .ndhb-lead{ margin-top:14px; font-size:var(--fs-lead); line-height:1.6; color:var(--c-brown); }
 
-/* ===== 히어로 ===== */
-.contents_div .ndhb-hero{ background:#F59A3C; }
-.contents_div .ndhb-hero img{ width:100%; height:auto; }
+/* ===== 히어로 (모션) ===== */
+.contents_div .ndhb-hero{position:relative;width:100%;max-width:800px;margin:0 auto;aspect-ratio:1600/1580;overflow:hidden;background:#ffc8cc}
+.contents_div .ndhb-hero img{display:block;width:100%;height:auto;max-width:none;margin:0;border:0}
+.contents_div .ndhb-hero__layer{position:absolute;inset:0}
+.contents_div .ndhb-hero__layer img{width:100%;height:100%}
+.contents_div .ndhb-hero__el{position:absolute}
+.contents_div .ndhb-hero__crop{position:relative;display:block;width:100%;overflow:hidden}
+.contents_div .ndhb-hero .ndhb-hero__crop img{position:absolute;height:auto;max-width:none}
+.contents_div .ndhb-hero__title .ndhb-hero__crop{overflow:visible}
+.contents_div .ndhb-hero__title--top .ndhb-hero__crop img{clip-path:polygon(0% 0%,100% 0%,100.000% 30.127%,90.062% 30.127%,87.688% 30.127%,87.688% 30.063%,87.312% 30.063%,87.312% 30.000%,86.938% 30.000%,86.938% 29.937%,86.188% 29.937%,86.188% 30.000%,85.438% 30.000%,85.438% 29.620%,85.062% 29.620%,85.062% 28.924%,84.688% 28.924%,84.688% 28.481%,83.938% 28.481%,83.938% 28.544%,82.625% 28.544%,82.625% 28.608%,81.312% 28.608%,81.312% 28.671%,80.000% 28.671%,80.000% 28.734%,78.750% 28.734%,78.750% 28.797%,77.438% 28.797%,77.438% 28.861%,76.125% 28.861%,76.125% 28.924%,74.812% 28.924%,74.812% 28.987%,73.500% 28.987%,73.500% 29.051%,72.188% 29.051%,72.188% 29.114%,70.938% 29.114%,70.938% 29.177%,69.625% 29.177%,69.625% 29.241%,68.312% 29.241%,68.312% 29.304%,67.000% 29.304%,67.000% 29.367%,65.688% 29.367%,65.688% 29.430%,64.375% 29.430%,64.375% 29.494%,63.125% 29.494%,63.125% 29.557%,61.812% 29.557%,61.812% 29.620%,60.500% 29.620%,60.500% 29.684%,59.188% 29.684%,59.188% 29.747%,57.875% 29.747%,57.875% 29.810%,56.562% 29.810%,56.562% 29.873%,55.312% 29.873%,55.312% 29.937%,54.000% 29.937%,54.000% 30.000%,52.688% 30.000%,52.688% 30.063%,51.375% 30.063%,51.375% 30.127%,49.500% 30.127%,49.500% 30.190%,48.750% 30.190%,48.750% 30.253%,47.500% 30.253%,47.500% 30.316%,46.188% 30.316%,46.188% 30.380%,44.875% 30.380%,44.875% 30.443%,43.562% 30.443%,43.562% 30.506%,42.250% 30.506%,42.250% 30.570%,40.938% 30.570%,40.938% 30.633%,39.688% 30.633%,39.688% 30.696%,38.375% 30.696%,38.375% 30.759%,37.062% 30.759%,37.062% 30.823%,35.750% 30.823%,35.750% 30.886%,34.438% 30.886%,34.438% 30.949%,33.125% 30.949%,33.125% 31.013%,31.875% 31.013%,31.875% 31.076%,30.562% 31.076%,30.562% 31.139%,29.250% 31.139%,29.250% 31.203%,27.938% 31.203%,27.938% 31.266%,26.625% 31.266%,26.625% 31.329%,25.312% 31.329%,25.312% 31.392%,24.062% 31.392%,24.062% 31.456%,22.750% 31.456%,22.750% 31.519%,21.438% 31.519%,21.438% 31.582%,20.125% 31.582%,20.125% 31.646%,18.812% 31.646%,18.812% 31.709%,17.500% 31.709%,17.500% 31.772%,15.938% 31.772%,15.938% 30.127%,15.562% 30.127%,0.000% 30.127%)}
+.contents_div .ndhb-hero__title--bot .ndhb-hero__crop img{clip-path:polygon(0.000% 30.127%,15.562% 30.127%,15.938% 30.127%,15.938% 31.772%,17.500% 31.772%,17.500% 31.709%,18.812% 31.709%,18.812% 31.646%,20.125% 31.646%,20.125% 31.582%,21.438% 31.582%,21.438% 31.519%,22.750% 31.519%,22.750% 31.456%,24.062% 31.456%,24.062% 31.392%,25.312% 31.392%,25.312% 31.329%,26.625% 31.329%,26.625% 31.266%,27.938% 31.266%,27.938% 31.203%,29.250% 31.203%,29.250% 31.139%,30.562% 31.139%,30.562% 31.076%,31.875% 31.076%,31.875% 31.013%,33.125% 31.013%,33.125% 30.949%,34.438% 30.949%,34.438% 30.886%,35.750% 30.886%,35.750% 30.823%,37.062% 30.823%,37.062% 30.759%,38.375% 30.759%,38.375% 30.696%,39.688% 30.696%,39.688% 30.633%,40.938% 30.633%,40.938% 30.570%,42.250% 30.570%,42.250% 30.506%,43.562% 30.506%,43.562% 30.443%,44.875% 30.443%,44.875% 30.380%,46.188% 30.380%,46.188% 30.316%,47.500% 30.316%,47.500% 30.253%,48.750% 30.253%,48.750% 30.190%,49.500% 30.190%,49.500% 30.127%,51.375% 30.127%,51.375% 30.063%,52.688% 30.063%,52.688% 30.000%,54.000% 30.000%,54.000% 29.937%,55.312% 29.937%,55.312% 29.873%,56.562% 29.873%,56.562% 29.810%,57.875% 29.810%,57.875% 29.747%,59.188% 29.747%,59.188% 29.684%,60.500% 29.684%,60.500% 29.620%,61.812% 29.620%,61.812% 29.557%,63.125% 29.557%,63.125% 29.494%,64.375% 29.494%,64.375% 29.430%,65.688% 29.430%,65.688% 29.367%,67.000% 29.367%,67.000% 29.304%,68.312% 29.304%,68.312% 29.241%,69.625% 29.241%,69.625% 29.177%,70.938% 29.177%,70.938% 29.114%,72.188% 29.114%,72.188% 29.051%,73.500% 29.051%,73.500% 28.987%,74.812% 28.987%,74.812% 28.924%,76.125% 28.924%,76.125% 28.861%,77.438% 28.861%,77.438% 28.797%,78.750% 28.797%,78.750% 28.734%,80.000% 28.734%,80.000% 28.671%,81.312% 28.671%,81.312% 28.608%,82.625% 28.608%,82.625% 28.544%,83.938% 28.544%,83.938% 28.481%,84.688% 28.481%,84.688% 28.924%,85.062% 28.924%,85.062% 29.620%,85.438% 29.620%,85.438% 30.000%,86.188% 30.000%,86.188% 29.937%,86.938% 29.937%,86.938% 30.000%,87.312% 30.000%,87.312% 30.063%,87.688% 30.063%,87.688% 30.127%,90.062% 30.127%,100.000% 30.127%,100% 100%,0% 100%)}
+
+/* 초기 상태: 화면에 들어오기 전 */
+.contents_div .ndhb-hero__bg{transform:scale(1.12);transform-origin:50% 40%}
+.contents_div .ndhb-hero__map{opacity:0;transform:translateY(8%)}
+.contents_div .ndhb-hero__badge{opacity:0;transform:translateX(-40%)}
+.contents_div .ndhb-hero__title{clip-path:polygon(-50% -50%,12.5% -50%,-37.5% 150%,-50% 150%);transform:translateX(-3%)}
+.contents_div .ndhb-hero__pin{opacity:0;transform:translateY(-140%);transform-origin:50% 100%}
+.contents_div .ndhb-hero__icon{opacity:0;transform:scale(0)}
+.contents_div .ndhb-hero__leaves{opacity:0}
+
+/* 재생 */
+.contents_div .ndhb-hero.is-play .ndhb-hero__bg{animation:ndhb-bg 2.2s cubic-bezier(.22,.8,.3,1) forwards}
+.contents_div .ndhb-hero.is-play .ndhb-hero__map{animation:ndhb-map 1s cubic-bezier(.22,.8,.3,1) .35s forwards}
+.contents_div .ndhb-hero.is-play .ndhb-hero__badge{animation:ndhb-badge .9s cubic-bezier(.2,.9,.3,1.15) .6s forwards}
+.contents_div .ndhb-hero.is-play .ndhb-hero__badge .ndhb-hero__crop{animation:ndhb-ride 1.2s ease-in-out 1.6s infinite}
+.contents_div .ndhb-hero.is-play .ndhb-hero__title{animation:ndhb-wipe .75s cubic-bezier(.6,0,.2,1) forwards}
+.contents_div .ndhb-hero.is-play .ndhb-hero__pin{animation:ndhb-drop .7s cubic-bezier(.3,1.4,.5,1) forwards,ndhb-bob 2.4s ease-in-out infinite}
+.contents_div .ndhb-hero.is-play .ndhb-hero__icon{animation:ndhb-pop .6s cubic-bezier(.3,1.6,.5,1) forwards,ndhb-float 3.2s ease-in-out infinite}
+.contents_div .ndhb-hero.is-play .ndhb-hero__leaves{animation:ndhb-fade 1s ease 1s forwards}
+
+/* 낙엽 */
+.contents_div .ndhb-hero__leaves{position:absolute;left:0;right:0;top:0;bottom:40%;overflow:hidden;pointer-events:none;-webkit-mask-image:linear-gradient(#000 75%,transparent);mask-image:linear-gradient(#000 75%,transparent)}
+.contents_div .ndhb-hero__leaf{position:absolute;top:-13%;width:4.4%;animation:ndhb-fall linear infinite;animation-play-state:paused}
+.contents_div .ndhb-hero.is-play .ndhb-hero__leaf{animation-play-state:running}
+.contents_div .ndhb-hero__leaf img{animation:ndhb-sway ease-in-out infinite alternate;animation-duration:inherit}
+
+@keyframes ndhb-bg{to{transform:scale(1)}}
+@keyframes ndhb-map{to{opacity:1;transform:none}}
+@keyframes ndhb-badge{to{opacity:1;transform:none}}
+@keyframes ndhb-ride{0%,100%{transform:translateY(0)}50%{transform:translateY(-2.5%)}}
+@keyframes ndhb-wipe{0%{clip-path:polygon(-50% -50%,12.5% -50%,-37.5% 150%,-50% 150%);transform:translateX(-3%)}100%{clip-path:polygon(-50% -50%,137.5% -50%,87.5% 150%,-50% 150%);transform:none}}
+@keyframes ndhb-drop{0%{opacity:0;transform:translateY(-140%)}40%{opacity:1}70%{transform:translateY(0) scaleY(.82) scaleX(1.12)}100%{opacity:1;transform:none}}
+@keyframes ndhb-bob{0%,100%{translate:0 0}50%{translate:0 -8%}}
+@keyframes ndhb-pop{to{opacity:1;transform:scale(1)}}
+@keyframes ndhb-float{0%,100%{translate:0 0;rotate:0deg}50%{translate:0 -5%;rotate:-3deg}}
+@keyframes ndhb-fade{to{opacity:1}}
+@keyframes ndhb-fall{0%{transform:translate(0,0) rotate(0deg)}100%{transform:translate(-30%,1700%) rotate(400deg)}}
+@keyframes ndhb-sway{0%{transform:translateX(-60%) rotate(-20deg)}100%{transform:translateX(60%) rotate(25deg)}}
 
 /* ===== 앵커 내비 ===== */
 .contents_div .ndhb-nav{ background:var(--c-brown); padding:0 var(--gut); }
@@ -212,6 +258,21 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 .contents_div .ndhb-seoul{ background:var(--c-pink); --day2:#F8C6BB; --book:#F2B0A3; }
 .contents_div .ndhb-busan{ background:var(--c-gold); --day2:#F2BC62; --book:#ECAC48; --c-road:#E0913A; }
 .contents_div .ndhb-h2 em{ font-style:normal; color:var(--c-red); }
+/* 서울·부산 섹션 상단 배경 — 웹 800폭 기준 높이 988(폭에 비례), 아래 90px는 투명하게 이어짐 */
+.contents_div .ndhb-seoul{ --top-bg:url("img/서울탑배경.webp"); }
+.contents_div .ndhb-busan{ --top-bg:url("img/부산탑배경.webp"); }
+.contents_div .ndhb-seoul,
+.contents_div .ndhb-busan{ position:relative; isolation:isolate; --top-bg-size:100% auto; --top-bg-fade:90px; }
+.contents_div .ndhb-seoul::before,
+.contents_div .ndhb-busan::before{
+  content:''; position:absolute; left:0; right:0; top:0; z-index:-1; pointer-events:none;
+  height:auto;
+  background:var(--top-bg) center top / var(--top-bg-size) no-repeat;
+  -webkit-mask-image:linear-gradient(to bottom, #000 calc(100% - var(--top-bg-fade)), transparent 100%);
+          mask-image:linear-gradient(to bottom, #000 calc(100% - var(--top-bg-fade)), transparent 100%);
+}
+.contents_div .ndhb-seoul::before,
+.contents_div .ndhb-busan::before{ height:auto; aspect-ratio:800 / 988; }   /* 서울·부산: 웹 800폭 기준 높이 988, 폭에 비례 */
 
 /* DAY별 띠 — 섹션 좌우 끝까지, DAY2는 한 톤 진한 색 + 위아래 물결 */
 .contents_div .ndhb-day{ position:relative; margin:0 calc(var(--gut) * -1); padding:0 var(--gut); }
@@ -417,9 +478,47 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   color:var(--c-sand); font-size:var(--fs-tagcap); font-weight:700; line-height:1.25;
 }
 
+/* ===== 스크롤 등장 (인트로부터 아래) — 스크립트가 .is-rv를 붙였을 때만 숨김 ===== */
+.contents_div .ndhb-wrap.is-rv .ndhb-rv{
+  opacity:0; translate:0 28px;
+  transition:opacity .7s ease, translate .8s cubic-bezier(.22,.8,.3,1), scale .7s cubic-bezier(.3,1.5,.5,1);
+  transition-delay:var(--rv-d,0s);
+}
+.contents_div .ndhb-wrap.is-rv .ndhb-rv--pop{ translate:none; scale:.6; }
+.contents_div .ndhb-wrap.is-rv .ndhb-rv.is-in{ opacity:1; translate:none; scale:none; }
+.contents_div .ndhb-wrap.is-rv .ndhb-cta.ndhb-rv{
+  transition:opacity .7s ease var(--rv-d,0s), translate .8s cubic-bezier(.22,.8,.3,1) var(--rv-d,0s), transform .15s, box-shadow .15s;
+}
+/* DAY 배지 — 화면에 도착하면 통통, 쉬고, 통통 반복 */
+.contents_div .ndhb-wrap.is-rv .ndhb-day-no.is-in{ animation:ndhb-hop 2.6s ease-in-out .8s infinite; }
+@keyframes ndhb-hop{
+  0%,40%,100%{ transform:translateY(0); }
+  8%{ transform:translateY(-.55em); }
+  16%{ transform:translateY(0); }
+  24%{ transform:translateY(-.4em); }
+  32%{ transform:translateY(0); }
+}
+/* 웹 ㄹ자 경로선(DAY1) — 출발점부터 그려짐 */
+.contents_div .ndhb-wrap.is-rv .ndhb-rv--line + .ndhb-route-svg path{
+  stroke-dasharray:1; stroke-dashoffset:1; transition:stroke-dashoffset 1.8s cubic-bezier(.45,0,.2,1) .2s;
+}
+.contents_div .ndhb-wrap.is-rv .ndhb-rv--line + .ndhb-route-svg circle{ opacity:0; transition:opacity .4s ease .2s; }
+.contents_div .ndhb-wrap.is-rv .ndhb-rv--line + .ndhb-route-svg circle:last-of-type{ transition-delay:1.9s; }
+.contents_div .ndhb-wrap.is-rv .ndhb-rv--line.is-in + .ndhb-route-svg path{ stroke-dashoffset:0; }
+.contents_div .ndhb-wrap.is-rv .ndhb-rv--line.is-in + .ndhb-route-svg circle{ opacity:1; }
+
 @media (hover:hover) and (pointer:fine){
   .contents_div .ndhb-nav-btn:hover{ color:var(--c-yellow); }
   .contents_div .ndhb-cta:hover{ transform:translate(2px,2px); box-shadow:3px 3px 0 var(--c-brown); }
+}
+
+/* 히어로 — 움직임 줄이기 설정 */
+@media (prefers-reduced-motion:reduce){
+  .contents_div .ndhb-hero *{animation:none!important}
+  .contents_div .ndhb-hero__bg,.contents_div .ndhb-hero__map,.contents_div .ndhb-hero__badge,
+  .contents_div .ndhb-hero__pin,.contents_div .ndhb-hero__icon{opacity:1;transform:none}
+  .contents_div .ndhb-hero__title{clip-path:none;transform:none}
+  .contents_div .ndhb-hero__leaves{display:none}
 }
 
 /* ===== 반응형 ===== */
@@ -450,9 +549,9 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   .contents_div .ndhb-tag{ margin-top:calc((var(--fs-body) * 1.45 - var(--lb-h)) / 2); }
   .contents_div .ndhb-seoul .ndhb-day:first-of-type .ndhb-route > li:nth-child(-n+3) .ndhb-tag{ padding-top:0; }
   .contents_div .ndhb-stop-fig{ margin-top:10px; border-radius:8px; }
-  .contents_div .ndhb-deco--b{ left:auto; right:var(--gut); bottom:-38px; width:120px; aspect-ratio:1 / 1.05; }
+  .contents_div .ndhb-deco--b{ left:auto; right:var(--gut); bottom:calc(-38px + var(--grp, 0px)); width:132px; aspect-ratio:1 / 1.05; }   /* 601~700: 10% 확대 */
   /* 새 데코: 기존 데코 왼쪽 위 45° 방향으로 30px 떨어짐 (가로·세로 각 21px) */
-  .contents_div .ndhb-deco--b2{ left:auto; right:calc(var(--gut) + 120px + 21px - 36px); bottom:calc(-38px + 126px + 21px - 25px); width:84px; aspect-ratio:1 / 0.72; }
+  .contents_div .ndhb-deco--b2{ left:auto; right:calc(var(--gut) + 115.5px); bottom:calc(-38px + 134.2px + var(--grp, 0px)); width:92.4px; aspect-ratio:1 / 0.72; }   /* 601~700: 크기·간격 10% 확대 */
   .contents_div .ndhb-route p{ grid-column:1 / -1; margin-top:7px; }
   .contents_div .ndhb-stop-head{ grid-column:1 / -1; }
   .contents_div .ndhb-stop-fig{ grid-column:1; align-self:start; }
@@ -520,12 +619,16 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
     background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='86' height='30' viewBox='0 0 86 30'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23FFE93F'/%3E%3Cstop offset='1' stop-color='%23FFC22E'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M2.5 2.5H14.5A2 2 0 0 0 18.5 2.5H85.5V10.5A5.5 5.5 0 0 0 85.5 21.5V29.5H18.5A2 2 0 0 0 14.5 29.5H2.5V21.5A5.5 5.5 0 0 0 2.5 10.5Z' fill='%2347270F' stroke='%2347270F'/%3E%3Cpath d='M0.5 0.5H12.5A2 2 0 0 0 16.5 0.5H83.5V8.5A5.5 5.5 0 0 0 83.5 19.5V27.5H16.5A2 2 0 0 0 12.5 27.5H0.5V19.5A5.5 5.5 0 0 0 0.5 8.5Z' fill='url(%23g)' stroke='%2347270F'/%3E%3Cpath d='M14.5 4.90V6.80' stroke='%2347270F' stroke-width='1.4' stroke-linecap='round'/%3E%3Cpath d='M14.5 9.20V11.10' stroke='%2347270F' stroke-width='1.4' stroke-linecap='round'/%3E%3Cpath d='M14.5 13.50V15.40' stroke='%2347270F' stroke-width='1.4' stroke-linecap='round'/%3E%3Cpath d='M14.5 17.80V19.70' stroke='%2347270F' stroke-width='1.4' stroke-linecap='round'/%3E%3C/svg%3E"); }
   .contents_div .ndhb-busan .ndhb-kicker{ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='86' height='30' viewBox='0 0 86 30'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23FFFFFF'/%3E%3Cstop offset='1' stop-color='%23FFEFD6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M2.5 2.5H14.5A2 2 0 0 0 18.5 2.5H85.5V10.5A5.5 5.5 0 0 0 85.5 21.5V29.5H18.5A2 2 0 0 0 14.5 29.5H2.5V21.5A5.5 5.5 0 0 0 2.5 10.5Z' fill='%2347270F' stroke='%2347270F'/%3E%3Cpath d='M0.5 0.5H12.5A2 2 0 0 0 16.5 0.5H83.5V8.5A5.5 5.5 0 0 0 83.5 19.5V27.5H16.5A2 2 0 0 0 12.5 27.5H0.5V19.5A5.5 5.5 0 0 0 0.5 8.5Z' fill='url(%23g)' stroke='%2347270F'/%3E%3Cpath d='M14.5 4.90V6.80' stroke='%2347270F' stroke-width='1.4' stroke-linecap='round'/%3E%3Cpath d='M14.5 9.20V11.10' stroke='%2347270F' stroke-width='1.4' stroke-linecap='round'/%3E%3Cpath d='M14.5 13.50V15.40' stroke='%2347270F' stroke-width='1.4' stroke-linecap='round'/%3E%3Cpath d='M14.5 17.80V19.70' stroke='%2347270F' stroke-width='1.4' stroke-linecap='round'/%3E%3C/svg%3E"); }
   .contents_div .ndhb-h3{ margin-top:8px; line-height:1.5; }
+  .contents_div .ndhb-seoul,
+  .contents_div .ndhb-busan{ --top-bg-size:120% auto; }   /* 모바일: 상단 배경 1.2배 확대 */
+  .contents_div .ndhb-seoul::before,
+  .contents_div .ndhb-busan::before{ aspect-ratio:800 / 1185.6; }   /* 서울·부산: 1.2배 확대에 맞춘 높이 */
 
   .contents_div .ndhb-info{ margin-top:26px; border-top-width:1.5px; }
   .contents_div .ndhb-info-row{ grid-template-columns:1fr; gap:10px; padding:14px 0; }
   .contents_div .ndhb-deco{ width:130px; transform:translateY(calc(-30% - 10px)); }
-  .contents_div .ndhb-deco--b{ width:115.2px; bottom:-30px; transform:none; }
-  .contents_div .ndhb-deco--b2{ right:calc(var(--gut) + 102px); bottom:calc(71.8px - var(--deco-dy, 0px)); width:70px; transform:none; }
+  .contents_div .ndhb-deco--b{ width:115.2px; bottom:calc(-30px + var(--grp, 0px)); transform:none; }
+  .contents_div .ndhb-deco--b2{ right:calc(var(--gut) + 102px); bottom:calc(71.8px - var(--deco-dy, 0px) + var(--grp, 0px)); width:70px; transform:none; }
   .contents_div .ndhb-lb{ margin-top:0; height:calc(var(--lb-h) * 1.1); padding:0 calc(var(--lb-px) * 1.1); }
   .contents_div .ndhb-dates{ grid-template-columns:repeat(2,1fr); gap:6px; }
   .contents_div .ndhb-dates li{ padding:6px 8px; gap:5px; border-radius:8px; }
@@ -541,13 +644,13 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   .contents_div .ndhb-wrap{ --img-stop:62.5%; }
   /* 490→350: 크기 90%까지, 위치 20px 더 아래로 연속 이동 */
   .contents_div .ndhb-deco--b{
-    width:clamp(82.08px, calc(91.2px - (490px - 100vw) * 0.0651), 91.2px);
-    bottom:clamp(-74px, calc(-54px - (490px - 100vw) * 0.1429), -54px);
+    width:clamp(90.288px, calc(100.32px - (490px - 100vw) * 0.07161), 100.32px);   /* 10% 확대 */
+    bottom:calc(clamp(-74px, calc(-54px - (490px - 100vw) * 0.1429), -54px) + 17px + var(--b1-up, 0px) + var(--grp, 0px));   /* 500 이하 17px 위로 */
   }
   .contents_div .ndhb-deco--b2{
     width:clamp(63px, calc(70px - (490px - 100vw) * 0.05), 70px);
     right:calc(var(--gut) + clamp(64px, calc(98px - (490px - 100vw) * 0.2429), 98px));
-    bottom:calc(clamp(14px, calc(46.8px - (490px - 100vw) * 0.2343), 46.8px) - var(--deco-dy, 0px));
+    bottom:calc(clamp(14px, calc(46.8px - (490px - 100vw) * 0.2343), 46.8px) - var(--deco-dy, 0px) + var(--b2-up, 0px) + var(--grp, 0px));
   }
   .contents_div .ndhb-stop--wide .ndhb-stop-fig::before{ padding-top:var(--img-stop); }
   .contents_div .ndhb-route > li:nth-child(n):nth-child(n){ display:block; }
@@ -560,6 +663,12 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   }
   .contents_div .ndhb-cta{ min-height:44px; }
 }
+@media (max-width:450px){
+  .contents_div .ndhb-wrap{ --b1-up:12px; --b2-up:25px; }   /* 부산 요소1 12px·요소2 25px 위로 */
+}
+@media (max-width:430px){
+  .contents_div .ndhb-wrap{ --deco-down:15px; }   /* 부산 요소 2개 15px 아래로 */
+}
 @media (max-width:420px){
   .contents_div .ndhb-wrap{
     --band:40px;
@@ -569,10 +678,18 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   .contents_div .ndhb-br--m420{ display:inline; }
   .contents_div .ndhb-intro .ndhb-h1{ margin-bottom:21px; }   /* 인트로 리드문 위 +7 */
   .contents_div .ndhb-seoul .ndhb-deco{ transform:translateY(calc(-30% - 20px)); }   /* 서울 데코 10px 위로 */
-  .contents_div .ndhb-deco--b{ bottom:calc(clamp(-74px, calc(-54px - (490px - 100vw) * 0.1429), -54px) + 4px); }   /* 부산 요소1 4px 위로 */
+  .contents_div .ndhb-deco--b{ bottom:calc(clamp(-74px, calc(-54px - (490px - 100vw) * 0.1429), -54px) + 21px + var(--b1-up, 0px) + var(--grp, 0px)); }   /* 부산 요소1: 500 이하 17px + 420 이하 4px 위로 */
   .contents_div .ndhb-deco:not(.ndhb-deco--b):not(.ndhb-deco--b2){ transform:translateY(calc(-30% - 20px)); }   /* 서울 요소 10px 더 위로 */
   .contents_div .ndhb-h1{ position:relative; top:-2px; }   /* 검은 글씨 줄만 2px 위로 */
   .contents_div .ndhb-h1-hl{ position:relative; top:2px; }   /* 주황 줄은 제자리 */
+  .contents_div .ndhb-seoul,
+  .contents_div .ndhb-busan{ --top-bg-size:132% auto; }   /* 서울·부산 탑배경 1.1배 더 확대 */
+  .contents_div .ndhb-seoul::before,
+  .contents_div .ndhb-busan::before{ aspect-ratio:800 / 1304.16; }   /* 확대한 만큼 높이도 */
+}
+@media (max-width:350px){
+  .contents_div .ndhb-deco--b{ width:76.745px; }    /* 부산 요소1 15% 축소 */
+  .contents_div .ndhb-deco--b2{ width:53.55px; }    /* 부산 요소2 15% 축소 */
 }
 </style>
 
@@ -580,8 +697,82 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 <article>
 
   <!-- 히어로 -->
-  <figure class="ndhb-hero">
-    <img src="img/히어로.webp" alt="남도한바퀴 서울·부산발 1박 2일 상품 출시. 남도를 맛보고 남도를 거닐다. 단풍과 억새 사이 남도 지도 위에 여행지 핀이 꽂힌 그림" width="1600" height="1580" fetchpriority="high" loading="eager" decoding="async">
+<!-- TEST: 확인 후 이 줄 삭제 -->
+<div class="jngj-test-spacer" aria-hidden="true" style="height:900px;max-width:800px;margin:auto;display:grid;place-items:center;border:1px solid #cb9;background:linear-gradient(to top right,#0000 calc(50% - 1px),#cb9,#0000 calc(50% + 1px)),linear-gradient(to top left,#0000 calc(50% - 1px),#cb9,#0000 calc(50% + 1px)) #fffdef;font:700 16px sans-serif;color:#7E5E50"><b style="padding:10px 20px;background:#fffdef;border:1px solid #cb9;border-radius:99px">
+  테스트 영역 · 아래로 스크롤 ↓</b></div>
+<!-- TEST: 확인 후 이 줄 삭제  -->
+  <figure class="ndhb-hero" role="img" aria-label="남도한바퀴 서울·부산발 1박 2일 상품 출시. 남도를 맛보고 남도를 거닐다. 단풍과 억새 사이 남도 지도 위에 여행지 핀이 꽂힌 그림">
+
+    <div class="ndhb-hero__layer ndhb-hero__bg" aria-hidden="true">
+      <img alt="" width="1600" height="1580" fetchpriority="high" loading="eager" decoding="async"
+        src="img/히어로배경.webp">
+    </div>
+
+    <div class="ndhb-hero__leaves" aria-hidden="true">
+      <span class="ndhb-hero__leaf" style="left:14%;animation-delay:-0s;animation-duration:9s"><img alt="" src="data:image/webp;base64,UklGRsIGAABXRUJQVlA4WAoAAAAQAAAAUwAASwAAQUxQSAYCAAABX6EgbQNm37/uKYiIxI6GLNu227a5AHvvVJfc25v/CCERD3hwyl9E/ycA/5/1eiiCsxARPQVmortVSNKJHkYBeaHHP+H4oa1FKCLaPIWCLAPR2bRB6Mj24FHWtEWilebYWZE/LZkvS82QkZz1jtlmNjcG7c1pAxH1m1JizLy5bSM6FY8KjtKbsw3RR3wv4qi8udjRKQMUkEm6MhApAKDQfMTuVBJpKEOz3FiIFHI3KuvPb0T0+fr0tHBMTEt+ZCmNuFnO77T92w5M3B2Qz8SZ2e18KrH7ItbaLvZp/07MpR184m8YTgFYGfIAgPND3MDSiBsTjkTaDN5FWMyEd1FHcJeSfsBfCVIO0IlZYwcaJyFLApc6fxOxwPUq4aVwlF9+BDxFqZsdSazgVKc7kgi35Q+JjJ3EA4ns4DR+IpGnzM1AQlInGUntE0Arrjcx1NdgT0hwr9lWSZRz7Uh2z0TSa5ZG3GsNoCwtRnE0A0gyC+3o0HuwKjAmHw4moDSeBicUcUDpZOF47jMAaI1DNTqpWO7m09OmS9Mp3O2NflxOLp75zDhvmr4tE2yejQxQ5fLFRpET3icDd1O+2Dvagq7nynwrjK8HQLrnqX0rjXoDUBw5Rt9qo9gEoFytSt9KI7Ux1biu+/1+XZexVvA9NRKbBtK1EdkE8IvoGwGO4TiSEMG5kvBnCFZQOCCWBAAA8BkAnQEqVABMAD4xFIdCoiEMjh7sEAGCWYAzFXA2V6L/cfyA9pWwf3v74/kB1ZiAep79z9yXap8wD9Q+k75gP2t/aP3hfRv6AH9C/yPWYegB5a/s1ftT6Mye3loaT6aZ5APq8ver6gTbQEkaWsdi8Dbj2t0R/DAM/MO4J9+8TgTAdUsaH6tqa6mgv4pp3lFDrILcztUDJfS8PpnNIKAK8rDI/9BMXoAyNAOniLuk/2KOczmR59L+HcoeFLH1yefXnbIE0VdGJHpU4T9OPDjcvr6a8KIGrzIAAP79UF7mOM8g/U8GQb/m/Xy2qq6lz0eCAq9PmoJnqs3i1movb+tK/eSzgyli4gi4oBA2iUw30teWVVG3s8y1IBo9Ia4kLOuKztJHhX94QchNiNTrcnZfZFJ07tXoHw/425brAADtvOg68je0YXUDsON5jvG0iPknXAWfha76klxs96tSVMHl8UjtdwEGriu/ZphRFwt+zXKKvoV1sRy70L3g4N7wSdEExlQoJP89xbvQbWw+/AfLjCKMYQp4nhzIG18KevaACZZYL+d5RFbInRXxKT2wXS4hSp+lH7PMB8dxU613mZkAW86G9yefQr8OdIhCArfkQB+yCQIwe8W3wVDBzJQyOseDtF3v9b/GcR17M1aGmxfIXrcL5SaFBV+xgBPTvaP3HnwRzcZbIxFomjve5s/Imk7e1QOBST+d+0KYxM98COhGZhQiJG0V4ocOxdNK7l1A9MTvan+oPx+//N5PJ5i/0kW25XftumaJnk2i6f1YoY2FJZJ2qhDtcKLz8EWpEx8PDDmD4o0Ww4KdbjqBKdon2tYgM00KP+XA+/9XjTSMhZSF3A/fQKJquIkBJu5QnAdSNznM+pt0ybTlsrnK31DrXvuNxcqs++TWGwiGScPK5FcY2JsOUK/wdYVPPvlC+gGijBq+joXowlgO49PTGCDnFVZnpPAFc8ar0rH8GAEceI5FxLNmY1pZ93vi/61Amhn3tXF80mqbvLioji96E/sifehL3hXNv2d9oq5i9++s0b4D73m8O359B7lhGOD7bf4bj/1V1k5N2pnGWpzQ3G69sPmXJeCUmwZeeQ+mVeVHC6DuiUyo11ca01zsfE8oTMfknjewmmeESAyUF4BQVfJJYicNdRkrAFs+LgH+pu6DHxFLq2uT55VCypdrb9YUlN2nxf+Tm+A7CWFlHB133L/USg7nYdKusNMaA1UHfevHL7OCxCVM+pWkaVM34Ha7y1G/9mOiom6xXcax9MbjYu114MpmvOHSagxxkAIR1hdW8s8mdkeFllIipIBnM7eynrZQMvyuiEC7LsHt4fvjmHoyXzVj77bCvTjkftHnySvnY37sxxXWJRcLY1vt0Xxx8yi3IKYu9ixozfkQtf/WY9eieougASjalR6ee/Qs/80RdLPe5xXxNJNaOFnX7/Pm6QEaFqlbIAKn6cY3fdnWxUHZAXGyQ6UZaM5S8q1QYH70M46DSrAhwA6nVM/PtBfs12c4Ci/y5cuul3iUQ3uDdtN2tb600GD38S4af4AeSY2tM+Cv0u4flpAAAA=="></span>
+      <span class="ndhb-hero__leaf" style="left:58%;animation-delay:-3.6s;animation-duration:10s"><img alt="" src="data:image/webp;base64,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"></span>
+      <span class="ndhb-hero__leaf" style="left:86%;animation-delay:-6.5s;animation-duration:9.5s"><img alt="" src="data:image/webp;base64,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"></span>
+    </div>
+
+    <div class="ndhb-hero__layer ndhb-hero__map" aria-hidden="true">
+      <img alt="" width="1600" height="1580" fetchpriority="high" loading="eager" decoding="async"
+        src="img/히어로지도.webp">
+    </div>
+
+    <div aria-hidden="true">
+      <div class="ndhb-hero__el ndhb-hero__badge" style="left:16.125%;top:8.418%;width:68.375%;">
+        <span class="ndhb-hero__crop" style="aspect-ratio:1094/181"><img alt="" width="1600" height="1580" fetchpriority="high" loading="eager" decoding="async" style="width:146.252%;left:-23.583%;top:-73.483%"
+          src="img/히어로위치.webp"></span>
+      </div>
+      <div class="ndhb-hero__el ndhb-hero__title ndhb-hero__title--top" style="left:15.563%;top:18.228%;width:74.500%;animation-delay:.95s">
+        <span class="ndhb-hero__crop" style="aspect-ratio:1192/214"><img alt="" width="1600" height="1580" fetchpriority="high" loading="eager" decoding="async" style="width:134.228%;left:-20.890%;top:-134.581%"
+          src="img/히어로텍스트.webp"></span>
+      </div>
+      <div class="ndhb-hero__el ndhb-hero__title ndhb-hero__title--bot" style="left:15.563%;top:28.481%;width:74.500%;animation-delay:1.25s">
+        <span class="ndhb-hero__crop" style="aspect-ratio:1192/260"><img alt="" width="1600" height="1580" fetchpriority="high" loading="eager" decoding="async" style="width:134.228%;left:-20.890%;top:-173.077%"
+          src="img/히어로텍스트.webp"></span>
+      </div>
+      <div class="ndhb-hero__el ndhb-hero__pin" style="left:20.938%;top:65.570%;width:5.688%;animation-delay:1.50s,2.20s">
+        <span class="ndhb-hero__crop" style="aspect-ratio:91/115"><img alt="" width="1600" height="1580" fetchpriority="high" loading="eager" decoding="async" style="width:1758.242%;left:-368.141%;top:-900.875%"
+          src="img/히어로위치.webp"></span>
+      </div>
+      <div class="ndhb-hero__el ndhb-hero__pin" style="left:31.438%;top:65.253%;width:7.688%;animation-delay:1.64s,2.64s">
+        <span class="ndhb-hero__crop" style="aspect-ratio:123/159"><img alt="" width="1600" height="1580" fetchpriority="high" loading="eager" decoding="async" style="width:1300.813%;left:-408.950%;top:-648.426%"
+          src="img/히어로위치.webp"></span>
+      </div>
+      <div class="ndhb-hero__el ndhb-hero__pin" style="left:43.688%;top:72.785%;width:6.312%;animation-delay:1.78s,3.08s">
+        <span class="ndhb-hero__crop" style="aspect-ratio:101/132"><img alt="" width="1600" height="1580" fetchpriority="high" loading="eager" decoding="async" style="width:1584.158%;left:-692.087%;top:-871.214%"
+          src="img/히어로위치.webp"></span>
+      </div>
+      <div class="ndhb-hero__el ndhb-hero__pin" style="left:61.875%;top:60.823%;width:6.813%;animation-delay:1.92s,3.52s">
+        <span class="ndhb-hero__crop" style="aspect-ratio:109/142"><img alt="" width="1600" height="1580" fetchpriority="high" loading="eager" decoding="async" style="width:1467.890%;left:-908.257%;top:-676.763%"
+          src="img/히어로위치.webp"></span>
+      </div>
+      <div class="ndhb-hero__el ndhb-hero__pin" style="left:71.125%;top:64.937%;width:8.875%;animation-delay:2.06s,3.96s">
+        <span class="ndhb-hero__crop" style="aspect-ratio:142/189"><img alt="" width="1600" height="1580" fetchpriority="high" loading="eager" decoding="async" style="width:1126.761%;left:-801.408%;top:-542.860%"
+          src="img/히어로위치.webp"></span>
+      </div>
+      <div class="ndhb-hero__el ndhb-hero__icon" style="left:8.125%;top:72.215%;width:13.250%;animation-delay:2.20s,2.80s">
+        <span class="ndhb-hero__crop" style="aspect-ratio:212/129"><img alt="" width="1600" height="1580" fetchpriority="high" loading="eager" decoding="async" style="width:754.717%;left:-61.321%;top:-884.494%"
+          src="img/히어로위치.webp"></span>
+      </div>
+      <div class="ndhb-hero__el ndhb-hero__icon" style="left:21.688%;top:54.620%;width:11.625%;animation-delay:2.33s,3.33s">
+        <span class="ndhb-hero__crop" style="aspect-ratio:186/175"><img alt="" width="1600" height="1580" fetchpriority="high" loading="eager" decoding="async" style="width:860.215%;left:-186.563%;top:-493.141%"
+          src="img/히어로위치.webp"></span>
+      </div>
+      <div class="ndhb-hero__el ndhb-hero__icon" style="left:34.062%;top:78.481%;width:11.812%;animation-delay:2.46s,3.86s">
+        <span class="ndhb-hero__crop" style="aspect-ratio:189/165"><img alt="" width="1600" height="1580" fetchpriority="high" loading="eager" decoding="async" style="width:846.561%;left:-288.356%;top:-751.515%"
+          src="img/히어로위치.webp"></span>
+      </div>
+      <div class="ndhb-hero__el ndhb-hero__icon" style="left:56.812%;top:70.949%;width:12.500%;animation-delay:2.59s,4.39s">
+        <span class="ndhb-hero__crop" style="aspect-ratio:200/168"><img alt="" width="1600" height="1580" fetchpriority="high" loading="eager" decoding="async" style="width:800.000%;left:-454.496%;top:-667.258%"
+          src="img/히어로위치.webp"></span>
+      </div>
+      <div class="ndhb-hero__el ndhb-hero__icon" style="left:80.875%;top:66.582%;width:12.438%;animation-delay:2.72s,4.92s">
+        <span class="ndhb-hero__crop" style="aspect-ratio:199/156"><img alt="" width="1600" height="1580" fetchpriority="high" loading="eager" decoding="async" style="width:804.020%;left:-650.251%;top:-674.356%"
+          src="img/히어로위치.webp"></span>
+      </div>
+    </div>
   </figure>
 
   <!-- 앵커 내비 -->
@@ -715,7 +906,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
           <li class="ndhb-stop">
             <span class="ndhb-pin ndhb-pin--course" aria-hidden="true"></span>
             <div class="ndhb-stop-head"><span class="ndhb-tag ndhb-tag--course">코스3</span><h4 class="ndhb-stop-name">해남 대흥사 (유네스코 세계문화유산)</h4></div>
-            <div class="ndhb-stop-fig"><img src="img/해남 대흥사.webp" alt=""><span class="ndhb-credit">출처: 한국관광공사</span></div>
+            <div class="ndhb-stop-fig"><img src="img/해남 대흥사.webp" alt=""><span class="ndhb-credit">출처: 국가유산청</span></div>
             <p>의상대사가 창건한 천년고찰로, 임진왜란 때 승병을 이끈 서산대사의 의발이 보관된 호국사찰입니다. 빽빽한 삼나무와 전나무 숲길을 걸어 들어가는 진입로부터 깊은 힐링을 선물해요.</p>
           </li>
           <li class="ndhb-stop">
@@ -929,7 +1120,25 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   /* 웹 경로선 — 직선·U턴·양끝 원을 하나의 SVG 경로로 그려 이음매 정렬 문제 제거 */
   var NS='http://www.w3.org/2000/svg';
   function px(el,name){ return parseFloat(getComputedStyle(el).getPropertyValue(name))||0; }
+  /* 700 이하: 부산 요소 2개(간격·크기 유지)를 DAY1·DAY2 경계 오른쪽에 묶어서 배치
+     700에서는 그룹 높이의 25%만큼 DAY2 쪽으로, 500 이하는 경계 정중앙 (사이 구간은 비례) */
+  function placeBusanDeco(){
+    var b1=root.querySelector('.ndhb-deco--b'), b2=root.querySelector('.ndhb-deco--b2');
+    if(!b1||!b2) return;
+    var day=b1.parentNode;
+    day.style.removeProperty('--grp');
+    var vw=window.innerWidth;
+    if(!window.matchMedia('(max-width:700px)').matches) return;
+    var r1=b1.getBoundingClientRect(), r2=b2.getBoundingClientRect(), rd=day.getBoundingClientRect();
+    var gt=Math.min(r1.top,r2.top), gb=Math.max(r1.bottom,r2.bottom), gh=gb-gt;
+    var center=(gt+gb)/2 - rd.top;
+    var wave=px(day,'--wave-h');
+    var bias=Math.max(0, Math.min(1, (vw-500)/200)) * gh * 0.25;
+    var target=-wave/2 + bias + px(day,'--deco-down');
+    day.style.setProperty('--grp', (center-target).toFixed(2)+'px');
+  }
   function drawRoutes(){
+    placeBusanDeco();
     var routes=root.querySelectorAll('.ndhb-route');
     for(var r=0;r<routes.length;r++){
       var rt=routes[r], svg=rt.nextElementSibling; if(svg && svg.getAttribute('class')!=='ndhb-route-svg') svg=null;
@@ -951,7 +1160,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
       d+=' H'+ex;
       if(!svg){
         svg=document.createElementNS(NS,'svg'); svg.setAttribute('class','ndhb-route-svg'); svg.setAttribute('aria-hidden','true');
-        svg.appendChild(document.createElementNS(NS,'path'));
+        var np=document.createElementNS(NS,'path'); np.setAttribute('pathLength','1'); svg.appendChild(np);
         svg.appendChild(document.createElementNS(NS,'circle'));
         svg.appendChild(document.createElementNS(NS,'circle'));
         rt.parentNode.insertBefore(svg,rt.nextSibling);
@@ -981,6 +1190,44 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
       }
     }, { rootMargin:'-45% 0px -50% 0px' });
     for(var k=0;k<secs.length;k++){ io.observe(secs[k]); }
+  }
+  /* 스크롤 등장 — 인트로부터 아래. 같은 순간 들어온 요소끼리 차례로 */
+  var rvWrap = root.querySelector('.ndhb-wrap');
+  var rvReduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  if(rvWrap && window.IntersectionObserver && !rvReduce){
+    var rvSel = [
+      '.ndhb-intro .ndhb-h1', '.ndhb-intro .ndhb-intro-sub', '.ndhb-intro .ndhb-lead', '.ndhb-intro .ndhb-sum',
+      '.ndhb-head', '.ndhb-points > li',
+      '.ndhb-day-no', '.ndhb-day .ndhb-h3', '.ndhb-route > li', '.ndhb-info-row', '.ndhb-cta',
+      '.ndhb-foot-title', '.ndhb-tags'
+    ].join(',');
+    rvWrap.querySelectorAll(rvSel).forEach(function(el){ el.classList.add('ndhb-rv'); });
+    rvWrap.querySelectorAll('.ndhb-deco').forEach(function(el){ el.classList.add('ndhb-rv','ndhb-rv--pop'); });
+    rvWrap.querySelectorAll('.ndhb-day:first-of-type .ndhb-route').forEach(function(el){ el.classList.add('ndhb-rv--line'); });   /* 경로선 그리기는 DAY1만 */
+    var rio = new IntersectionObserver(function(en){
+      var n = 0;
+      for(var q=0;q<en.length;q++){
+        if(!en[q].isIntersecting) continue;
+        var el = en[q].target;
+        el.style.setProperty('--rv-d', Math.min(n * 0.09, 0.45).toFixed(2) + 's'); n++;
+        el.classList.add('is-in');
+        rio.unobserve(el);
+      }
+    }, { rootMargin:'0px 0px -30px 0px' });
+    rvWrap.querySelectorAll('.ndhb-rv, .ndhb-rv--line').forEach(function(el){ rio.observe(el); });
+    rvWrap.classList.add('is-rv');
+  }
+
+  /* 히어로 모션 — 화면에 들어오면 한 번 재생 */
+  var hero = root.querySelector('.ndhb-hero');
+  if(hero){
+    if(!window.IntersectionObserver){ hero.classList.add('is-play'); }
+    else{
+      var hio = new IntersectionObserver(function(en){
+        for(var h=0;h<en.length;h++){ if(en[h].isIntersecting){ hero.classList.add('is-play'); hio.disconnect(); break; } }
+      }, { threshold:0.3 });
+      hio.observe(hero);
+    }
   }
 })();
 </script>
