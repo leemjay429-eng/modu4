@@ -677,7 +677,6 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   .contents_div .ndhb-br--mo-wide{ display:none; }
   .contents_div .ndhb-br--m420{ display:inline; }
   .contents_div .ndhb-intro .ndhb-h1{ margin-bottom:21px; }   /* 인트로 리드문 위 +7 */
-  .contents_div .ndhb-sum-sub{ font-size:11px; letter-spacing:-0.03em; }   /* (9호선 올림픽공원역 / 3번 출구) 두 줄 */
   .contents_div .ndhb-seoul .ndhb-deco{ transform:translateY(calc(-30% - 20px)); }   /* 서울 데코 10px 위로 */
   .contents_div .ndhb-deco--b{ bottom:calc(clamp(-74px, calc(-54px - (490px - 100vw) * 0.1429), -54px) + 21px + var(--b1-up, 0px) + var(--grp, 0px)); }   /* 부산 요소1: 500 이하 17px + 420 이하 4px 위로 */
   .contents_div .ndhb-deco:not(.ndhb-deco--b):not(.ndhb-deco--b2){ transform:translateY(calc(-30% - 20px)); }   /* 서울 요소 10px 더 위로 */
@@ -687,6 +686,9 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   .contents_div .ndhb-busan{ --top-bg-size:132% auto; }   /* 서울·부산 탑배경 1.1배 더 확대 */
   .contents_div .ndhb-seoul::before,
   .contents_div .ndhb-busan::before{ aspect-ratio:800 / 1304.16; }   /* 확대한 만큼 높이도 */
+}
+@media (max-width:370px){
+  .contents_div .ndhb-sum-sub{ font-size:12px; letter-spacing:-0.04em; }   /* 요청: 370 이하만 — (9호선 올림픽공원역 / 3번 출구) 두 줄 */
 }
 @media (max-width:350px){
   .contents_div .ndhb-deco--b{ width:76.745px; }    /* 부산 요소1 15% 축소 */
@@ -798,7 +800,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
       <tbody>
         <tr>
           <th scope="row">출발</th>
-          <td><time datetime="06:50">06:50</time><br>올림픽공원 주차장<br><span class="ndhb-sum-sub">(9호선 올림픽공원역<span class="ndhb-br ndhb-br--m420"></span> 3번 출구)</span></td>
+          <td><time datetime="06:50">06:50</time><br>올림픽공원 주차장<br><span class="ndhb-sum-sub">(9호선 올림픽공원역 <span class="ndhb-nowrap">3번 출구)</span></span></td>
           <td><time datetime="07:30">07:30</time><br>사상역 3번 출구 앞 버스정류장</td>
         </tr>
         <tr>
